@@ -10,6 +10,10 @@ call vundle#rc()
 " First to come, use ViM defaults and not Vi (be iMproved)
 set nocompatible
 
+if filereadable(".vim.custom")
+so .vim.custom
+endif
+
 " Hightlight syntax
 syntax on
 filetype off                   " required!
