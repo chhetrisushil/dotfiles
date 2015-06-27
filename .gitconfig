@@ -1,0 +1,54 @@
+[user]
+    name = chhetrisushil
+    email = chhetrisushil@gmail.com
+
+[merge]
+    tool = vimdiff
+
+[color]
+    ui = true
+    status = true
+    interactive = true
+
+[color "diff"]
+    meta = blue black bold
+
+[credential]
+    helper = cache --timeout=3600
+
+
+[core]
+    editor = vim
+    excludesfile = /Users/oli/.gitignore
+    legacyheaders = false # >git 1.5
+    quotepath = false
+    pager = less -r
+
+[repack]
+    usedeltabaseoffset = true # >git 1.5
+
+[alias]
+    st = status -s
+    a = !git add . && git status
+    au = !git add -u . && git status
+    aa = !git add . && git add -u . && git status
+    c = commit
+    cm = commit -m
+    cmn = commit --no-verify
+    co = checkout
+    ca = commit --amend # careful
+    ac = !git add . && git commit
+    acm = !git add . && git commit -m
+    l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+    ll = log --stat --abbrev-commit
+    d = diff --color-words
+    dh = diff --color-words head
+    master = checkout master
+    spull = svn rebase
+    spush = svn dcommit
+    alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+	graph = log --graph --all --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset %s%C(yellow)%d%Creset' --abbrev-commit --date=relative
+
+[github]
+    user = "chhetrisushil"
+    ; token = [API token from https://github.com/account/admin]
