@@ -48,6 +48,7 @@ Bundle "jceb/vim-orgmode"
 Bundle "jelera/vim-javascript-syntax"
 Bundle "pangloss/vim-javascript"
 Bundle "nathanaelkane/vim-indent-guides"
+Bundle "burnettk/vim-angular"
 imap <C-c> <CR><Esc>O
 Bundle "Chiel92/vim-autoformat"
 noremap <F2> :Autoformat<CR>
