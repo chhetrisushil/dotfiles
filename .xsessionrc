@@ -5,6 +5,9 @@
 # xset b 100 400 100
 export PATH=$PATH:$HOME/.cabal/bin:$HOME/.scripts
 
+# Set background image with feh
+feh --bg-scale /usr/share/backgrounds/warty-final-ubuntu.png &
+
 # setxkbmap -model thinkpad -layout us
 # convert caps lock to additional control-key
 setxkbmap -option ctrl:nocaps
