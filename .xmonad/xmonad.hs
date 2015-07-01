@@ -133,7 +133,7 @@ customLayout = myShowWName $ avoidStruts $
 -------------------------------------------------------------------------------
 -- Terminal --
 terminal' :: String
-terminal' = "urxvtc"
+terminal' = "terminator"
 
 myXPConfig = defaultXPConfig
              { promptKeymap = emacsLikeXPKeymap
