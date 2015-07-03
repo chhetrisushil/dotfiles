@@ -157,7 +157,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,               xK_p     ), shellPrompt myXPConfig)
     , ((modMask .|. shiftMask, xK_c     ), kill)
     , ((modMask .|. shiftMask, xK_p     ), spawn "gmrun")
-    , ((modMask,               xK_d     ), spawn "alock -auth md5:file=/home/chhetrisushil/hash.txt")
+    , ((modMask,               xK_d     ), spawn "alock -bg none")
 )
 
     -- layouts
