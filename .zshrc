@@ -87,7 +87,7 @@ alias logout="pkill -u chhetrisushil"
 alias tpOff="synclient TouchpadOff=1"
 alias tpOn="synclient TouchpadOff=0"
 alias ltp="alock -bg none"
-alias lbg="alock -bg blank"
+alias lbg="alock"
 
 #function lock-screen-tp {
 #  ltp
