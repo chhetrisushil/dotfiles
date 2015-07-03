@@ -86,19 +86,19 @@ alias vi="vim"
 alias logout="pkill -u chhetrisushil"
 alias tpOff="synclient TouchpadOff=1"
 alias tpOn="synclient TouchpadOff=0"
-alias ltp="alock -auth md5:file=hash.txt"
-alias lbg="alock -auth md5:file=hash.txt -bg blank"
+#alias ltp="alock -auth md5:file=hash.txt"
+#alias lbg="alock -auth md5:file=hash.txt -bg blank"
 
-function lock-screen-tp {
-  ltp
-}
+#function lock-screen-tp {
+#  ltp
+#}
 
-function lock-screen-bg {
-  lbg
-}
+#function lock-screen-bg {
+#  lbg
+#}
 
-zle -N lock-screen-tp
-zle -N lock-screen-bg
+#zle -N lock-screen-tp
+#zle -N lock-screen-bg
 
-bindkey '^[^L' lock-screen-bg
-bindkey '^[^T' lock-screen-tp
+#bindkey '^[^L' lock-screen-bg
+#bindkey '^[^T' lock-screen-tp
