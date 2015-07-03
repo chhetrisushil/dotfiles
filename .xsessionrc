@@ -41,4 +41,4 @@ pkill trayer; trayer --edge top --SetDockType true --align right --height 14 \
 
 pkill nm-applet; nm-applet &
 dropbox start
-xautolock -exit; xautolock -time 10 -locker "lock" &
+xautolock -exit; xautolock -time 10 -locker "alock -auth md5:file=/home/chhetrisushil/hash.txt -bg blank" &
