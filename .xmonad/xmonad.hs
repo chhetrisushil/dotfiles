@@ -153,11 +153,12 @@ modMask' = mod4Mask
 keys' :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- launching and killing programs
-    [ ((modMask,               xK_Return), spawn $ XMonad.terminal conf)
-    , ((modMask,               xK_p     ), shellPrompt myXPConfig)
-    , ((modMask .|. shiftMask, xK_c     ), kill)
-    , ((modMask .|. shiftMask, xK_p     ), spawn "gmrun")
-    , ((modMask,               xK_d     ), spawn "alock -bg none -c glyph")
+    [ ((modMask,                 xK_Return), spawn $ XMonad.terminal conf)
+    , ((modMask,                 xK_p     ), shellPrompt myXPConfig)
+    , ((modMask .|. shiftMask,   xK_c     ), kill)
+    , ((modMask .|. shiftMask,   xK_p     ), spawn "gmrun")
+    , ((modMask,                 xK_d     ), spawn "alock -bg none -c glyph")
+    , ((modMask .|. controlMask, xK_d     ), spawn "alock -c glyph")
 )
 
     -- layouts
