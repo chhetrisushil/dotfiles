@@ -6,4 +6,4 @@ reference: https://github.com/sagarrakshe/dotvim, https://github.com/sagarrakshe
 
 install alock from https://github.com/chhetrisushil/alock
 
-**NOTE:** locaiton of most of the config is HOME directory (i.e. ~/) except for .gitconfig which resides in the project directory
+**NOTE:** location of most of the config is HOME directory (i.e. ~/) except for .gitconfig which resides in the project directory
