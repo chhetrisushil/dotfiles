@@ -331,7 +331,7 @@ nnoremap <silent> n   n:call HLNext(0.4)<cr>
 nnoremap <silent> N   N:call HLNext(0.4)<cr>
 
 
-" OR ELSE just highlight the match in red...
+" just highlight the match in red...
 function! HLNext (blinktime)
     highlight RedOnRed ctermfg=red ctermbg=red
     let [bufnum, lnum, col, off] = getpos('.')
