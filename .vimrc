@@ -321,7 +321,7 @@ endif
 set hlsearch
 
 " just the 81st column of wide lines...
-highlight ColorColumn ctermbg=red
+highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
 "=====[ Highlight matches when jumping to next ]=============
