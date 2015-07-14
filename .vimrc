@@ -62,6 +62,8 @@ Bundle "mustache/vim-mustache-handlebars"
 let g:mustache_abbreviations = 1
 
 Bundle "kchmck/vim-coffee-script"
+Bundle "xolox/vim-misc"
+Bundle "xolox/vim-session"
 
 set smartindent
 set nonumber        " don't show line numbers
@@ -346,3 +348,8 @@ function! HLNext (blinktime)
     call matchdelete(ring)
     redraw
 endfunction
+
+let g:session_autosave='yes'
+let g:session_autosave_periodic=3
+let g:session_autosave_silent=1
+let g:session_autosave_to=$VI_SERVER
