@@ -5,6 +5,7 @@ export ZSH=/home/chhetrisushil/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+#ZSH_THEME="robbyrussell"
 ZSH_THEME="bira"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -87,18 +88,47 @@ alias logout="pkill -u chhetrisushil"
 alias tpOff="synclient TouchpadOff=1"
 alias tpOn="synclient TouchpadOff=0"
 alias ltp="alock -bg none -c glyph"
-alias lbg="alock -c glyph"
+alias lbg="alock -bg image:file=$HOME/Pictures/1752231.jpg -c glyph"
 
-#function lock-screen-tp {
-#  ltp
-#}
+# function lock-screen-tp {
+#   ltp
+# }
+# 
+# function lock-screen-bg {
+#   lbg
+# }
+# 
+# zle -N lock-screen-tp
+# zle -N lock-screen-bg
+# 
+# bindkey '^[^L' lock-screen-bg
+# bindkey '^[^T' lock-screen-tp
 
-#function lock-screen-bg {
-#  lbg
-#}
+# export windows home
+export winHome="/media/chhetrisushil/OS/Users/chhetrisushil"
 
-#zle -N lock-screen-tp
-#zle -N lock-screen-bg
+# folder aliases
+alias winh="cd $winHome"
+alias wing="cd $winHome/Documents/gitProjects"
 
-#bindkey '^[^L' lock-screen-bg
-#bindkey '^[^T' lock-screen-tp
+# emacs alias for terminal
+alias emacs="emacs -nw"
+
+# Set the name of vim session the terminal is tied up to
+eset(){
+    export VI_SERVER=$1
+}
+
+# Fire up a new server according to the argument supplied
+vs(){
+    eset $1
+    vim --servername $VI_SERVER
+}
+
+# Open up the files in the environment Vim server.
+es(){
+    vim --servername $VI_SERVER --remote-silent $*
+}
+
+# Reuse Vim ZSH completions for vim completions
+compdef _vim es
