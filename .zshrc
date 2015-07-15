@@ -122,7 +122,7 @@ eset(){
 # Fire up a new server according to the argument supplied
 vs(){
     eset $1
-    vim --servername $VI_SERVER
+    vim --servername $VI_SERVER "${@:2}"
 }
 
 # Open up the files in the environment Vim server.
