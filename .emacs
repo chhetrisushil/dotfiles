@@ -91,3 +91,6 @@
 (require 'flycheck)
 (add-hook 'js-mode-hook
           (lambda () (flycheck-mode t)))
+;; hide menu and tool bar for GNU emacs                                                                                                                                                                                                     
+(menu-bar-mode -1)
+(tool-bar-mode -1)
