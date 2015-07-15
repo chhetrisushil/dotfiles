@@ -320,10 +320,10 @@ so .vim.custom
 endif
 
 " set search hightlighting on
-set hlsearch
+" set hlsearch
 
 " Press Enter to turn off highlighting and clear any message already displayed.
-nnoremap <CR> :nohlsearch<Bar>:echo<CR>
+" nnoremap <CR> :nohlsearch<Bar>:echo<CR>
 
 " just the 81st column of wide lines...
 highlight ColorColumn ctermbg=magenta
