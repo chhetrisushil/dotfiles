@@ -1,0 +1,9 @@
+export LOCK_BG="$HOME/Pictures/1752231.jpg"
+alias logout="pkill -u chhetrisushil"
+
+# export windows home
+export winHome="/media/chhetrisushil/OS/Users/chhetrisushil"
+
+# folder aliases
+alias winh="cd $winHome"
+alias wing="cd $winHome/Documents/gitProjects"
