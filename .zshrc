@@ -75,6 +75,11 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# load local alias files
+if [[ -f ~/.zshrc_local && -r ~/.zshrc_local ]]; then
+    source ~/.zshrc_local
+fi
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -84,11 +89,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi="vim"
-alias logout="pkill -u chhetrisushil"
 alias tpOff="synclient TouchpadOff=1"
 alias tpOn="synclient TouchpadOff=0"
 alias ltp="alock -bg none -c glyph"
-alias lbg="alock -bg image:file=$HOME/Pictures/1752231.jpg -c glyph"
+alias lbg="alock -bg image:file=$LOCK_BG -c glyph"
 
 # function lock-screen-tp {
 #   ltp
@@ -103,13 +107,6 @@ alias lbg="alock -bg image:file=$HOME/Pictures/1752231.jpg -c glyph"
 # 
 # bindkey '^[^L' lock-screen-bg
 # bindkey '^[^T' lock-screen-tp
-
-# export windows home
-export winHome="/media/chhetrisushil/OS/Users/chhetrisushil"
-
-# folder aliases
-alias winh="cd $winHome"
-alias wing="cd $winHome/Documents/gitProjects"
 
 # emacs alias for terminal
 alias emacs="emacs -nw"
