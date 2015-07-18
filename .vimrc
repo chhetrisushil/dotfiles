@@ -106,6 +106,7 @@ set wildmode=list:longest,full
 set guifont=Fira\ Mono\ 9
 colorscheme molokai
 set laststatus=2
+set encoding=utf-8
 
 " Code Folding Settings
 set foldmethod=indent   " fold based on indent
