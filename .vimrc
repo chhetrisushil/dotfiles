@@ -76,6 +76,11 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
+" Emmet for html and css tag/selector completion
+Bundle "mattn/emmet-vim"
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
 set smartindent
 set nonumber        " don't show line numbers
 set autoindent      " always set autoindenting on
