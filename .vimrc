@@ -65,6 +65,11 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "xolox/vim-misc"
 Bundle "xolox/vim-session"
 
+Bundle "SirVer/ultisnips"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 set smartindent
 set nonumber        " don't show line numbers
 set autoindent      " always set autoindenting on
