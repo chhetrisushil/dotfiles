@@ -365,3 +365,5 @@ let g:session_autosave='yes'
 let g:session_autosave_periodic=3
 let g:session_autosave_silent=1
 let g:session_autosave_to=$VI_SERVER
+
+let g:tlist_javascript_settings='javascript;r:var;s:string;a:array;o:object;u:function'
