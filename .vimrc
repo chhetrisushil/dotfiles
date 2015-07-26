@@ -263,7 +263,7 @@ hi SpellBad cterm=underline,bold ctermbg=white ctermfg=black
 
 " Autocompletion menu colors
 hi Pmenu ctermfg=black ctermbg=white
-hi PmenuSel ctermfg=white ctermbg=yellow
+hi PmenuSel ctermfg=black ctermbg=yellow
 
 " mapped <F5> to display error in quickfix window
 function! ToggleQuickFix()
