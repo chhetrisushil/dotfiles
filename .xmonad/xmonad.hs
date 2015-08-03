@@ -161,7 +161,6 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask .|. controlMask,   xK_l     ), spawn "pkill -u chhetrisushil")
     , ((modMask,                                 xK_d     ), spawn "alock -bg none -c glyph")
     , ((modMask .|. controlMask,                 xK_d     ), spawn "alock -c glyph")
-)
 
     -- layouts
     , ((modMask,               xK_space ), sendMessage NextLayout)
