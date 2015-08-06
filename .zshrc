@@ -113,19 +113,25 @@ alias emacs="emacs -nw"
 
 # Set the name of vim session the terminal is tied up to
 eset(){
-    export VI_SERVER=$1
+  export VI_SERVER=$1
 }
 
 # Fire up a new server according to the argument supplied
 vs(){
-    eset $1
-    vim --servername $VI_SERVER "${@:2}"
+  eset $1
+  vim --servername $VI_SERVER "${@:2}"
 }
 
 # Open up the files in the environment Vim server.
 es(){
-    vim --servername $VI_SERVER --remote-silent $*
+  vim --servername $VI_SERVER --remote-silent $*
+}
+
+# Open up the files in the environment Vim server in a tab
+est(){
+  vim --servername $VI_SERVER --remote-tab-silent $*
 }
 
 # Reuse Vim ZSH completions for vim completions
 compdef _vim es
+compdef _vim est
