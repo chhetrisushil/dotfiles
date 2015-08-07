@@ -16,6 +16,10 @@ filetype off                   " required!
 filetype plugin on
 filetype plugin indent on
 
+" set omnicomplete on
+" use <C-x><C-o> for completion in insert mode
+set omnifunc=syntaxcomplete#Complete
+
 "Bundles
 Bundle "jiangmiao/auto-pairs"
 Bundle "Rip-Rip/clang_complete"
