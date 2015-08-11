@@ -72,6 +72,9 @@ Bundle "xolox/vim-easytags"
 Bundle "juneedahamed/svnj.vim"
 Bundle "lambdatoast/elm.vim"
 
+let g:easytags_autorecurse = 1
+let g:easytags_by_filetype = "~/.tags"
+
 Bundle "SirVer/ultisnips"
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
