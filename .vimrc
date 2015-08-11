@@ -68,12 +68,12 @@ let g:mustache_abbreviations = 1
 Bundle "kchmck/vim-coffee-script"
 Bundle "xolox/vim-misc"
 Bundle "xolox/vim-session"
-Bundle "xolox/vim-easytags"
+" Bundle xolox/vim-easytags
 Bundle "juneedahamed/svnj.vim"
 Bundle "lambdatoast/elm.vim"
 
-let g:easytags_autorecurse = 1
-let g:easytags_by_filetype = "~/.tags"
+" let g:easytags_autorecurse = 1
+" let g:easytags_by_filetype = "~/.tags"
 
 Bundle "SirVer/ultisnips"
 " make YCM compatible with UltiSnips (using supertab)
