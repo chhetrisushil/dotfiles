@@ -91,10 +91,16 @@ Bundle "mattn/emmet-vim"
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
-Bundle "vim-scripts/javacomplete"
+Bundle "artur-shaik/vim-javacomplete2"
+
 if has("autocmd")
   autocmd! Filetype java setlocal omnifunc=javacomplete#Complete
+  autocmd! Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
 endif
+
+nnoremap <F4> call javacomplete#AddImport()<cr>
+
+let g:java_classpath="/usr/lib/jvm/java-8-openjdk-amd64/lib"
 
 set smartindent
 set nonumber        " don't show line numbers
