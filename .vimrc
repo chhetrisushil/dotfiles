@@ -92,6 +92,9 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
 Bundle "vim-scripts/javacomplete"
+if has("autocmd")
+  autocmd! Filetype java setlocal omnifunc=javacomplete#Complete
+endif
 
 set smartindent
 set nonumber        " don't show line numbers
