@@ -91,6 +91,8 @@ Bundle "mattn/emmet-vim"
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
+Bundle "vim-scripts/javacomplete"
+
 set smartindent
 set nonumber        " don't show line numbers
 set autoindent      " always set autoindenting on
