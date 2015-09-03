@@ -196,6 +196,9 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 " open gvimrc
 nmap <silent> <leader>eg :e $MYGVIMRC<CR> 
 
+" set syntax highlighting to javascript
+nmap <silent> <leader>js :set syntax=javascript<CR>
+
 " source vimrc
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " source gvimrc
