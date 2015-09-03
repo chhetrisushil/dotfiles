@@ -353,10 +353,6 @@ endfunction
 
 nnoremap <C-o>z :call MaximizeToggle()<CR>
 
-if filereadable(".vim.custom")
-so .vim.custom
-endif
-
 " set search hightlighting on
 " set hlsearch
 
@@ -393,3 +389,13 @@ let g:session_autosave_silent=1
 let g:session_autosave_to=$VI_SERVER
 
 let g:tlist_javascript_settings='javascript;r:var;s:string;a:array;o:object;u:function'
+
+" source custom config from home directory
+if filereadable("~/.vim.custom")
+  so ~/.vim.custom
+endif
+
+" source custom config from current directory
+if filereadable(".vim.custom")
+  so .vim.custom
+endif
