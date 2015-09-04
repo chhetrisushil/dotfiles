@@ -137,3 +137,9 @@ est(){
 # Reuse Vim ZSH completions for vim completions
 compdef _vim es
 compdef _vim est
+
+# Set custom title to terminal window
+settitle() {
+  export DISABLE_AUTO_TITLE="true"
+  echo -e "\033];$1\007"
+}
