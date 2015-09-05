@@ -9,8 +9,8 @@ export PATH=$PATH:$HOME/.cabal/bin:$HOME/.scripts
 feh --bg-scale /usr/share/backgrounds/warty-final-ubuntu.png &
 
 # setxkbmap -model thinkpad -layout us
-# convert caps lock to additional control-key
-setxkbmap -option ctrl:nocaps
+# convert caps lock to additional esc-key
+setxkbmap -option caps:escape
 
 ## Touchpad settings
 # synclient TapButton1=1
