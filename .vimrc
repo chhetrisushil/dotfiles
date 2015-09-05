@@ -140,7 +140,16 @@ set wildmode=list:longest,full
 
 " Setting Font
 " Programming Font
-set guifont=Fira\ Mono\ 9
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Fira\ Mono\ 9
+  elseif has("gui_macvim")
+    set guifont=Fira\ Mono:h12
+  elseif has("gui_win32")
+    set guifont=Fira\ Mono:h11
+  endif
+endif
+
 colorscheme molokai
 set laststatus=2
 set encoding=utf-8
