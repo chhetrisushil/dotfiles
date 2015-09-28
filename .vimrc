@@ -100,7 +100,8 @@ endif
 
 nnoremap <F4> call javacomplete#AddImport()<cr>
 
-let g:java_classpath="/usr/lib/jvm/java-8-openjdk-amd64/lib"
+" Javascript ES6 syntax support
+Bundle "isRuslan/vim-es6"
 
 set smartindent
 set nonumber        " don't show line numbers
