@@ -51,6 +51,7 @@ Bundle "honza/vim-snippets"
 Bundle "jceb/vim-orgmode"
 Bundle "jelera/vim-javascript-syntax"
 Bundle "pangloss/vim-javascript"
+Bundle "maksimr/vim-jsbeautify"
 Bundle "nathanaelkane/vim-indent-guides"
 Bundle "burnettk/vim-angular"
 imap <C-c> <CR><Esc>O
@@ -213,6 +214,9 @@ nmap <silent> <leader>sg :so $MYGVIMRC<CR>
 
 " set syntax highlighting to javascript
 nmap <silent> <leader>js :set syntax=javascript<CR>
+
+" formatter for javascript files
+nmap <silent> <leader>fj :call JsBeautify()<CR>
 
 " toggle NERDTree
 nmap <silent> <C-D> :NERDTreeToggle<CR>
