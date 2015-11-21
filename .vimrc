@@ -217,6 +217,10 @@ nmap <silent> <leader>js :set syntax=javascript<CR>
 
 " formatter for javascript files
 nmap <silent> <leader>fj :call JsBeautify()<CR>
+" formatter for HTML files
+nmap <silent> <leader>fh :call HtmlBeautify()<CR>
+" formatter for CSS files
+nmap <silent> <leader>fc :call CSSBeautify()<CR>
 
 " toggle NERDTree
 nmap <silent> <C-D> :NERDTreeToggle<CR>
