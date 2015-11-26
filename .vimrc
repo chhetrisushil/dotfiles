@@ -52,6 +52,7 @@ Bundle "jceb/vim-orgmode"
 Bundle "jelera/vim-javascript-syntax"
 Bundle "pangloss/vim-javascript"
 Bundle "maksimr/vim-jsbeautify"
+Bundle "heavenshell/vim-jsdoc"
 Bundle "nathanaelkane/vim-indent-guides"
 Bundle "burnettk/vim-angular"
 imap <C-c> <CR><Esc>O
@@ -221,6 +222,8 @@ nmap <silent> <leader>fj :call JsBeautify()<CR>
 nmap <silent> <leader>fh :call HtmlBeautify()<CR>
 " formatter for CSS files
 nmap <silent> <leader>fc :call CSSBeautify()<CR>
+" jsdoc shortcut
+nmap <silent> <leader>jsd <Plug>(jsdoc)
 
 " toggle NERDTree
 nmap <silent> <C-D> :NERDTreeToggle<CR>
