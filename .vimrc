@@ -56,6 +56,7 @@ Bundle "heavenshell/vim-jsdoc"
 Bundle "nathanaelkane/vim-indent-guides"
 Bundle "burnettk/vim-angular"
 imap <C-c> <CR><Esc>O
+Bundle "sotte/presenting.vim"
 Bundle "Chiel92/vim-autoformat"
 noremap <F2> :Autoformat<CR>
 
