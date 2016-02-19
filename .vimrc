@@ -106,6 +106,15 @@ nnoremap <F4> call javacomplete#AddImport()<cr>
 " Javascript ES6 syntax support
 Bundle "isRuslan/vim-es6"
 
+" Actionscript support
+Bundle "jeroenbourgois/vim-actionscript"
+
+" filetype association for actionscript
+autocmd FileType actionscript set omnifunc=actionscriptcomplete#CompleteAS
+
+" dictionary for actionscript
+autocmd FileType actionscript :set dictionary=~/.vim/dict/actionscript.dict
+
 set smartindent
 set nonumber        " don't show line numbers
 set autoindent      " always set autoindenting on
