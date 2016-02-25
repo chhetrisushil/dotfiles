@@ -11,3 +11,4 @@ install alock from https://github.com/chhetrisushil/alock
   - Create a ".tags" folder in home directory
   - Run npm install after installing tern plugin
   - Run git submodule update --init --recursive in vim-jsbeautify plugin folder
+  - Map actionscript.dict in .vimrc properly
