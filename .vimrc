@@ -74,6 +74,7 @@ Bundle "xolox/vim-session"
 " Bundle "xolox/vim-easytags"
 Bundle "juneedahamed/svnj.vim"
 Bundle "lambdatoast/elm.vim"
+Bundle "vimwiki/vimwiki"
 
 " let g:easytags_autorecurse = 1
 " let g:easytags_by_filetype = "~/.tags"
