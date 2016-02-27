@@ -368,6 +368,7 @@ endfunction
 
 " show line number by default
 set number
+set relativenumber
 
 " autoread to check for changes on disk
 set autoread
