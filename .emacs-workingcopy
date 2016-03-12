@@ -29,6 +29,9 @@
 (require 'linum-relative)
 (linum-relative-on)
 
+;;; js-doc
+(require 'js-doc)
+
 ;;; org mode TODO sequence
 (setq org-todo-keywords
   '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
@@ -36,6 +39,12 @@
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 
 (setq fiplr-root-markers '(".git" ".svn"))
+
+;;; backup files in one folder
+(setq backup-directory-alist '(("."."~/.emacssaves")))
+
+;;; avoid backup all together
+;;; (setq make-backup-files nil)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
