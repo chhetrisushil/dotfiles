@@ -37,10 +37,14 @@ import XMonad.Layout.PerWorkspace
 import XMonad.Layout.LayoutCombinators
 import XMonad.Layout.ShowWName
 
+-- Scratchpad
+-- import XMonad.Util.Scratchpad
+
 -------------------------------------------------------------------------------
 -- Main --
 {-main :: IO()-}
 main = do
+  --h <- spawnPipe "/usr/bin/xmobar"
   h <- spawnPipe "~/.cabal/bin/xmobar"
   xmonad $ withUrgencyHook NoUrgencyHook $ defaultConfig
              { workspaces = workspaces'
@@ -52,6 +56,7 @@ main = do
              , keys = keys'
              , logHook = logHook' h
              , layoutHook = layoutHook'
+             -- , manageHook = manageHook' <+> manageHook defaultConfig <+> manageScratchPad'
              , manageHook = manageHook' <+> manageHook defaultConfig
              , handleEventHook = fullscreenEventHook
              , focusFollowsMouse  = myFocusFollowsMouse
@@ -65,6 +70,7 @@ manageHook' = composeAll
               [ isFullscreen                  --> doFullFloat
               , isDialog                      --> doFloat
               , className     =? "Xmessage"   --> doFloat
+              , className     =? "Yakuake"    --> doFloat
               , className     =? "MPlayer"    --> ask >>= doF . W.sink
               , className     =? "MPlayer"    --> doShift "9"
               , manageDocks
@@ -75,6 +81,16 @@ logHook' h = dynamicLogWithPP (customPP { ppOutput = hPutStrLn h })
 
 layoutHook' = customLayout
 -- Top-level binding with no type signature:           layoutHook' :: XMonad.Layout.LayoutModifier.ModifiedLayout
+
+-- manageScratchPad' :: ManageHook
+-- manageScratchPad' = scratchpadManageHook (W.RationalRect l t w h)
+--
+--   where
+--
+--     h = 0.3               -- terminal height, 35%
+--     w = 1                 -- terminal width, 100%
+--     t = 0                 -- terminal distance from top edge, 0
+--     l = 0                 -- terminal distance from left edge, 0
 
 -------------------------------------------------------------------------------
 -- Looks --
@@ -160,6 +176,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask .|. controlMask,   xK_s     ), spawn "poweroff")
     , ((modMask .|. shiftMask .|. controlMask,   xK_l     ), spawn "pkill -u chhetrisushil")
     , ((modMask,                                 xK_d     ), spawn "alock -bg none -c glyph")
+    -- , ((modMask .|. controlMask,                 xK_d     ), spawn "alock -bg image:file=/home/chhetrisushil/Pictures/1752231.jpg -c glyph")
     , ((modMask .|. controlMask,                 xK_d     ), spawn "alock -c glyph")
 
     -- layouts
@@ -189,6 +206,9 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,               xK_j     ), windows W.focusDown)
     , ((modMask,               xK_k     ), windows W.focusUp)
     , ((modMask,               xK_m     ), windows W.focusMaster)
+
+    -- Scratchpad
+    -- , ((controlMask,           xK_space), scratchPad)
 
     -- swapping
     --, ((modMask .|. shiftMask, xK_Return), windows W.swapMaster)
@@ -237,3 +257,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     [((m .|. modMask, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) $ [xK_1 .. xK_9] ++ [xK_0]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask), (W.greedyView, controlMask)]]
+      --
+      -- where
+      --
+      --   scratchPad = scratchpadSpawnActionTerminal terminal'
