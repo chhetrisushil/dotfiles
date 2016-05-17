@@ -160,6 +160,8 @@ set wildmode=list:longest,full
 if has("gui_running")
   if has("gui_gtk2")
     set guifont=Fira\ Mono\ 9
+    set guioptions-=m
+    set guioptions-=T
   elseif has("gui_macvim")
     set guifont=Fira\ Mono:h12
   elseif has("gui_win32")
