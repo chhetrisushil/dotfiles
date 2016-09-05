@@ -120,8 +120,12 @@ autocmd FileType actionscript :set dictionary=~/.vim/dict/actionscript.dict
 Bundle "itchyny/calendar.vim"
 
 " Vim Local History
-Bundle "hjdivad/vimlocalhistory"
-let g:vlh_repository_dir = "~/.vim/localhistory"
+" Bundle "hjdivad/vimlocalhistory"
+" let g:vlh_repository_dir = "~/.vim/localhistory"
+
+" Vim Local History
+Bundle "serby/vim-historic"
+let g:historicBackupRepoLocation = "~/.vim/localhistory"
 
 set smartindent
 set nonumber        " don't show line numbers
