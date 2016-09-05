@@ -119,6 +119,10 @@ autocmd FileType actionscript :set dictionary=~/.vim/dict/actionscript.dict
 " Calendar
 Bundle "itchyny/calendar.vim"
 
+" Vim Local History
+Bundle "hjdivad/vimlocalhistory"
+let g:vlh_repository_dir = "~/.vim/localhistory"
+
 set smartindent
 set nonumber        " don't show line numbers
 set autoindent      " always set autoindenting on
