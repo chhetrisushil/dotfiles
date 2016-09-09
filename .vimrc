@@ -120,12 +120,14 @@ autocmd FileType actionscript :set dictionary=~/.vim/dict/actionscript.dict
 Bundle "itchyny/calendar.vim"
 
 " Vim Local History
-" Bundle "hjdivad/vimlocalhistory"
-" let g:vlh_repository_dir = "~/.vim/localhistory"
+" Note: install 'spec' and 'rspec' (rspec version 1.3.1)
+" using command 'sudo gem install spec' and 'sudo gem install rspec -v 1.3.1'
+Bundle "hjdivad/vimlocalhistory"
+let g:vlh_repository_dir = "~/.vim/localhistory"
 
 " Vim Local History
-Bundle "serby/vim-historic"
-let g:historicBackupRepoLocation = "~/.vim/localhistory"
+" Bundle "serby/vim-historic"
+" let g:historicBackupRepoLocation = "~/.vim/localhistory"
 
 set smartindent
 set nonumber        " don't show line numbers
