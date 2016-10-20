@@ -24,7 +24,11 @@ set omnifunc=syntaxcomplete#Complete
 Bundle "jiangmiao/auto-pairs"
 Bundle "Rip-Rip/clang_complete"
 Bundle "wincent/Command-T"
+
 Bundle "kien/ctrlp.vim"
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
+
 Bundle "Lokaltog/vim-easymotion"
 Bundle "davidhalter/jedi-vim"
 Bundle "terryma/vim-multiple-cursors"
