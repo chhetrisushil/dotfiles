@@ -33,13 +33,24 @@ Bundle "Lokaltog/vim-easymotion"
 Bundle "davidhalter/jedi-vim"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "Shougo/neocomplcache.vim"
+
+" Nerd tree plugin
 Bundle "scrooloose/nerdtree"
+" Bundle "ryanoasis/vim-devicons"
+
 Bundle "ervandew/supertab"
 Bundle "scrooloose/syntastic"
 Bundle "vim-scripts/taglist.vim"
 Bundle "aperezdc/vim-template"
 Bundle "vim-scripts/tComment"
+
+"Git Plugins
 Bundle "tpope/vim-fugitive"
+Bundle "airblade/vim-gitgutter"
+Bundle "Xuyuanp/nerdtree-git-plugin"
+
+Bundle "pelodelfuego/vim-swoop"
+Bundle "gko/vim-coloresque"
 Bundle "Lokaltog/vim-powerline"
 Bundle "tpope/vim-sensible"
 Bundle "tpope/vim-surround"
@@ -111,6 +122,9 @@ nnoremap <F4> call javacomplete#AddImport()<cr>
 " Javascript ES6 syntax support
 Bundle "isRuslan/vim-es6"
 
+" Node support
+Bundle "moll/vim-node"
+
 " Actionscript support
 Bundle "jeroenbourgois/vim-actionscript"
 
@@ -132,6 +146,9 @@ let g:vlh_repository_dir = "~/.vim/localhistory"
 " Vim Local History
 " Bundle "serby/vim-historic"
 " let g:historicBackupRepoLocation = "~/.vim/localhistory"
+
+" Markdown Plugins
+Bundle "suan/vim-instant-markdown"
 
 set smartindent
 set nonumber        " don't show line numbers
@@ -174,12 +191,15 @@ set wildmode=list:longest,full
 if has("gui_running")
   if has("gui_gtk2")
     set guifont=Fira\ Mono\ 9
+    " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 9
     set guioptions-=m
     set guioptions-=T
   elseif has("gui_macvim")
     set guifont=Fira\ Mono:h12
+    " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
   elseif has("gui_win32")
     set guifont=Fira\ Mono:h11
+    " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
   endif
 endif
 
@@ -197,7 +217,7 @@ set foldlevel=1         " this is just what i use
 let mapleader=","
 
 " Toggle line number
-map <leader>l :setlocal number!<CR>
+map <leader>ln :setlocal number!<CR>
 
 " Toggle paste mode
 map <leader>o :set paste!<CR>
