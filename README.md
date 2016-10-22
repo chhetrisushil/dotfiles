@@ -11,7 +11,7 @@ install alock from https://github.com/chhetrisushil/alock
 install 'yakuake' for drop-down terminal
 
 ## Nerd font
-- Install nerd font form https://github.com/ryanoasis/nerd-fonts#font-installation
+- Install nerd font from https://github.com/ryanoasis/nerd-fonts#font-installation
 - Install nerd devicons for fancy nerd tree icons https://github.com/ryanoasis/vim-devicons#installation
 
 ## Instant markdown for instant preview
