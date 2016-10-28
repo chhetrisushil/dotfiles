@@ -7,3 +7,4 @@ export winHome="/media/chhetrisushil/OS/Users/chhetrisushil"
 # folder aliases
 alias winh="cd $winHome"
 alias wing="cd $winHome/Documents/gitProjects"
+alias gweb="git instaweb --httpd=webrick"
