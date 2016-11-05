@@ -17,6 +17,9 @@ install 'yakuake' for drop-down terminal
 ## Instant markdown for instant preview
 - Follow install instructions from https://github.com/suan/vim-instant-markdown
 
+## Install ack-grep for ack.vim support
+- Run command `sudo apt-get install ack-grep` to install ack. _symlink ack-grep to ack if needed_`ln -s /usr/bin/ack-grep /usr/bin/ack`
+
 **NOTES:** 
   - location of most of the config is HOME directory (i.e. ~/) except for .gitconfig which resides in the project directory
   - Keep colors folder inside `~/.vim` folder
