@@ -244,6 +244,14 @@ map n nzz
 
 " Cycle through buffers
 map <c-b> :CtrlPBuffer<CR>
+" Search for text through open buffer
+map <leader>/ :CtrlPLine<CR>
+
+" Ack key binding
+" Open a new tab before searching through the project
+map <leader>a :tab split<CR>:Ack ""<Left>
+" Search for the word under the cursor in new tab
+map <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 " Insert Mode Mapping
 imap jj <Esc>
