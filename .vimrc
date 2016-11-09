@@ -235,16 +235,16 @@ map <C-h> <C-w>h
 map <C-u> <C-w>l
 
 " Move current line up and down normal mode
-nnoremap <C-S-j> :m .+1<CR>==
-nnoremap <C-S-k> :m .-2<CR>==
+nmap <C-Down> :m .+1<CR>==
+nmap <C-Up> :m .-2<CR>==
 
 " Move current line up and down insert mode
-inoremap <C-S-j> <Esc>:m .+1<CR>==gi
-inoremap <C-S-k> <Esc>:m .-2<CR>==gi
+imap <C-Down> <Esc>:m .+1<CR>==gi
+imap <C-Up> <Esc>:m .-2<CR>==gi
 
 " Move selected block up and down Visual mode
-vnoremap <C-S-j> :m '>+1<CR>gv=gv
-vnoremap <C-S-k> :m '<-2<CR>gv=gv
+vmap <C-Down> :m '>+1<CR>gv=gv
+vmap <C-Up> :m '<-2<CR>gv=gv
 
 " shortcut to close buffer
 map Q :q!<CR>
