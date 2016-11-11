@@ -28,3 +28,4 @@ install 'yakuake' for drop-down terminal
   - Run git submodule update --init --recursive in vim-jsbeautify plugin folder
   - Map actionscript.dict in .vimrc properly
   - Path to xmonad.desktop `/usr/share/xsessions/xmonad.desktop`
+  - Ultisnips to work create a directory `mkdir -p ~/.vim/ftdetect` and run this command `ln -s ~/.vim/bundle/ultisnips/ftdetect/* ~/.vim/ftdetect/`
