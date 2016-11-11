@@ -20,6 +20,12 @@ install 'yakuake' for drop-down terminal
 ## Install ack-grep for ack.vim support
 - Run command `sudo apt-get install ack-grep` to install ack. _symlink ack-grep to ack if needed_`ln -s /usr/bin/ack-grep /usr/bin/ack`
 
+## For fish like auto completion in zsh
+- Install zsh-autosuggestions from https://github.com/zsh-users/zsh-autosuggestions
+- Run the following command `git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions`
+- Plugin is already mapped in `.zshrc` file
+
+
 **NOTES:** 
   - location of most of the config is HOME directory (i.e. ~/) except for .gitconfig which resides in the project directory
   - Keep colors folder inside `~/.vim` folder
