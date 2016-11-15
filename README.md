@@ -35,3 +35,4 @@ install 'yakuake' for drop-down terminal
   - Map actionscript.dict in .vimrc properly
   - Path to xmonad.desktop `/usr/share/xsessions/xmonad.desktop`
   - Ultisnips to work create a directory `mkdir -p ~/.vim/ftdetect` and run this command `ln -s ~/.vim/bundle/ultisnips/ftdetect/* ~/.vim/ftdetect/`
+  - `jsctags` for ctags generation for vim read more at https://www.npmjs.com/package/jsctags
