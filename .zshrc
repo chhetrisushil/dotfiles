@@ -96,6 +96,7 @@ alias tpOff="synclient TouchpadOff=1"
 alias tpOn="synclient TouchpadOff=0"
 alias ltp="alock -bg none -c glyph"
 alias lbg="alock -bg image:file=$LOCK_BG -c glyph"
+alias soff="xset dpms force off"
 
 # function lock-screen-tp {
 #   ltp
