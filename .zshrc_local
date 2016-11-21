@@ -11,6 +11,15 @@ alias gweb="git instaweb --httpd=webrick"
 alias sz="source ~/.zshrc"
 alias opm="gvim --servername GVIM --remote-tab"
 alias sus="sudo pm-suspend"
+alias mp="mpc -p 6601"
+alias pause="mp pause"
+alias play="mp play"
+alias mpt="mp toggle"
+alias vol+="mp volume +5"
+alias vol-="mp volume -5"
+
+# emacsclient alias
+alias emc="emacsclient -n ${@}"
 #### -c for selecting card ####
 # alias mute="amixer -q -c 1 set Master mute && amixer -q -c 1 set Headphone mute"
 # alias unmute="amixer -q -c 1 set Master unmute && amixer -q -c 1 set Headphone unmute"
@@ -18,3 +27,5 @@ alias sus="sudo pm-suspend"
 alias mute="amixer -q set Master mute && amixer -q set Headphone mute"
 alias unmute="amixer -q set Master unmute && amixer -q set Headphone unmute"
 alias sunmute="unmute && amixer -q set Speaker unmute"
+
+fortune | cowsay -f tux
