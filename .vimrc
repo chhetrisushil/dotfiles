@@ -70,10 +70,6 @@ Bundle "pangloss/vim-javascript"
 
 " Paste from history
 Bundle "maxbrunsfeld/vim-yankstack"
-let g:yankstack_map_keys = 0
-
-nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " Bundle "beautify-web/js-beautify"
 Bundle "maksimr/vim-jsbeautify"
@@ -505,6 +501,12 @@ endif
 if filereadable(".vim.custom")
   so .vim.custom
 endif
+
+" Paste from history key mappings
+let g:yankstack_map_keys = 0
+
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " Show Tab numbers
 if has("gui_running")
