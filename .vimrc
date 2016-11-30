@@ -508,6 +508,9 @@ let g:yankstack_map_keys = 0
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
+" Mapping to open register
+nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
+
 " Show Tab numbers
 if has("gui_running")
  set showtabline=2 " always show tabs in gvim, but not vim
