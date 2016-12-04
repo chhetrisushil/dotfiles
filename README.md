@@ -27,6 +27,7 @@ install 'yakuake' for drop-down terminal
 
 
 **NOTES:** 
+  - Before setting up vim copy `.vim` folder to `~/.vim`
   - location of most of the config is HOME directory (i.e. ~/) except for .gitconfig which resides in the project directory
   - Keep colors folder inside `~/.vim` folder
   - Create a ".tags" folder in home directory
