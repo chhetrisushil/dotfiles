@@ -56,17 +56,17 @@ set autoread
 " Setting Font
 " Programming Font
 if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Fira\ Mono\ 9
-    " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 9
-    set guioptions-=m
-    set guioptions-=T
-  elseif has("gui_macvim")
+  if has("gui_macvim")
     set guifont=Fira\ Mono:h12
     " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
   elseif has("gui_win32")
     set guifont=Fira\ Mono:h11
     " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
+  else
+    set guifont=Fira\ Mono\ 9
+    " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 9
+    set guioptions-=m
+    set guioptions-=T
   endif
 endif
 
