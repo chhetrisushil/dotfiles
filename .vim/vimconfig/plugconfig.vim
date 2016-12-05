@@ -39,7 +39,11 @@ if has("autocmd")
   autocmd! Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
 endif
 
-nnoremap <F4> call javacomplete#AddImport()<cr>
+nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+
+nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
 " Actionscript support
 " filetype association for actionscript
