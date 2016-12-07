@@ -230,11 +230,11 @@ else
 endif
 
 " source custom config from home directory
-if filereadable("~/.vim.custom")
-  so ~/.vim.custom
-endif
+" if filereadable("~/.vim.custom")
+"   so ~/.vim.custom
+" endif
 
 " source custom config from current directory
-if filereadable(".vim.custom")
-  so .vim.custom
-endif
+" if filereadable(".vim.custom")
+"   so .vim.custom
+" endif

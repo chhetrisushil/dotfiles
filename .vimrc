@@ -21,3 +21,8 @@ exec ":source ".s:pluginConf
 if filereadable(s:userConfig)
    exec ":source ".s:userConfig
 endif
+
+" user configuration
+if filereadable('local.vim')
+   exec ":source local.vim"
+endif
