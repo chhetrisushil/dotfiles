@@ -17,12 +17,12 @@ exec ":source ".s:pluginDef
 exec ":source ".s:pluginConf
 
 
-" user configuration
+" user configuration from .vim folder
 if filereadable(s:userConfig)
    exec ":source ".s:userConfig
 endif
 
-" user configuration
+" user configuration from local folder
 if filereadable('local.vim')
    exec ":source local.vim"
 endif
