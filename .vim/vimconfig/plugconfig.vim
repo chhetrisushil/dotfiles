@@ -68,6 +68,7 @@ let g:AutoPreview_enabled =1
 let g:AutoPreview_allowed_filetypes = ["c","cpp"]
 let NERDTreeIgnore = ['\.pyc$']
 let g:email = "chhetrisushil@gmail.com"
+let g:username = "Sushil Chhetri"
 " let g:clang_library_path = '/usr/lib/libclang.so'
 " let g:clang_debug = 1
 " let g:clang_user_options='|| exit 0'
