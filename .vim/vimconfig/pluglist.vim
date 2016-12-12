@@ -99,4 +99,18 @@ Plug 'Yggdroot/indentLine'
 " Plugin execute make on project root from anywhere
 Plug 'airblade/vim-rooter'
 
+" Interactive command execution in Vim
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
+
+" Unite plugin
+Plug 'Shougo/unite.vim'
+
+" Typescript plugins
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/vim-js-pretty-template'
+Plug 'jason0x43/vim-js-indent'
+Plug 'Quramy/vim-dtsm'
+Plug 'mhartington/vim-typings'
+
 call plug#end()
