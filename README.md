@@ -28,6 +28,7 @@ install 'yakuake' for drop-down terminal
 
 **NOTES:** 
   - Before setting up vim copy `.vim` folder to `~/.vim`
+  - Install `typescript` `dtsm` `typings` by running `sudo npm install -g typescript dtsm typings` for typescripts plugin to work properly
   - location of most of the config is HOME directory (i.e. ~/) except for .gitconfig which resides in the project directory
   - Keep colors folder inside `~/.vim` folder
   - Create a ".tags" folder in home directory
