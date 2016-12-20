@@ -113,4 +113,7 @@ Plug 'jason0x43/vim-js-indent'
 Plug 'Quramy/vim-dtsm'
 Plug 'mhartington/vim-typings'
 
+" auto tag closing plugin
+Plug 'alvan/vim-closetag'
+
 call plug#end()

@@ -93,3 +93,8 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " misc config
 let g:tlist_javascript_settings='javascript;r:var;s:string;a:array;o:object;u:function'
+
+
+" closetag.vim plugin config
+" filenames like *.xml, *.html, *.xhtml, ...
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml"
