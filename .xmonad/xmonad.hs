@@ -37,6 +37,9 @@ import XMonad.Layout.PerWorkspace
 import XMonad.Layout.LayoutCombinators
 import XMonad.Layout.ShowWName
 
+-- java swing support
+import XMonad.Hooks.SetWMName
+
 -- Scratchpad
 -- import XMonad.Util.Scratchpad
 
@@ -60,6 +63,7 @@ main = do
              , manageHook = manageHook' <+> manageHook defaultConfig
              , handleEventHook = fullscreenEventHook
              , focusFollowsMouse  = myFocusFollowsMouse
+             , startupHook = setWMName "LG3D"
              }
 
 -------------------------------------------------------------------------------
