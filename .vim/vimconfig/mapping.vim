@@ -198,3 +198,4 @@ inoremap <A-k> <C-o>k
 inoremap <A-l> <C-o>l
 inoremap <A-b> <C-o>b
 inoremap <A-w> <C-o>w
+inoremap <A-u> <C-o>u
