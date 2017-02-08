@@ -191,3 +191,10 @@ nnoremap <silent> N   N:call HLNext(0.4)<cr>
 " Mapping to open register
 nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
 
+" provide hjkl movements in Insert mode via the <Alt> modifier key
+inoremap <A-h> <C-o>h
+inoremap <A-j> <C-o>j
+inoremap <A-k> <C-o>k
+inoremap <A-l> <C-o>l
+inoremap <A-b> <C-o>b
+inoremap <A-w> <C-o>w
