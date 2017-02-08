@@ -192,10 +192,20 @@ nnoremap <silent> N   N:call HLNext(0.4)<cr>
 nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
 
 " provide hjkl movements in Insert mode via the <Alt> modifier key
-inoremap <A-h> <C-o>h
-inoremap <A-j> <C-o>j
-inoremap <A-k> <C-o>k
-inoremap <A-l> <C-o>l
-inoremap <A-b> <C-o>b
-inoremap <A-w> <C-o>w
-inoremap <A-u> <C-o>u
+if has("gui_running")
+  inoremap <A-h> <C-o>h
+  inoremap <A-j> <C-o>j
+  inoremap <A-k> <C-o>k
+  inoremap <A-l> <C-o>l
+  inoremap <A-b> <C-o>b
+  inoremap <A-w> <C-o>w
+  inoremap <A-u> <C-o>u
+else
+  inoremap <Esc>h <C-o>h
+  inoremap <Esc>j <C-o>j
+  inoremap <Esc>k <C-o>k
+  inoremap <Esc>l <C-o>l
+  inoremap <Esc>b <C-o>b
+  inoremap <Esc>w <C-o>w
+  inoremap <Esc>u <C-o>u
+endif
