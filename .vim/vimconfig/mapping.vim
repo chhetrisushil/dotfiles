@@ -50,7 +50,7 @@ map <leader>a :tab split<CR>:Ack ""<Left>
 map <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 " Insert Mode Mapping
-imap jj <Esc>
+imap jj <Esc><Esc>
 
 " append semi-colon at the end
 inoremap ;<cr> <end>;
