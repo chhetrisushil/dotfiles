@@ -200,6 +200,7 @@ if has("gui_running")
   inoremap <A-b> <C-o>b
   inoremap <A-w> <C-o>w
   inoremap <A-u> <C-o>u
+  inoremap <A-x> <C-o>x
 else
   inoremap <Esc>h <C-o>h
   inoremap <Esc>j <C-o>j
@@ -208,4 +209,5 @@ else
   inoremap <Esc>b <C-o>b
   inoremap <Esc>w <C-o>w
   inoremap <Esc>u <C-o>u
+  inoremap <Esc>x <C-o>x
 endif
