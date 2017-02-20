@@ -32,6 +32,7 @@ set title           " change the terminal's title
 set ruler           " show the cursor position all the time
 set showcmd         " show current command in bottom line
 set wildignore=*.swp,*.bak,*.pyc,*.class,*/migrations/*,*/blackhole__/*,*/tmp/*,*/search*/*
+" set wildignore+=*/target/*,*/test-coverage/*,*/node_modules/*
 
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.  " highlight whitespace
