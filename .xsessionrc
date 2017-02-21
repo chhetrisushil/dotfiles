@@ -12,6 +12,14 @@ feh --bg-scale /usr/share/backgrounds/warty-final-ubuntu.png &
 # convert caps lock to additional esc-key
 setxkbmap -option caps:escape
 
+# mapping caps to ctrl
+# mapping ctrl (left) to esc
+# mapping esc to caps
+# setxkbmap -option caps:ctrl_modifier
+#
+# xmodmap -e "keycode 37 = Escape"
+# xmodmap -e "keycode 9 = Caps_Lock"
+
 ## Touchpad settings
 # synclient TapButton1=1
 # synclient VertEdgeScroll=0, VertTwoFingerScroll=1, HorizTwoFingerScroll=1
