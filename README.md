@@ -25,6 +25,8 @@ install 'yakuake' for drop-down terminal
 - Run the following command `git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions`
 - Plugin is already mapped in `.zshrc` file
 
+## Install xcape to map Caps_Lock to ctrl (on long press) and esc (on tap)
+- Install xcape from https://github.com/alols/xcape before setting up the environment
 
 **NOTES:** 
   - Before setting up vim copy `.vim` folder to `~/.vim`
