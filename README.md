@@ -26,6 +26,7 @@ install 'yakuake' for drop-down terminal
 - Plugin is already mapped in `.zshrc` file
 
 ## Install xcape to map Caps_Lock to ctrl (on long press) and esc (on tap)
+- Try `sudo apt-get install xcape` first (ubuntu 15 and above)
 - Install xcape from https://github.com/alols/xcape before setting up the environment
 
 **NOTES:** 
