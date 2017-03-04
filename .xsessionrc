@@ -18,7 +18,7 @@ feh --bg-scale /usr/share/backgrounds/warty-final-ubuntu.png &
 setxkbmap -option caps:ctrl_modifier
 
 # mapping caps lock to escape and ctrl using xcape
-xcape -e "Caps_Lock=Escape" -t 130
+xcape -e "Caps_Lock=Escape" -t 200
 # xmodmap -e "keycode 37 = Escape"
 # xmodmap -e "keycode 9 = Caps_Lock"
 
