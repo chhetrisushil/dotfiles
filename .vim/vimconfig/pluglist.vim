@@ -116,4 +116,7 @@ Plug 'mhartington/vim-typings'
 " auto tag closing plugin
 Plug 'alvan/vim-closetag'
 
+" adding semi-colon and command
+Plug 'lfilho/cosco.vim'
+
 call plug#end()

@@ -98,3 +98,8 @@ let g:tlist_javascript_settings='javascript;r:var;s:string;a:array;o:object;u:fu
 " closetag.vim plugin config
 " filenames like *.xml, *.html, *.xhtml, ...
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml,*.jsp"
+
+
+" cosco.vim mappings
+autocmd FileType javascript,css,YOUR_LANG nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
+autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
