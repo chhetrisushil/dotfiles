@@ -103,3 +103,7 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml,*.jsp"
 " cosco.vim mappings
 autocmd FileType javascript,css,YOUR_LANG nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
+
+" vim-airline config
+let g:Powerline_symbols="unicode"
+let g:airline_powerline_fonts=1
