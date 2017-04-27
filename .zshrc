@@ -8,7 +8,7 @@ export EDITOR="vim"
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="bira"
+ZSH_THEME="powerline"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
