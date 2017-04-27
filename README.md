@@ -14,6 +14,10 @@ install 'yakuake' for drop-down terminal
 - Install nerd font from https://github.com/ryanoasis/nerd-fonts#font-installation
 - Install nerd devicons for fancy nerd tree icons https://github.com/ryanoasis/vim-devicons#installation
 
+## Powerline font for 'agnoster' zsh theme and vim-airline
+- Install powerline font from https://github.com/powerline/fonts
+- set the font `Meslo LG S DZ for Powerline` in the terminal (_italic_ preferably)
+
 ## Instant markdown for instant preview
 - Follow install instructions from https://github.com/suan/vim-instant-markdown
 
