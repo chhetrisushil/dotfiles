@@ -61,15 +61,15 @@ set autoread
 " Programming Font
 if has("gui_running")
   if has("gui_gtk")
-    set guifont=Fira\ Mono\ 9
+    set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ Italic\ 9
     " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 9
     set guioptions-=m
     set guioptions-=T
   elseif has("gui_macvim")
-    set guifont=Fira\ Mono:h12
+    set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ Italic:h12
     " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
   elseif has("gui_win32")
-    set guifont=Fira\ Mono:h11
+    set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ Italic:h11
     " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
   endif
 endif
