@@ -61,7 +61,7 @@ set autoread
 " Programming Font
 if has("gui_running")
   if has("gui_gtk")
-    set guifont=Meslo\ LG\ S\ DZ\ Italic\ for\ Powerline\ 9
+    set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ Italic\ 9
     " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 9
     set guioptions-=m
     set guioptions-=T
