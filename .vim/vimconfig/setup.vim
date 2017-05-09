@@ -34,7 +34,8 @@ set showcmd         " show current command in bottom line
 set laststatus=2    " Always display the statusline in all windows
 set showtabline=2   " Always display the tabline, even if there is only one tab
 set noshowmode      " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-set wildignore=*.swp,*.bak,*.pyc,*.class,*/migrations/*,*/blackhole__/*,*/tmp/*,*/search*/*
+set wildignore=*.swp,*.bak,*.pyc,*.class,*/migrations/*,*/blackhole__/*,*/tmp/*
+" set wildignore=*.swp,*.bak,*.pyc,*.class,*/migrations/*,*/blackhole__/*,*/tmp/*,*/search*/*
 " set wildignore+=*/target/*,*/test-coverage/*,*/node_modules/*
 
 set list
