@@ -75,7 +75,7 @@ if has("gui_running")
   endif
 endif
 
-colorscheme molokai
+" colorscheme molokai
 set encoding=utf-8
 
 " Code Folding Settings

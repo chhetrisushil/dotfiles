@@ -124,4 +124,12 @@ Plug 'alvan/vim-closetag'
 " adding semi-colon and command
 Plug 'lfilho/cosco.vim'
 
+" color scheme plugin
+Plug 'trevordmiller/nova-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'othree/html5.vim'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'mxw/vim-jsx'
+Plug 'HerringtonDarkholme/yats.vim'
+
 call plug#end()
