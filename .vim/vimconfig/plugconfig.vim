@@ -120,4 +120,5 @@ let g:ycm_semantic_triggers = {
     \}
 
 " color scheme
-colorscheme nova
+" colorscheme nova
+colorscheme molokai
