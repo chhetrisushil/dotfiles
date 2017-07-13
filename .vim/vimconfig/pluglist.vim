@@ -12,7 +12,8 @@ Plug 'Shougo/neocomplcache.vim'
 
 " Nerd tree plugin
 Plug 'scrooloose/nerdtree'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'ervandew/supertab'
 Plug 'scrooloose/syntastic'
