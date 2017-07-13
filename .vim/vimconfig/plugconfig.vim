@@ -74,7 +74,8 @@ let g:username = "Sushil Chhetri"
 " let g:clang_user_options='|| exit 0'
 
 " NERDTree Tab config
-let g:nerdtree_tabs_open_on_console_startup=1
+" disabling default enable use NERDTreeTabsOpen instead
+" let g:nerdtree_tabs_open_on_console_startup=1
 
 " JsHint error indicator
 hi SpellBad cterm=underline,bold ctermbg=white ctermfg=black
