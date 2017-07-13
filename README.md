@@ -18,6 +18,9 @@ install 'yakuake' for drop-down terminal
 - Install powerline font from https://github.com/powerline/fonts
 - set the font `Meslo LG S DZ for Powerline` in the terminal (_italic_ preferably)
 
+## cobalt2 zsh-theme for iterm
+- Follow the instruction in this repo https://github.com/wesbos/Cobalt2-iterm
+
 ## Instant markdown for instant preview
 - Follow install instructions from https://github.com/suan/vim-instant-markdown
 
