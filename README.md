@@ -13,6 +13,9 @@ install 'yakuake' for drop-down terminal
 ## Nerd font
 - Install nerd font from https://github.com/ryanoasis/nerd-fonts#font-installation
 - Install nerd devicons for fancy nerd tree icons https://github.com/ryanoasis/vim-devicons#installation
+- Install `Meslo LG S Italic for Powerline Nerd Font.ttf` font to the system for linux
+- For linux place the font in `/usr/share/font/` folder and rebuild the font cache `fc-cache -f -v`
+- For Mac install font from `./mac-Meslo-Nerd-Font/Meslo LG S Italic for Powerline Nerd Font.ttf`
 
 ## Powerline font for 'agnoster' zsh theme and vim-airline
 - Install powerline font from https://github.com/powerline/fonts
