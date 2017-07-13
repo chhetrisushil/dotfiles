@@ -67,7 +67,8 @@ if has("gui_running")
     set guioptions-=m
     set guioptions-=T
   elseif has("gui_macvim")
-    set guifont=Meslo\ LG\ S\ DZ\ Italic\ for\ Powerline:h12
+    " set guifont=Meslo\ LG\ S\ DZ\ Italic\ for\ Powerline:h12
+    set guifont=Meslo\ LG\ S\ Italic\ for\ Powerline\ Nerd\ Font:h12
     " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
   elseif has("gui_win32")
     set guifont=Meslo\ LG\ S\ DZ\ Italic\ for\ Powerline:h11
