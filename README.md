@@ -10,6 +10,9 @@ install alock from https://github.com/chhetrisushil/alock
 ## Drop-down terminal 'yakuake'
 install 'yakuake' for drop-down terminal
 
+## mpv for mac os
+- Install `mpv` for mac os using brew run the following command `brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/mpv.rb`
+
 ## Nerd font
 - Install nerd font from https://github.com/ryanoasis/nerd-fonts#font-installation
 - Install nerd devicons for fancy nerd tree icons https://github.com/ryanoasis/vim-devicons#installation
