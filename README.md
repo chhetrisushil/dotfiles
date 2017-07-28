@@ -56,3 +56,4 @@ install 'yakuake' for drop-down terminal
   - `jsctags` for ctags generation for vim read more at https://www.npmjs.com/package/jsctags
   - use https://github.com/gpakosz/.tmux for tmux configuration
   - Install `eslint`, run `npm install -g eslint`
+  - `.tmux/` folder is customized copy of `oh-my-tmux`
