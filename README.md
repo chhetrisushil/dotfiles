@@ -55,5 +55,6 @@ install 'yakuake' for drop-down terminal
   - Ultisnips to work create a directory `mkdir -p ~/.vim/ftdetect` and run this command `ln -s ~/.vim/bundle/ultisnips/ftdetect/* ~/.vim/ftdetect/`
   - `jsctags` for ctags generation for vim read more at https://www.npmjs.com/package/jsctags
   - use https://github.com/gpakosz/.tmux for tmux configuration
+  - set locale to utf8 in linux for powerline fonts to work properly in tmux, run `sudo localectl set-locale LANG="en_IN.utf8"`, choose utf8 locale by running `localectl list-locales`. Once the locale is set a reboot is required.
   - Install `eslint`, run `npm install -g eslint`
   - `.tmux/` folder is customized copy of `oh-my-tmux`
