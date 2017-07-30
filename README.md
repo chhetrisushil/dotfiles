@@ -58,3 +58,4 @@ install 'yakuake' for drop-down terminal
   - set locale to utf8 in linux for powerline fonts to work properly in tmux, run `sudo localectl set-locale LANG="en_IN.utf8"`, choose utf8 locale by running `localectl list-locales`. Once the locale is set a reboot is required.
   - Install `eslint`, run `npm install -g eslint`
   - `.tmux/` folder is customized copy of `oh-my-tmux`
+  - install `reattach-to-user-namespace` in macos for tmux and clipboard binding and `xclip` for Linux
