@@ -146,6 +146,14 @@ settitle() {
   echo -e "\033];$1\007"
 }
 
+# execute command without cd'ing to the directory
+exe() {
+  pushd $1;
+  shift;
+  eval $@;
+  popd
+}
+
 # vi bindings in terminal
 set -o vi
 bindkey -v
