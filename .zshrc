@@ -148,10 +148,10 @@ settitle() {
 
 # execute command without cd'ing to the directory
 exe() {
-  pushd $1;
+  pushd $1 > /dev/null;
   shift;
   eval $@;
-  popd
+  popd > /dev/null;
 }
 
 # vi bindings in terminal
