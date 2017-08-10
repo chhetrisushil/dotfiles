@@ -128,6 +128,9 @@ let g:ycm_semantic_triggers = {
 " colorscheme nova
 colorscheme molokai
 
+" fix yankstack key mapping
+call yankstack#setup()
+
 " eslint config
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
