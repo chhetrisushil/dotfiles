@@ -42,6 +42,11 @@ install 'yakuake' for drop-down terminal
 - Try `sudo apt-get install xcape` first (ubuntu 15 and above)
 - Install xcape from https://github.com/alols/xcape before setting up the environment
 
+## Install `jsctags` for javascript ctags
+- `jsctags` for ctags generation for vim read more at https://www.npmjs.com/package/jsctags
+- Run the following command to create tags file `find <path to directory containing javascript files> -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | sort > tags`
+- set the tags option to the tag file in local.vim e.g. `set tags+=./tags`
+
 **NOTES:** 
   - Before setting up vim copy `.vim` folder to `~/.vim`
   - Install `typescript` `dtsm` `typings` by running `sudo npm install -g typescript dtsm typings` for typescripts plugin to work properly

@@ -38,6 +38,8 @@ set wildignore=*.swp,*.bak,*.pyc,*.class,*/migrations/*,*/blackhole__/*,*/tmp/*
 " set wildignore=*.swp,*.bak,*.pyc,*.class,*/migrations/*,*/blackhole__/*,*/tmp/*,*/search*/*
 " set wildignore+=*/target/*,*/test-coverage/*,*/node_modules/*
 
+set tags=~/.vim/tags
+
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.  " highlight whitespace
 set viminfo='20,\"50 " Tell vim to remember certain things when we exit
