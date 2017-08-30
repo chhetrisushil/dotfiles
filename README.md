@@ -51,6 +51,7 @@ install 'yakuake' for drop-down terminal
   - Before setting up vim copy `.vim` folder to `~/.vim`
   - Install `typescript` `dtsm` `typings` by running `sudo npm install -g typescript dtsm typings` for typescripts plugin to work properly
   - location of most of the config is HOME directory (i.e. ~/) except for .gitconfig which resides in the project directory
+  - location for `.ackrc` is home directory (i.e. ~/) e.g. `~/.ackrc`
   - Keep colors folder inside `~/.vim` folder
   - Create a ".tags" folder in home directory
   - Run npm install after installing tern plugin
