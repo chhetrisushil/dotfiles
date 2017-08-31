@@ -29,3 +29,29 @@ alias unmute="amixer -q set Master unmute && amixer -q set Headphone unmute"
 alias sunmute="unmute && amixer -q set Speaker unmute"
 
 fortune | cowsay -f tux
+
+
+# example to write shell script function to handle options
+# ding() {
+#   ARGS=""
+#
+#   # if options are provided append appropriate parameter
+#   while getopts "bsd" OPTION; do
+#     case $OPTION in
+#       # b - build the project
+#       b)
+#         ARGS+="build -x check"
+#         ;;
+#       # s - start the server
+#       s)
+#         ARGS+=" startExpweb"
+#         ;;
+#       # d - is for debugging
+#       d)
+#         ARGS+=" -Pdebug"
+#         ;;
+#     esac
+#   done
+#
+#   echo $ARGS
+# }
