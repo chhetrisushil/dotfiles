@@ -32,7 +32,7 @@ fortune | cowsay -f tux
 
 
 # example to write shell script function to handle options
-# ding() {
+# getopts_example() {
 #   ARGS=""
 #
 #   # if options are provided append appropriate parameter
@@ -54,4 +54,39 @@ fortune | cowsay -f tux
 #   done
 #
 #   echo $ARGS
+# }
+
+# example of a select menu in shell script
+# select_example() {
+#     PS3="Select an options: "
+#
+#     select opt in "s" "u" "s" "h" "i" "l"; do
+#         case $opt in
+#             "s")
+#                 echo "s"
+#                 break
+#                 ;;
+#             "u")
+#                 echo "u"
+#                 break
+#                 ;;
+#             "s")
+#                 echo "s"
+#                 break
+#                 ;;
+#             "h")
+#                 echo "h"
+#                 break
+#                 ;;
+#             "i")
+#                 echo "i"
+#                 break
+#                 ;;
+#             "l")
+#                 echo "l"
+#                 break
+#                 ;;
+#             *) echo "Invalid Option!!!";;
+#         esac
+#     done
 # }
