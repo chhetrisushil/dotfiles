@@ -134,4 +134,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'HerringtonDarkholme/yats.vim'
 
+" tag jump in new tab
+Plug 'ipod825/TagJump'
+
 call plug#end()
