@@ -47,6 +47,11 @@ install 'yakuake' for drop-down terminal
 - Run the following command to create tags file `find <path to directory containing javascript files> -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | sort > tags`
 - set the tags option to the tag file in local.vim e.g. `set tags+=./tags`
 
+## Install the_silver_searcher
+- Install `the_silver_searcher` which is aliased to command `ag` for searching
+- `ag` is also used in vim config for inside vim searching
+- Repo for the_silver_searcher https://github.com/ggreer/the_silver_searcher
+
 **NOTES:** 
   - Before setting up vim copy `.vim` folder to `~/.vim`
   - Install `typescript` `dtsm` `typings` by running `sudo npm install -g typescript dtsm typings` for typescripts plugin to work properly

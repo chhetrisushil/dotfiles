@@ -131,6 +131,13 @@ colorscheme molokai
 " fix yankstack key mapping
 call yankstack#setup()
 
+" ack.vim config to remap to ag (silver searcher)
+let g:ackprg = 'ag --vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
+
 " eslint config
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
