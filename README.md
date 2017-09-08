@@ -57,6 +57,11 @@ install 'yakuake' for drop-down terminal
 - Repo for `elm-format` as reference: https://github.com/avh4/elm-format
 - `elm-format` is enabled for vim on save
 
+## Install `elm`
+- Install `elm` by running `npm i -g elm`
+- Elm reference site https://guide.elm-lang.org/
+- Introduciton to Elm https://www.gitbook.com/book/evancz/an-introduction-to-elm/details
+
 **NOTES:** 
   - Before setting up vim copy `.vim` folder to `~/.vim`
   - Install `typescript` `dtsm` `typings` by running `sudo npm install -g typescript dtsm typings` for typescripts plugin to work properly
