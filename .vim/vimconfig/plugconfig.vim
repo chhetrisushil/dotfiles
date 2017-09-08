@@ -123,6 +123,7 @@ let g:elm_syntastic_show_warnings = 1
 let g:ycm_semantic_triggers = {
     \ 'elm' : ['.'],
     \}
+let g:elm_format_autosave = 1
 
 " color scheme
 " colorscheme nova

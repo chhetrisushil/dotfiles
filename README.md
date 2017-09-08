@@ -52,6 +52,11 @@ install 'yakuake' for drop-down terminal
 - `ag` is also used in vim config for inside vim searching
 - Repo for the_silver_searcher https://github.com/ggreer/the_silver_searcher
 
+## Install `elm-format`
+- Install `elm-format` by running command `npm i -g elm-format`
+- Repo for `elm-format` as reference: https://github.com/avh4/elm-format
+- `elm-format` is enabled for vim on save
+
 **NOTES:** 
   - Before setting up vim copy `.vim` folder to `~/.vim`
   - Install `typescript` `dtsm` `typings` by running `sudo npm install -g typescript dtsm typings` for typescripts plugin to work properly
