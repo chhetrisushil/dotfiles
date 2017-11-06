@@ -63,7 +63,7 @@ install 'yakuake' for drop-down terminal
 - Introduciton to Elm https://www.gitbook.com/book/evancz/an-introduction-to-elm/details
 
 ## Neovim setup
-- Copy nvim folder to `~/.config`
+- Copy `nvim` folder to `~/.config`
 - NOTE: vim's `.vim` folder and `.vimrc` should alredy be setup before copying nvim folder
 
 **NOTES:** 
