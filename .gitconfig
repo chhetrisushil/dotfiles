@@ -1,5 +1,5 @@
 [user]
-    name = chhetrisushil
+    name = Sushil Chhetri
     email = chhetrisushil@gmail.com
 
 [diff]
@@ -35,7 +35,7 @@
 
 
 [core]
-    editor = vim
+    editor = nvim
     excludesfile = /Users/suschhetri/.gitignore_global
     legacyheaders = false # >git 1.5
     quotepath = false
