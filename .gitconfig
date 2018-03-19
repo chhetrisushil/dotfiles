@@ -3,16 +3,24 @@
     email = chhetrisushil@gmail.com
 
 [diff]
-    tool = vscode
+    # tool = vscode
+    tool = neovim
 
 [merge]
-    tool = vscode
+    # tool = vscode
+    tool = neovim
 
-[mergetool "vscode"]
-    cmd = "code --wait "
+# [mergetool "vscode"]
+#     cmd = "code --wait $MERGED"
+#
+# [difftool "vscode"]
+#     cmd = "code --wait --diff $LOCAL $REMOTE"
 
-[difftool "vscode"]
-    cmd = "code --wait --diff  "
+[mergetool "neovim"]
+    cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[difftool "neovim"]
+    cmd = nvim -d $LOCAL $REMOTE
 
 [color]
     ui = true
