@@ -2,8 +2,17 @@
     name = chhetrisushil
     email = chhetrisushil@gmail.com
 
+[diff]
+    tool = vscode
+
 [merge]
-    tool = vimdiff
+    tool = vscode
+
+[mergetool "vscode"]
+    cmd = "code --wait "
+
+[difftool "vscode"]
+    cmd = "code --wait --diff  "
 
 [color]
     ui = true
@@ -19,7 +28,7 @@
 
 [core]
     editor = vim
-    excludesfile = /Users/oli/.gitignore
+    excludesfile = /Users/suschhetri/.gitignore_global
     legacyheaders = false # >git 1.5
     quotepath = false
     pager = less -r
@@ -47,7 +56,7 @@
     spull = svn rebase
     spush = svn dcommit
     alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
-	graph = log --graph --all --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset %s%C(yellow)%d%Creset' --abbrev-commit --date=relative
+    graph = log --graph --all --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset %s%C(yellow)%d%Creset' --abbrev-commit --date=relative
 
 [github]
     user = "chhetrisushil"
