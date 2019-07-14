@@ -22,7 +22,7 @@ import XMonad.Prompt
 import XMonad.Prompt.Shell
 
 -- hooks
-import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageDocks (ToggleStruts(..),avoidStruts,docks,manageDocks)
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.UrgencyHook
@@ -47,9 +47,9 @@ import XMonad.Hooks.SetWMName
 -- Main --
 {-main :: IO()-}
 main = do
-  --h <- spawnPipe "/usr/bin/xmobar"
-  h <- spawnPipe "~/.cabal/bin/xmobar"
-  xmonad $ withUrgencyHook NoUrgencyHook $ defaultConfig
+  h <- spawnPipe "/usr/bin/xmobar"
+  -- h <- spawnPipe "~/.cabal/bin/xmobar"
+  xmonad $ withUrgencyHook NoUrgencyHook $ docks defaultConfig
              { workspaces = workspaces'
              , modMask = modMask'
              , borderWidth = borderWidth'
@@ -180,8 +180,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask .|. controlMask,   xK_s     ), spawn "poweroff")
     , ((modMask .|. shiftMask .|. controlMask,   xK_l     ), spawn "pkill -u chhetrisushil")
     , ((modMask,                                 xK_d     ), spawn "alock -bg none -c glyph")
-    -- , ((modMask .|. controlMask,                 xK_d     ), spawn "alock -bg image:file=/home/chhetrisushil/Pictures/1752231.jpg -c glyph")
-    , ((modMask .|. controlMask,                 xK_d     ), spawn "alock -c glyph")
+    , ((modMask .|. controlMask,                 xK_d     ), spawn "alock -bg image:file=/home/chhetrisushil/Pictures/1752231.jpg -c glyph")
 
     -- layouts
     , ((modMask,               xK_space ), sendMessage NextLayout)
