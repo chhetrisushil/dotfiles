@@ -66,6 +66,9 @@ install 'yakuake' for drop-down terminal
 - Copy `nvim` folder to `~/.config`
 - NOTE: vim's `.vim` folder and `.vimrc` should alredy be setup before copying nvim folder
 
+## BAT (alternate to `cat` command) 
+- Install `bat` it's a good alternate to `cat` command for file content viewing
+
 **NOTES:** 
   - Before setting up vim copy `.vim` folder to `~/.vim`
   - Install `typescript` `dtsm` `typings` by running `sudo npm install -g typescript dtsm typings` for typescripts plugin to work properly
