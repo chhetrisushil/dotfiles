@@ -90,3 +90,4 @@ install 'yakuake' for drop-down terminal
   - Install `eslint`, run `npm install -g eslint`
   - `.tmux/` folder is customized copy of `oh-my-tmux`
   - install `reattach-to-user-namespace` in macos for tmux and clipboard binding and `xclip` for Linux
+  - install `clipit` for clipboard management (paste from history)
