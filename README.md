@@ -82,7 +82,7 @@ install 'yakuake' for drop-down terminal
   - Run npm install after installing tern plugin
   - Run git submodule update --init --recursive in vim-jsbeautify plugin folder
   - Map actionscript.dict in .vimrc properly
-  - Path to xmonad.desktop `/usr/share/xsessions/xmonad.desktop`
+  - Path to xmonad.desktop `/usr/share/xsessions/xmonad.desktop`, update the `Exec` property value to the starter script
   - Ultisnips to work create a directory `mkdir -p ~/.vim/ftdetect` and run this command `ln -s ~/.vim/bundle/ultisnips/ftdetect/* ~/.vim/ftdetect/`
   - `jsctags` for ctags generation for vim read more at https://www.npmjs.com/package/jsctags
   - use https://github.com/gpakosz/.tmux for tmux configuration
