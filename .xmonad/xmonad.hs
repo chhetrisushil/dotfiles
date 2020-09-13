@@ -63,7 +63,7 @@ main = do
              , manageHook = manageHook' <+> manageHook defaultConfig
              , handleEventHook = fullscreenEventHook
              , focusFollowsMouse  = myFocusFollowsMouse
-             , startupHook = setWMName "LG3D"
+             , startupHook = ewmhDesktopsStartup >> setWMName "LG3D"
              }
 
 -------------------------------------------------------------------------------
@@ -120,8 +120,8 @@ borderWidth' = 1
 normalBorderColor', focusedBorderColor' :: String
 normalBorderColor'  = "#CCCCCC"
 focusedBorderColor' = "#00DD00"
-myFont = "xft:Monospace:pixelsize=12:bold:antialias=true:hinting=true"
-myFontLarge = "xft:Monospace:pixelsize=60:bold:antialias=true:hinting=true"
+myFont = "xft:MesloLGSForPowerline Nerd Font:pixelsize=12:bold:antialias=true:hinting=true"
+myFontLarge = "xft:MesloLGSForPowerline Nerd Font:pixelsize=60:bold:antialias=true:hinting=true"
 
 -- workspaces
 workspaces' :: [WorkspaceId]
