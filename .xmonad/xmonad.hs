@@ -129,9 +129,11 @@ workspaces' :: [WorkspaceId]
 workspaces' = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 -- layouts
-myTiled = spacing 1 $ smartBorders $ ResizableTall 1 (3/100) (52/100) []
+myTiled = spacing 5 $ smartBorders $ ResizableTall 1 (3/100) (52/100) []
 myFull = noBorders Full
-myTabbed = noBorders $ tabbed shrinkText defaultTheme
+myTabbed = noBorders $ tabbed shrinkText defaultTheme {
+  fontName = myFont
+}
 mySWNConfig = defaultSWNConfig
               { swn_font = myFontLarge
               , swn_fade = 1
