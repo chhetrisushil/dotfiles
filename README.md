@@ -91,3 +91,4 @@ install 'yakuake' for drop-down terminal
   - `.tmux/` folder is customized copy of `oh-my-tmux`
   - install `reattach-to-user-namespace` in macos for tmux and clipboard binding and `xclip` for Linux
   - install `clipit` for clipboard management (paste from history) for linux
+  - install `pywal` for setting wallpaper and corresponding theme

@@ -6,11 +6,15 @@
 export PATH=$PATH:$HOME/.cabal/bin:$HOME/.scripts
 
 # Set background image with feh
-feh --bg-scale /usr/share/backgrounds/warty-final-ubuntu.png &
+# feh --bg-scale /home/chhetrisushil/Pictures/Wallpapers/wallpapers-master/0074.jpg &
+wal -i ~/Pictures/Wallpapers/wallpapers-master/0031.jpg -a 75
 
 # setxkbmap -model thinkpad -layout us
 # convert caps lock to additional esc-key
 # setxkbmap -option caps:escape
+
+# load .Xresources
+xrdb -merge $HOME/.Xresources
 
 # mapping caps to ctrl
 # mapping ctrl (left) to esc
@@ -41,6 +45,9 @@ xsetroot -cursor_name left_ptr
 # $HOME/workspace/configs/scripts/display.sh
 # bash $HOME/.fehbg
 
+# disable bell sound
+xset b off
+
 ## Start some useful programms
 # pkill mpd; mpd &
 # pkill mpdscribble;mpdscribble &
@@ -52,3 +59,4 @@ pkill trayer; trayer --edge top --SetDockType true --align right --height 14 \
 pkill nm-applet; nm-applet &
 dropbox start
 xautolock -exit; xautolock -time 10 -locker "alock -c glyph" &
+compton -c -b

@@ -113,6 +113,8 @@ autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(co
 let g:Powerline_symbols="unicode"
 let g:airline_powerline_fonts=1
 
+" vim-airline theme
+let g:airline_theme='wal'
 
 " elm config
 let g:syntastic_always_populate_loc_list = 1
@@ -127,7 +129,8 @@ let g:elm_format_autosave = 1
 
 " color scheme
 " colorscheme nova
-colorscheme molokai
+" colorscheme molokai
+colorscheme wal
 
 " fix yankstack key mapping
 call yankstack#setup()
