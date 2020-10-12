@@ -154,7 +154,7 @@ customLayout = myShowWName
 
     where
       wideLayout = myWide ||| myTiled ||| myFull ||| myTabbed
-      normalLayout = myTiled ||| myFull ||| myTabbed
+      normalLayout = myTiled ||| myFull ||| myTabbed ||| myWide
       workLayout = myTiled ||| myFull
       fullLayout = myTabbed ||| myFull ||| myTiled
 
@@ -196,7 +196,8 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
     , ((modMask              , xK_b     ), sendMessage ToggleStruts)
     , ((modMask              , xK_f     ), sendMessage $ JumpToLayout "Full")
-    , ((modMask              , xK_r     ), sendMessage $ JumpToLayout "ResizableTall")
+    , ((modMask              , xK_r     ), sendMessage $ JumpToLayout "Spacing ResizableTall")
+    , ((modMask              , xK_w     ), sendMessage $ JumpToLayout "Spacing ThreeCol")
     -- Don't need split screens right now :)
     --, ((modMask .|. controlMask, xK_l   ), layoutSplitScreen 2 (TwoPane 0.5 0.5))
     --, ((modMask .|. controlMask, xK_r   ), rescreen)
