@@ -31,12 +31,14 @@ import XMonad.Hooks.ManageHelpers
 -- layouts
 import XMonad.Layout.NoBorders
 import XMonad.Layout.ResizableTile
+import XMonad.Layout.ThreeColumns
 import XMonad.Layout.Grid
 import XMonad.Layout.Tabbed
 import XMonad.Layout.PerWorkspace
 import XMonad.Layout.LayoutCombinators
 import XMonad.Layout.ShowWName
 import XMonad.Layout.Spacing
+import XMonad.Layout.PerScreen
 
 -- java swing support
 import XMonad.Hooks.SetWMName
@@ -130,6 +132,7 @@ workspaces' = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 -- layouts
 myTiled = spacing 5 $ smartBorders $ ResizableTall 1 (3/100) (52/100) []
+myWide = spacing 5 $smartBorders $ ThreeColMid 1 (1/20) (1/2)
 myFull = noBorders Full
 myTabbed = noBorders $ tabbed shrinkText defaultTheme {
   fontName = myFont
@@ -142,13 +145,15 @@ mySWNConfig = defaultSWNConfig
               }
 myShowWName = showWName' mySWNConfig
 
-customLayout = myShowWName $ avoidStruts $
-                 {-onWorkspaces ["4", "5", "6"] workLayout $-}
-                 {-onWorkspaces ["8", "9"] (noBorders normalLayout) $-}
-                 {-onWorkspaces ["2"] fullLayout-}
-                 normalLayout
+customLayout = myShowWName
+              $ avoidStruts 
+              $ ifWider 1920 wideLayout normalLayout
+              -- $ onWorkspaces ["4", "5", "6"] workLayout
+              -- $ onWorkspaces ["8", "9"] (noBorders normalLayout)
+              -- $ onWorkspaces ["2"] fullLayout
 
     where
+      wideLayout = myWide ||| myTiled ||| myFull ||| myTabbed
       normalLayout = myTiled ||| myFull ||| myTabbed
       workLayout = myTiled ||| myFull
       fullLayout = myTabbed ||| myFull ||| myTiled
@@ -157,6 +162,7 @@ customLayout = myShowWName $ avoidStruts $
 -- Terminal --
 terminal' :: String
 terminal' = "terminator"
+-- terminal' = "urxvt"
 
 myXPConfig = defaultXPConfig
              { promptKeymap = emacsLikeXPKeymap
