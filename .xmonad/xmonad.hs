@@ -60,6 +60,7 @@ main = do
              , focusedBorderColor = focusedBorderColor'
              , terminal = terminal'
              , keys = keys'
+             , mouseBindings = mouseBindings'
              , logHook = logHook' h
              , layoutHook = layoutHook'
              -- , manageHook = manageHook' <+> manageHook defaultConfig <+> manageScratchPad'
@@ -274,3 +275,8 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
       -- where
       --
       --   scratchPad = scratchpadSpawnActionTerminal terminal'
+-- mousebindings
+mouseBindings' (XConfig {XMonad.modMask = modMask}) = M.fromList $
+  [((0, 7), (\w -> nextWS))
+  , ((0, 6), (\w -> prevWS))
+  ]
