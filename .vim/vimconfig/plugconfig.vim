@@ -114,7 +114,7 @@ let g:Powerline_symbols="unicode"
 let g:airline_powerline_fonts=1
 
 " vim-airline theme
-let g:airline_theme='wal'
+let g:airline_theme='dark'
 
 " elm config
 let g:syntastic_always_populate_loc_list = 1
@@ -130,7 +130,7 @@ let g:elm_format_autosave = 1
 " color scheme
 " colorscheme nova
 " colorscheme molokai
-colorscheme wal
+colorscheme molokai
 
 " fix yankstack key mapping
 call yankstack#setup()
@@ -151,3 +151,9 @@ cnoreabbrev AG Ack
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
 " let g:syntastic_javascript_checkers = ['eslint']
+
+" telescope mapping
+nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
