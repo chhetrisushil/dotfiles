@@ -43,7 +43,8 @@ alias cat=bat
 alias deploy='sh -c '\''git push origin HEAD:deploy-"$@" --force'\'' _'
 alias ls='exa --icons'
 alias gpft='git push --follow-tags'
-alias edit='nvim $(fd | peco)'
+alias edit='nvim $(fd -H . | peco)'
+alias view='cat $(fd -H . | peco)'
 
 export EDITOR=nvim
 export PATH=/usr/local/go/bin:$PATH
