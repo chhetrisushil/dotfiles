@@ -80,6 +80,10 @@ install 'yakuake' for drop-down terminal
 - neovim setup https://github.com/craftzdog/dotfiles-public
 - neovim setup video: https://www.youtube.com/watch?v=FW2X1CXrU1w&t=741s&ab_channel=devaslife
 
+## Install `exa` modern replacement for ls
+- website: https://the.exa.website/
+- github: https://github.com/ogham/exa
+
 **NOTES:** 
   - Before setting up vim copy `.vim` folder to `~/.vim`
   - Install `typescript` `dtsm` `typings` by running `sudo npm install -g typescript dtsm typings` for typescripts plugin to work properly
