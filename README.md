@@ -77,6 +77,8 @@ install 'yakuake' for drop-down terminal
 
 ## Neovim plugins
 - Telescop: fuzzy finder https://github.com/nvim-telescope/telescope.nvim
+- neovim setup https://github.com/craftzdog/dotfiles-public
+- neovim setup video: https://www.youtube.com/watch?v=FW2X1CXrU1w&t=741s&ab_channel=devaslife
 
 **NOTES:** 
   - Before setting up vim copy `.vim` folder to `~/.vim`
