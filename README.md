@@ -84,6 +84,9 @@ install 'yakuake' for drop-down terminal
 - website: https://the.exa.website/
 - github: https://github.com/ogham/exa
 
+## Install `fd` an alternative to `find`
+- github: https://github.com/sharkdp/fd
+
 **NOTES:** 
   - Before setting up vim copy `.vim` folder to `~/.vim`
   - Install `typescript` `dtsm` `typings` by running `sudo npm install -g typescript dtsm typings` for typescripts plugin to work properly
