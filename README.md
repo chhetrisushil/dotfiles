@@ -72,6 +72,12 @@ install 'yakuake' for drop-down terminal
 ## Install `lazydocker`
 - Install `lazydocker` for visual docker container management
 
+## Install `peco`
+- interactvie filtering command tool https://github.com/peco/peco
+
+## Neovim plugins
+- Telescop: fuzzy finder https://github.com/nvim-telescope/telescope.nvim
+
 **NOTES:** 
   - Before setting up vim copy `.vim` folder to `~/.vim`
   - Install `typescript` `dtsm` `typings` by running `sudo npm install -g typescript dtsm typings` for typescripts plugin to work properly
