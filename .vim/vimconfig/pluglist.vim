@@ -148,4 +148,6 @@ Plug 'onsails/lspkind-nvim'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'onsails/lspkind-nvim'
 
+Plug 'github/copilot.vim'
+
 call plug#end()
