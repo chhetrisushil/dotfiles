@@ -79,6 +79,7 @@ install 'yakuake' for drop-down terminal
 - Telescop: fuzzy finder https://github.com/nvim-telescope/telescope.nvim
 - neovim setup https://github.com/craftzdog/dotfiles-public
 - neovim setup video: https://www.youtube.com/watch?v=FW2X1CXrU1w&t=741s&ab_channel=devaslife
+- github copilot: https://github.com/github/copilot.vim
 
 ## Install `exa` modern replacement for ls
 - website: https://the.exa.website/
