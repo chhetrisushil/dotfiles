@@ -83,6 +83,8 @@ install 'yakuake' for drop-down terminal
 - github copilot: https://github.com/github/copilot.vim
 - which-key: https://github.com/folke/which-key.nvim
 - toggleterm: https://github.com/akinsho/toggleterm.nvim
+- nvim-tree (file explorer): https://github.com/kyazdani42/nvim-tree.lua
+- nvim-web-devicons: https://github.com/kyazdani42/nvim-web-devicons
 - neovim setup https://github.com/craftzdog/dotfiles-public
 - neovim setup video: https://www.youtube.com/watch?v=FW2X1CXrU1w&t=741s&ab_channel=devaslife
 
