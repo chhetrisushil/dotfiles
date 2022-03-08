@@ -72,6 +72,9 @@ install 'yakuake' for drop-down terminal
 ## Install `lazydocker`
 - Install `lazydocker` for visual docker container management
 
+## Install `lazygit` A simple terminal UI for git commands
+- github: https://github.com/jesseduffield/lazygit
+
 ## Install `peco`
 - interactvie filtering command tool https://github.com/peco/peco
 
