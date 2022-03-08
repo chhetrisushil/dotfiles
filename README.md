@@ -88,6 +88,10 @@ install 'yakuake' for drop-down terminal
 ## Install `fd` an alternative to `find`
 - github: https://github.com/sharkdp/fd
 
+## Install `lvim` Lunar vim
+- github: https://github.com/LunarVim/LunarVim
+- Documentation: https://www.lunarvim.org
+
 **NOTES:** 
   - Before setting up vim copy `.vim` folder to `~/.vim`
   - Install `typescript` `dtsm` `typings` by running `sudo npm install -g typescript dtsm typings` for typescripts plugin to work properly
