@@ -92,6 +92,9 @@ install 'yakuake' for drop-down terminal
 - github: https://github.com/LunarVim/LunarVim
 - Documentation: https://www.lunarvim.org
 
+## How to configure/customize Neovim
+- github: https://github.com/LunarVim/Neovim-from-scratch
+
 **NOTES:** 
   - Before setting up vim copy `.vim` folder to `~/.vim`
   - Install `typescript` `dtsm` `typings` by running `sudo npm install -g typescript dtsm typings` for typescripts plugin to work properly
