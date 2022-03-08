@@ -79,12 +79,12 @@ install 'yakuake' for drop-down terminal
 - interactvie filtering command tool https://github.com/peco/peco
 
 ## Neovim plugins
-- Telescop: fuzzy finder https://github.com/nvim-telescope/telescope.nvim
-- neovim setup https://github.com/craftzdog/dotfiles-public
-- neovim setup video: https://www.youtube.com/watch?v=FW2X1CXrU1w&t=741s&ab_channel=devaslife
+- Telescope: fuzzy finder https://github.com/nvim-telescope/telescope.nvim
 - github copilot: https://github.com/github/copilot.vim
 - which-key: https://github.com/folke/which-key.nvim
 - toggleterm: https://github.com/akinsho/toggleterm.nvim
+- neovim setup https://github.com/craftzdog/dotfiles-public
+- neovim setup video: https://www.youtube.com/watch?v=FW2X1CXrU1w&t=741s&ab_channel=devaslife
 
 ## Install `exa` modern replacement for ls
 - website: https://the.exa.website/
