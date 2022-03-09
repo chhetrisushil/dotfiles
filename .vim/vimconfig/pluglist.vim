@@ -136,6 +136,7 @@ Plug 'ipod825/TagJump'
 " telescope
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 " lsp plugins
@@ -149,5 +150,8 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'onsails/lspkind-nvim'
 
 Plug 'github/copilot.vim'
+
+" which-key
+Plug 'folke/which-key.nvim'
 
 call plug#end()

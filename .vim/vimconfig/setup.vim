@@ -59,6 +59,7 @@ set wildmode=list:longest,full
 set autoread
 " set search hightlighting on
 " set hlsearch
+set timeoutlen=300
 
 " Setting Font
 " Programming Font
