@@ -37,7 +37,7 @@ Plug 'mrinterweb/vim-visual-surround'
 " Plug 'vim-scripts/TwitVim'
 Plug 'vim-scripts/a.vim'
 Plug 'milkypostman/vim-togglelist'
-" Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 " Plug 'mileszs/ack.vim'
 Plug 'sagarrakshe/ack.vim'
 " Plug 'jceb/vim-orgmode'
@@ -153,5 +153,8 @@ Plug 'github/copilot.vim'
 
 " which-key
 Plug 'folke/which-key.nvim'
+
+" terminal plugin
+Plug 'akinsho/toggleterm.nvim'
 
 call plug#end()
