@@ -45,6 +45,12 @@ function _GTOP_TOGGLE()
   gtop:toggle()
 end
 
+local lazydocker = Terminal:new({ cmd = "lazydocker", hidden = true })
+
+function _LAZYDOCKER_TOGGLE()
+  lazydocker:toggle()
+end
+
 local wk_status_ok, wk = pcall(require, "which-key")
 if not wk_status_ok then
   return
@@ -56,5 +62,6 @@ wk.register({
     n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node Terminal" },
     g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "Lazygit Terminal" },
     h = { "<cmd>lua _GTOP_TOGGLE()<cr>", "Gtop Terminal" },
+    d = { "<cmd>lua _LAZYDOCKER_TOGGLE()<cr>", "Lazydocker Terminal" },
   }
 }, {prefix = "<leader>"})
