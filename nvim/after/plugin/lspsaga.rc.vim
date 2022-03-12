@@ -21,3 +21,16 @@ nnoremap <silent><leader>ca :Lspsaga code_action<CR>
 vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
 nnoremap <silent>gs :Lspsaga signature_help<CR>
 nnoremap <silent>gr :Lspsaga rename<CR>
+
+lua << EOF
+local status_ok, wk = pcall(require, 'which-key')
+
+if not status_ok then
+  return
+end
+
+wk.register({
+  e = {"<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>" , "Line diagnostics"}
+}, {prefix = '<space>', nnoremap = true, silent = true})
+
+EOF

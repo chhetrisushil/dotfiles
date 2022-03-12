@@ -181,8 +181,7 @@ wk.register({
   },
   D = {"<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition"},
   ["rn"] = {"<cmd>lua vim.lsp.buf.rename()<CR>", "Rename variable"},
-  ["ca"] = {"<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action"},
-  e = {"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Line diagnostics"}
+  ["ca"] = {"<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action"}
 }, {prefix = "<space>", silent = true, noremap = true})
 
 EOF
