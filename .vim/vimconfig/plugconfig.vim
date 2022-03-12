@@ -128,9 +128,7 @@ let g:ycm_semantic_triggers = {
 let g:elm_format_autosave = 1
 
 " color scheme
-" colorscheme nova
-" colorscheme molokai
-colorscheme molokai
+colorscheme gruvbox
 
 " fix yankstack key mapping
 call yankstack#setup()
