@@ -78,6 +78,10 @@ install 'yakuake' for drop-down terminal
 ## Install `peco`
 - interactvie filtering command tool https://github.com/peco/peco
 
+## Install `z` directory jumper
+- github: https://github.com/rupa/z
+- path on arch linux `/usr/share/z/z.sh`
+
 ## Neovim plugins
 - Telescope: fuzzy finder https://github.com/nvim-telescope/telescope.nvim
 - github copilot: https://github.com/github/copilot.vim
