@@ -149,9 +149,3 @@ cnoreabbrev AG Ack
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
 " let g:syntastic_javascript_checkers = ['eslint']
-
-" telescope mapping
-nnoremap <C-p> <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
