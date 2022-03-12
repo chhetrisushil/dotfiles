@@ -171,7 +171,7 @@ if not status_ok then
 end
 
 wk.register({
-  q = {"<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", "Loc list"},
+  q = {"<cmd>lua vim.diagnostic.setloclist()<CR>", "Loc list"},
   f = {"<cmd>lua vim.lsp.buf.formatting()<CR>", "Formatting"},
   w = {
     name = "Workspace",
