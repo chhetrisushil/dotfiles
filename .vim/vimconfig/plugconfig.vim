@@ -114,7 +114,7 @@ let g:Powerline_symbols="unicode"
 let g:airline_powerline_fonts=1
 
 " vim-airline theme
-let g:airline_theme='dark'
+let g:airline_theme='lucius'
 
 " elm config
 let g:syntastic_always_populate_loc_list = 1
