@@ -161,4 +161,7 @@ Plug 'akinsho/toggleterm.nvim'
 " trouble
 Plug 'folke/trouble.nvim'
 
+" show context using treesitter
+Plug 'romgrk/nvim-treesitter-context'
+
 call plug#end()
