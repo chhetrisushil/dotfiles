@@ -11,6 +11,7 @@ Plug 'Shougo/neocomplcache.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 
 Plug 'ervandew/supertab'
 Plug 'vim-syntastic/syntastic'
@@ -156,5 +157,8 @@ Plug 'folke/which-key.nvim'
 
 " terminal plugin
 Plug 'akinsho/toggleterm.nvim'
+
+" trouble
+Plug 'folke/trouble.nvim'
 
 call plug#end()
