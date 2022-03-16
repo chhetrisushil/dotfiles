@@ -1,5 +1,6 @@
--- load fzf extension in telescope
+-- load extensions for telescope
 require('telescope').load_extension('fzf')
+require('telescope').load_extension('file_browser')
 
 local status_ok, wk = pcall(require, 'which-key')
 
