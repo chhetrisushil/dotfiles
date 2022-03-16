@@ -81,7 +81,7 @@ nmap <silent> <leader>fc :call CSSBeautify()<CR>
 nmap <silent> <leader>jsd <Plug>(jsdoc)
 
 " toggle NERDTree
-nmap <silent> <C-D> :NERDTreeToggle<CR>
+" nmap <silent> <C-D> :NERDTreeToggle<CR>
 
 " toggle Tagbar
 nmap <F8> :TagbarToggle<CR>

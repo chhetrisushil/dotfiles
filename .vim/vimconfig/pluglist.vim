@@ -8,8 +8,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/neocomplcache.vim'
 
 " Nerd tree plugin
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
+" Plug 'scrooloose/nerdtree'
+" Plug 'jistr/vim-nerdtree-tabs'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 
@@ -22,7 +22,7 @@ Plug 'vim-scripts/tComment'
 " Git Plugins
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-rhubarb'
 
 Plug 'pelodelfuego/vim-swoop'
@@ -163,5 +163,8 @@ Plug 'folke/trouble.nvim'
 
 " show context using treesitter
 Plug 'romgrk/nvim-treesitter-context'
+
+" nvim tree
+Plug 'kyazdani42/nvim-tree.lua'
 
 call plug#end()

@@ -66,9 +66,9 @@ let g:jedi#popup_select_first = 0
 let g:syntastic_python_checkers=['pylint']
 let g:AutoPreview_enabled =1
 let g:AutoPreview_allowed_filetypes = ["c","cpp"]
-let NERDTreeIgnore = ['\.pyc$']
 let g:email = "chhetrisushil@gmail.com"
 let g:username = "Sushil Chhetri"
+" let NERDTreeIgnore = ['\.pyc$']
 " let g:clang_library_path = '/usr/lib/libclang.so'
 " let g:clang_debug = 1
 " let g:clang_user_options='|| exit 0'
@@ -76,7 +76,7 @@ let g:username = "Sushil Chhetri"
 " NERDTree Tab config
 " disabling default enable use NERDTreeTabsOpen instead
 " let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_open_on_gui_startup=0
+" let g:nerdtree_tabs_open_on_gui_startup=0
 
 " JsHint error indicator
 hi SpellBad cterm=underline,bold ctermbg=white ctermfg=black
