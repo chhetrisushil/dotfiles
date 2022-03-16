@@ -1,3 +1,6 @@
+-- load fzf extension in telescope
+require('telescope').load_extension('fzf')
+
 local status_ok, wk = pcall(require, 'which-key')
 
 if not status_ok then
