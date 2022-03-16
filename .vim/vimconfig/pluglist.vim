@@ -168,4 +168,7 @@ Plug 'romgrk/nvim-treesitter-context'
 " nvim tree
 Plug 'kyazdani42/nvim-tree.lua'
 
+" neovim greeter
+Plug 'goolord/alpha-nvim'
+
 call plug#end()
