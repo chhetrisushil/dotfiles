@@ -1,12 +1,6 @@
 " change the mapleader from \ to ,
 let mapleader=","
 
-" Toggle line number
-map <leader>ln :setlocal number!<CR>
-
-" Toggle paste mode
-map <leader>o :set paste!<CR>
-
 " forward cycling through tabs
 map <C-Tab> gt
 " backward cycling through tabs
@@ -38,48 +32,13 @@ map Q :q!<CR>
 map N Nzz
 map n nzz
 
-" Cycle through buffers
-map <c-b> :CtrlPBuffer<CR>
-" Search for text through open buffer
-map <leader>/ :CtrlPLine<CR>
-
-" Ack key binding
-" Open a new tab before searching through the project
-map <leader>a :tab split<CR>:Ack ""<Left>
-" Search for the word under the cursor in new tab
-map <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
-
 " Insert Mode Mapping
 imap jj <Esc><Esc>
 
 " append semi-colon at the end
 inoremap ;<cr> <end>;
 
-inoremap )) <ESC>f)i<Right>
-
 " Normal Mode Mapping
-" open vimrc
-nmap <silent> <leader>ev :e $MYVIMRC<CR> 
-" open gvimrc
-nmap <silent> <leader>eg :e $MYGVIMRC<CR> 
-
-" source vimrc
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
-" source gvimrc
-nmap <silent> <leader>sg :so $MYGVIMRC<CR>
-
-" set syntax highlighting to javascript
-nmap <silent> <leader>js :set syntax=javascript<CR>
-
-" formatter for javascript files
-nmap <silent> <leader>fj :call JsBeautify()<CR>
-" formatter for HTML files
-nmap <silent> <leader>fh :call HtmlBeautify()<CR>
-" formatter for CSS files
-nmap <silent> <leader>fc :call CSSBeautify()<CR>
-" jsdoc shortcut
-nmap <silent> <leader>jsd <Plug>(jsdoc)
-
 " toggle NERDTree
 " nmap <silent> <C-D> :NERDTreeToggle<CR>
 

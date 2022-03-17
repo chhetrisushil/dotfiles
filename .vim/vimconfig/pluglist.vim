@@ -172,4 +172,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 " neovim greeter
 Plug 'goolord/alpha-nvim'
 
+" focus the code you are editing with limelight
+Plug 'junegunn/limelight.vim'
+
 call plug#end()
