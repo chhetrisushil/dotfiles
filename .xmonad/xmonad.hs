@@ -20,6 +20,7 @@ import XMonad.Actions.NoBorders
 import XMonad.Util.Run (spawnPipe)
 import XMonad.Prompt
 import XMonad.Prompt.Shell
+import XMonad.Actions.ConditionalKeys
 
 -- hooks
 import XMonad.Hooks.ManageDocks (ToggleStruts(..),avoidStruts,docks,manageDocks)
@@ -39,6 +40,10 @@ import XMonad.Layout.LayoutCombinators
 import XMonad.Layout.ShowWName
 import XMonad.Layout.Spacing
 import XMonad.Layout.PerScreen
+import XMonad.Layout.Named
+import XMonad.Layout.SubLayouts
+import XMonad.Layout.WindowNavigation
+import XMonad.Layout.BoringWindows
 
 -- java swing support
 import XMonad.Hooks.SetWMName
@@ -60,7 +65,7 @@ main = do
              , focusedBorderColor = focusedBorderColor'
              , terminal = terminal'
              , keys = keys'
-             , mouseBindings = mouseBindings'
+             -- , mouseBindings = mouseBindings'
              , logHook = logHook' h
              , layoutHook = layoutHook'
              -- , manageHook = manageHook' <+> manageHook defaultConfig <+> manageScratchPad'
@@ -132,10 +137,24 @@ workspaces' :: [WorkspaceId]
 workspaces' = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 -- layouts
-myTiled = spacing 5 $ smartBorders $ ResizableTall 1 (3/100) (52/100) []
-myWide = spacing 5 $smartBorders $ ThreeColMid 1 (1/20) (1/2)
-myFull = noBorders Full
-myTabbed = noBorders $ tabbed shrinkText defaultTheme {
+myTiled = spacing 5
+          $ smartBorders
+          $ windowNavigation
+          $ subLayout [] myTabbed
+          $ boringWindows
+          $ named "Tiled"
+          $ ResizableTall 1 (3/100) (52/100) []
+
+myWide = spacing 5
+         $smartBorders
+         $ windowNavigation
+         $ subLayout [] myTabbed
+         $ boringWindows
+         $ named "Wide"
+         $ ThreeColMid 1 (1/20) (1/2)
+
+myFull = noBorders $ named "Full" $ Full
+myTabbed = noBorders $ named "Tabs" $ tabbed shrinkText defaultTheme {
   fontName = myFont
 }
 mySWNConfig = defaultSWNConfig
@@ -188,7 +207,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask,                   xK_c     ), kill)
     , ((modMask .|. shiftMask,                   xK_p     ), spawn "gmrun")
     , ((modMask .|. shiftMask .|. controlMask,   xK_s     ), spawn "poweroff")
-    , ((modMask .|. shiftMask .|. controlMask,   xK_l     ), spawn "pkill -u chhetrisushil")
+    -- , ((modMask .|. shiftMask .|. controlMask,   xK_l     ), spawn "pkill -u chhetrisushil")
     , ((modMask,                                 xK_d     ), spawn "alock -bg none -c glyph")
     , ((modMask .|. controlMask,                 xK_d     ), spawn "alock -bg image:file=/home/chhetrisushil/Pictures/1752231.jpg -c glyph")
 
@@ -217,17 +236,17 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,                 xK_o   ),  shiftNextScreen)
 
     -- focus
-    , ((modMask,               xK_j     ), windows W.focusDown)
-    , ((modMask,               xK_k     ), windows W.focusUp)
-    , ((modMask,               xK_m     ), windows W.focusMaster)
+    , ((modMask,               xK_j     ), bindOn LD [("Full", windows W.focusDown), ("", focusDown)])
+    , ((modMask,               xK_k     ), bindOn LD [("Full", windows W.focusUp), ("", focusUp)])
+    , ((modMask,               xK_m     ), focusMaster)
 
     -- Scratchpad
     -- , ((controlMask,           xK_space), scratchPad)
 
     -- swapping
     --, ((modMask .|. shiftMask, xK_Return), windows W.swapMaster)
-    , ((modMask .|. shiftMask, xK_j     ), windows W.swapDown  )
-    , ((modMask .|. shiftMask, xK_k     ), windows W.swapUp    )
+    , ((modMask .|. shiftMask, xK_j     ), windows W.swapDown)
+    , ((modMask .|. shiftMask, xK_k     ), windows W.swapUp)
 
     -- increase or decrease number of windows in the master area
     , ((modMask              , xK_comma ), sendMessage (IncMasterN 1))
@@ -238,6 +257,20 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,               xK_l     ), sendMessage Expand)
     , ((modMask .|. shiftMask, xK_h     ), sendMessage MirrorShrink)
     , ((modMask .|. shiftMask, xK_l     ), sendMessage MirrorExpand)
+
+    -- sublayouts keybinding
+    , ((modMask .|. shiftMask .|. controlMask, xK_h), sendMessage $ pullGroup L)
+    , ((modMask .|. shiftMask .|. controlMask, xK_l), sendMessage $ pullGroup R)
+    , ((modMask .|. shiftMask .|. controlMask, xK_k), sendMessage $ pullGroup U)
+    , ((modMask .|. shiftMask .|. controlMask, xK_j), sendMessage $ pullGroup D)
+
+    -- sublayout merge keybindings
+    , ((modMask .|. controlMask, xK_g), withFocused (sendMessage . MergeAll))
+    , ((modMask .|. shiftMask .|. controlMask, xK_g), withFocused (sendMessage . UnMerge))
+
+    -- cycle through sublayout windows
+    , ((modMask, xK_semicolon), bindOn LD [("Tabs", windows W.focusUp), ("", onGroup W.focusUp')])
+    , ((modMask, xK_quoteright), bindOn LD [("Tabs", windows W.focusDown), ("", onGroup W.focusDown')])
 
     -- XF86AudioMute
     , ((0 , 0x1008ff12), spawn "amixer -q set Master toggle")
@@ -276,7 +309,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
       --
       --   scratchPad = scratchpadSpawnActionTerminal terminal'
 -- mousebindings
-mouseBindings' (XConfig {XMonad.modMask = modMask}) = M.fromList $
-  [((0, 7), (\w -> nextWS))
-  , ((0, 6), (\w -> prevWS))
-  ]
+-- mouseBindings' (XConfig {XMonad.modMask = modMask}) = M.fromList $
+--   [((0, 7), (\w -> nextWS))
+--   , ((0, 6), (\w -> prevWS))
+--   ]
