@@ -137,4 +137,7 @@ Plug 'goolord/alpha-nvim'
 " focus the code you are editing with limelight
 Plug 'junegunn/limelight.vim'
 
+" rust support
+Plug 'simrat39/rust-tools.nvim'
+
 call plug#end()
