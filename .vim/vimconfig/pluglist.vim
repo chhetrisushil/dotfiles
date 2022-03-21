@@ -3,7 +3,6 @@ call plug#begin($HOME.'/.vim/bundle')
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'davidhalter/jedi-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/neocomplcache.vim'
 
