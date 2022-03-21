@@ -140,4 +140,7 @@ Plug 'junegunn/limelight.vim'
 " rust support
 Plug 'simrat39/rust-tools.nvim'
 
+" git lens
+Plug 'APZelos/blamer.nvim'
+
 call plug#end()
