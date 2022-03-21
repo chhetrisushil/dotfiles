@@ -33,15 +33,12 @@ Plug 'milkypostman/vim-togglelist'
 Plug 'preservim/tagbar'
 Plug 'sagarrakshe/ack.vim'
 " Plug 'jceb/vim-orgmode'
-" Plug 'jelera/vim-javascript-syntax'
-" Plug 'pangloss/vim-javascript'
 
 " Paste from history
 Plug 'maxbrunsfeld/vim-yankstack'
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'heavenshell/vim-jsdoc'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Chiel92/vim-autoformat'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
@@ -54,9 +51,6 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
 
 Plug 'artur-shaik/vim-javacomplete2'
-
-" Javascript ES6 syntax support
-Plug 'isRuslan/vim-es6'
 
 " Node support
 Plug 'moll/vim-node'
@@ -81,16 +75,8 @@ Plug 'airblade/vim-rooter'
 " auto tag closing plugin
 Plug 'alvan/vim-closetag'
 
-" adding semi-colon and command
-Plug 'lfilho/cosco.vim'
-
 " color scheme plugin
 Plug 'trevordmiller/nova-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'othree/html5.vim'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'mxw/vim-jsx'
-Plug 'HerringtonDarkholme/yats.vim'
 
 " tag jump in new tab
 Plug 'ipod825/TagJump'

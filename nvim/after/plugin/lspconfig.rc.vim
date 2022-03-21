@@ -35,7 +35,7 @@ local on_attach = function(client, bufnr)
 
   -- formatting
   if client.name == 'tsserver' then
-    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_formatting = true
   end
 
   if client.resolved_capabilities.document_formatting then
@@ -89,6 +89,12 @@ nvim_lsp.flow.setup {
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  capabilities = capabilities
+}
+
+nvim_lsp.pylsp.setup {
+  on_attach = require('cmp_nvim_lsp').on_attach,
+  filetypes = { "python" },
   capabilities = capabilities
 }
 
