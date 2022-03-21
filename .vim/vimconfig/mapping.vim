@@ -45,9 +45,6 @@ inoremap ;<cr> <end>;
 " toggle Tagbar
 nmap <F8> :TagbarToggle<CR>
 
-" toggle syntastic checker
-nmap <F3> :SyntasticToggleMode<CR>
-
 " Faster switching to tabs (works in gvim) (Eg. alt+1 goes to tab 1)
 nmap <M-1> :tabnext 1<CR>
 nmap <M-2> :tabnext 2<CR>

@@ -11,7 +11,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 
 Plug 'ervandew/supertab'
-Plug 'vim-syntastic/syntastic'
 Plug 'vim-scripts/taglist.vim'
 Plug 'aperezdc/vim-template'
 Plug 'vim-scripts/tComment'
