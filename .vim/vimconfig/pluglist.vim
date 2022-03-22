@@ -87,6 +87,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'cljoly/telescope-repo.nvim'
 
 " lsp plugins
 Plug 'neovim/nvim-lspconfig'
