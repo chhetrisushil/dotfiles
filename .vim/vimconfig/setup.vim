@@ -14,7 +14,6 @@ set smartindent
 " show line number by default
 set number
 set relativenumber
-" set nonumber        " don't show line numbers
 set autoindent      " always set autoindenting on
 set copyindent      " copy the previous indentation on autoindenting
 set tabstop=2       " tab is 2 spaces
@@ -34,6 +33,7 @@ set showcmd         " show current command in bottom line
 set laststatus=2    " Always display the statusline in all windows
 set showtabline=2   " Always display the tabline, even if there is only one tab
 set noshowmode      " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set cursorline      " Highlight the current line
 set wildignore=*.swp,*.bak,*.pyc,*.class,*/migrations/*,*/blackhole__/*,*/tmp/*
 " set wildignore=*.swp,*.bak,*.pyc,*.class,*/migrations/*,*/blackhole__/*,*/tmp/*,*/search*/*
 " set wildignore+=*/target/*,*/test-coverage/*,*/node_modules/*
