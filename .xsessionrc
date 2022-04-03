@@ -48,6 +48,9 @@ xsetroot -cursor_name left_ptr
 # disable bell sound
 xset b off
 
+# disable laptop sleep
+xset s off -dpms
+
 ## Start some useful programms
 # pkill mpd; mpd &
 # pkill mpdscribble;mpdscribble &
