@@ -128,4 +128,7 @@ Plug 'simrat39/rust-tools.nvim'
 " git lens
 Plug 'APZelos/blamer.nvim'
 
+" ranger in neovim
+Plug 'kevinhwang91/rnvimr'
+
 call plug#end()

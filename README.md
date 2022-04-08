@@ -91,6 +91,7 @@ install 'yakuake' for drop-down terminal
 - nvim-web-devicons: https://github.com/kyazdani42/nvim-web-devicons
 - neovim setup https://github.com/craftzdog/dotfiles-public
 - neovim setup video: https://www.youtube.com/watch?v=FW2X1CXrU1w&t=741s&ab_channel=devaslife
+- ranger in neovim: https://github.com/kevinhwang91/rnvimr
 
 ## Install `exa` modern replacement for ls
 - website: https://the.exa.website/
