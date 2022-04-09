@@ -104,6 +104,9 @@ install 'yakuake' for drop-down terminal
 - github: https://github.com/LunarVim/LunarVim
 - Documentation: https://www.lunarvim.org
 
+## Install `dmenu` application launcher
+- `yay -Syu dmenu`
+
 ## How to configure/customize Neovim
 - github: https://github.com/LunarVim/Neovim-from-scratch
 
