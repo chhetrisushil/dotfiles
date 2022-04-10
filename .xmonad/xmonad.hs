@@ -262,7 +262,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- launching and killing programs
     [ ((modMask,                                 xK_Return), spawn $ XMonad.terminal conf)
     -- , ((modMask,                                 xK_p     ), shellPrompt myXPConfig)
-    , ((modMask,                                 xK_p     ), spawn "dmenu_run")
+    , ((modMask,                                 xK_p     ), spawn "dmenu_run -p 'Run:'")
     , ((modMask .|. shiftMask,                   xK_c     ), kill)
     -- , ((modMask .|. shiftMask,                   xK_p     ), spawn "gmrun")
     , ((modMask .|. shiftMask,                      xK_p     ), shellPrompt myXPConfig)
