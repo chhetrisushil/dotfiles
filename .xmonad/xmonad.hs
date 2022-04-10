@@ -195,7 +195,7 @@ workspaces' :: [WorkspaceId]
 workspaces' = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 -- layouts
-myTiled = spacing 5
+myTiled = spacing 10
           $ smartBorders
           $ windowNavigation
           $ subLayout [] myTabbed
@@ -203,7 +203,7 @@ myTiled = spacing 5
           $ named "Tiled"
           $ ResizableTall 1 (3/100) (52/100) []
 
-myWide = spacing 5
+myWide = spacing 10
          $smartBorders
          $ windowNavigation
          $ subLayout [] myTabbed
