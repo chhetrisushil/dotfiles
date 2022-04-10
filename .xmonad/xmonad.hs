@@ -131,6 +131,7 @@ myLogHook dbus = def
     , ppCurrent = wrap ("%{B" ++ bg2 ++ "} ") " %{B-}"
     , ppVisible = wrap ("%{B" ++ bg1 ++ "} ") " %{B-}"
     , ppUrgent = wrap ("%{F" ++ red ++ "} ") " %{F-}"
+    , ppHiddenNoWindows = wrap ("%{F" ++ fg ++ "} ") " %{F-}"
     -- , ppHidden = wrap " " " "
     , ppWsSep = ""
     , ppSep = " : "
