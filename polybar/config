@@ -61,9 +61,10 @@ font-1 = "FontAwesome:size=12;1"
 modules-left = xmonad
 modules-center = 
 ; modules-right = xbacklight pulseaudio xkeyboard battery temperature date
-modules-right = wlan pulseaudio xkeyboard temperature date
+modules-right = wlan pulseaudio temperature date
 
 tray-position = right
+tray-detached = false
 tray-padding = 2
 ;tray-background = #0063ff
 tray-maxsize = 30
