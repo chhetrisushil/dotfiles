@@ -106,6 +106,13 @@ install 'yakuake' for drop-down terminal
 
 ## Install `dmenu` application launcher
 - `yay -Syu dmenu`
+- github: https://github.com/stilvoid/dmenu
+- suckless documentation: https://tools.suckless.org/dmenu/
+
+## Install `polybar` status bar
+- `yay -Syu polybar`
+- github: https://github.com/polybar/polybar
+- documentation: https://polybar.readthedocs.io/en/stable/
 
 ## How to configure/customize Neovim
 - github: https://github.com/LunarVim/Neovim-from-scratch
