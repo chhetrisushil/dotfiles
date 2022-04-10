@@ -49,9 +49,9 @@ import XMonad.Layout.BoringWindows
 import XMonad.Hooks.SetWMName
 
 -- DBus for polybar support
-import qualified DBus as D
-import qualified DBus.Client as D
-import qualified Codec.Binary.UTF8.String as UTF8
+-- import qualified DBus as D
+-- import qualified DBus.Client as D
+-- import qualified Codec.Binary.UTF8.String as UTF8
 
 -- Scratchpad
 -- import XMonad.Util.Scratchpad
@@ -78,12 +78,12 @@ aqua      = "#8ec07c"
 -- Main --
 {-main :: IO()-}
 main = do
-  -- h <- spawnPipe "/usr/bin/xmobar"
+  h <- spawnPipe "/usr/bin/xmobar"
   -- h <- spawnPipe "~/.cabal/bin/xmobar"
-  dbus <- D.connectSession
+  -- dbus <- D.connectSession
   -- Request access to the DBus name
-  D.requestName dbus (D.busName_ "org.xmonad.Log")
-    [D.nameAllowReplacement, D.nameReplaceExisting, D.nameDoNotQueue]
+  -- D.requestName dbus (D.busName_ "org.xmonad.Log")
+  --   [D.nameAllowReplacement, D.nameReplaceExisting, D.nameDoNotQueue]
 
   xmonad $ ewmh $ withUrgencyHook NoUrgencyHook $ docks defaultConfig
              { workspaces = workspaces'
@@ -94,15 +94,15 @@ main = do
              , terminal = terminal'
              , keys = keys'
              -- , mouseBindings = mouseBindings'
-             -- , logHook = logHook' h
-             , logHook = dynamicLogWithPP (myLogHook dbus)
+             , logHook = logHook' h
+             -- , logHook = dynamicLogWithPP (myLogHook dbus)
              , layoutHook = layoutHook'
              -- , manageHook = manageHook' <+> manageHook defaultConfig <+> manageScratchPad'
              , manageHook = manageHook' <+> manageHook defaultConfig
              , handleEventHook = fullscreenEventHook
              , focusFollowsMouse  = myFocusFollowsMouse
              , startupHook = do
-                              spawn "~/.config/polybar/launch.sh"
+                              -- spawn "~/.config/polybar/launch.sh"
                               ewmhDesktopsStartup >> setWMName "LG3D"
              }
 
@@ -120,35 +120,35 @@ manageHook' = composeAll
               , manageDocks
               ]
 
--- logHook' :: Handle ->  X ()
--- logHook' h = dynamicLogWithPP (customPP { ppOutput = hPutStrLn h })
+logHook' :: Handle ->  X ()
+logHook' h = dynamicLogWithPP (customPP { ppOutput = hPutStrLn h })
 
 -- Override the PP values as you would otherwise, adding colors etc depending
 -- on  the statusbar used
-myLogHook :: D.Client -> PP
-myLogHook dbus = def
-    { ppOutput = dbusOutput dbus
-    , ppCurrent = wrap ("%{B" ++ bg2 ++ "} ") " %{B-}"
-    , ppVisible = wrap ("%{B" ++ bg1 ++ "} ") " %{B-}"
-    , ppUrgent = wrap ("%{F" ++ red ++ "} ") " %{F-}"
-    , ppHiddenNoWindows = wrap ("%{F" ++ fg ++ "} ") " %{F-}"
-    -- , ppHidden = wrap " " " "
-    , ppWsSep = ""
-    , ppSep = " : "
-    , ppTitle = shorten 40
-    }
+-- myLogHook :: D.Client -> PP
+-- myLogHook dbus = def
+--     { ppOutput = dbusOutput dbus
+--     , ppCurrent = wrap ("%{B" ++ bg2 ++ "} ") " %{B-}"
+--     , ppVisible = wrap ("%{B" ++ bg1 ++ "} ") " %{B-}"
+--     , ppUrgent = wrap ("%{F" ++ red ++ "} ") " %{F-}"
+--     , ppHiddenNoWindows = wrap ("%{F" ++ fg ++ "} ") " %{F-}"
+--     -- , ppHidden = wrap " " " "
+--     , ppWsSep = ""
+--     , ppSep = " : "
+--     , ppTitle = shorten 40
+--     }
 
 -- Emit a DBus signal on log updates
-dbusOutput :: D.Client -> String -> IO ()
-dbusOutput dbus str = do
-    let signal = (D.signal objectPath interfaceName memberName) {
-            D.signalBody = [D.toVariant $ UTF8.decodeString str]
-        }
-    D.emit dbus signal
-  where
-    objectPath = D.objectPath_ "/org/xmonad/Log"
-    interfaceName = D.interfaceName_ "org.xmonad.Log"
-    memberName = D.memberName_ "Update"
+-- dbusOutput :: D.Client -> String -> IO ()
+-- dbusOutput dbus str = do
+--     let signal = (D.signal objectPath interfaceName memberName) {
+--             D.signalBody = [D.toVariant $ UTF8.decodeString str]
+--         }
+--     D.emit dbus signal
+--   where
+--     objectPath = D.objectPath_ "/org/xmonad/Log"
+--     interfaceName = D.interfaceName_ "org.xmonad.Log"
+--     memberName = D.memberName_ "Update"
 
 layoutHook' = customLayout
 -- Top-level binding with no type signature:           layoutHook' :: XMonad.Layout.LayoutModifier.ModifiedLayout
@@ -166,15 +166,15 @@ layoutHook' = customLayout
 -------------------------------------------------------------------------------
 -- Looks --
 -- bar
--- customPP :: PP
--- customPP = defaultPP
---            { ppCurrent = xmobarColor "#FFEE00" "" . wrap "[" "]"
---            , ppVisible = xmobarColor "#5599FF" "" . wrap "<" ">"
---            , ppTitle =  shorten 80
---            , ppSep =  "<fc=#AFAF87> | </fc>"
---            , ppHiddenNoWindows = xmobarColor "#404040" ""
---            , ppUrgent = xmobarColor "#ff0000" "" . wrap "!" "!"
---            }
+customPP :: PP
+customPP = defaultPP
+           { ppCurrent = xmobarColor "#FFEE00" "" . wrap "[" "]"
+           , ppVisible = xmobarColor "#5599FF" "" . wrap "<" ">"
+           , ppTitle =  shorten 80
+           , ppSep =  "<fc=#AFAF87> | </fc>"
+           , ppHiddenNoWindows = xmobarColor "#404040" ""
+           , ppUrgent = xmobarColor "#ff0000" "" . wrap "!" "!"
+           }
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
