@@ -112,7 +112,7 @@ install 'yakuake' for drop-down terminal
 ## Install `polybar` status bar
 - `yay -Syu polybar`
 - github: https://github.com/polybar/polybar
-- documentation: https://polybar.readthedocs.io/en/stable/
+- documentation: https://polybar.readthedocs.io/en/stable/, https://polybar.github.io/
 
 ## How to configure/customize Neovim
 - github: https://github.com/LunarVim/Neovim-from-scratch
