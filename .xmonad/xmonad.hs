@@ -85,7 +85,7 @@ main = do
   D.requestName dbus (D.busName_ "org.xmonad.Log")
     [D.nameAllowReplacement, D.nameReplaceExisting, D.nameDoNotQueue]
 
-  xmonad $ withUrgencyHook NoUrgencyHook $ docks defaultConfig
+  xmonad $ ewmh $ withUrgencyHook NoUrgencyHook $ docks defaultConfig
              { workspaces = workspaces'
              , modMask = modMask'
              , borderWidth = borderWidth'
