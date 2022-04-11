@@ -78,7 +78,8 @@ aqua      = "#8ec07c"
 -- Main --
 {-main :: IO()-}
 main = do
-  h <- spawnPipe "/usr/bin/xmobar"
+  h <- spawnPipe "/usr/bin/xmobar -x 0"
+  h' <- spawnPipe "/usr/bin/xmobar -x 1"
   -- h <- spawnPipe "~/.cabal/bin/xmobar"
   -- dbus <- D.connectSession
   -- Request access to the DBus name
@@ -94,7 +95,9 @@ main = do
              , terminal = terminal'
              , keys = keys'
              -- , mouseBindings = mouseBindings'
-             , logHook = logHook' h
+             , logHook = do
+                          logHook' h
+                          logHook' h'
              -- , logHook = dynamicLogWithPP (myLogHook dbus)
              , layoutHook = layoutHook'
              -- , manageHook = manageHook' <+> manageHook defaultConfig <+> manageScratchPad'

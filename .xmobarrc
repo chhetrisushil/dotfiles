@@ -1,6 +1,6 @@
 -- -*-Haskell-*-
 
---Config { font = "xft:Monospace:size=9:bold"
+--Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
 --       , bgColor = "black"
 --       , fgColor = "white"
 --       , position = Top
@@ -51,11 +51,16 @@
 --, template="%StdinReader%}{%cpu%~%memory%~Vol:%volume%~%date%"
 
 
-Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
+Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
+        , additionalFonts = [
+          "xft:Font Awesome 6 Free Solid:size=10:antialias=true"
+        ]
+        , allDesktops = True
         , borderColor = "black"
         , border = TopB
-        , bgColor = "black"
+        , bgColor = "#5F819D"
         , fgColor = "grey"
+        , textOffset = -1
         , position = TopW L 100
         , commands = [ Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
                         , Run Wireless "wlan0" ["-L","0","-H","32","--normal","green","--high","red", "-t", "<essid>"] 10
@@ -70,10 +75,14 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
                            "-i", "", "-l", "red", "-m", "blue",
                            "-h", "green"]
                           10
-                        , Run Date "%a %b %_d %Y %I:%M %p" "date" 10
+                        , Run Date "%a %b %_d %Y <fn=1></fn> %I:%M %p" "date" 10
+                        , Run MPD ["-t", "[<state>] <artist> - <track>", "--"
+                        , "-p", "6600"
+                        , "-h", "127.0.0.1"
+                        ] 10
                         , Run StdinReader
                         ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template = "%StdinReader% | %cpu% | %memory% * %swap% | %eth0% - %wlan0wi% | %battery%}{<fc=#ee9a00>%date%</fc> | %uname%         "
+        , template = "%StdinReader% | %cpu% | %memory% * %swap% | %eth0% - %wlan0wi% | %battery%}{MPD: %mpd% | <fc=#ee9a00><fn=1></fn> %date%</fc> | %uname%         "
         }
