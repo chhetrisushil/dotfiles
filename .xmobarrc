@@ -56,33 +56,36 @@ Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
           "xft:Font Awesome 6 Free Solid:size=10:antialias=true"
         ]
         , allDesktops = True
-        , borderColor = "black"
-        , border = TopB
-        , bgColor = "#5F819D"
-        , fgColor = "grey"
-        , textOffset = -1
-        , position = TopW L 100
-        , commands = [ Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
+--        , borderColor = "black"
+--        , border = TopB
+        , bgColor = "#282828"
+        , fgColor = "#ebdbb2"
+        , position = TopSize L 100 24
+        , commands = [
+                          Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
                         , Run Wireless "wlan0" ["-L","0","-H","32","--normal","green","--high","red", "-t", "<essid>"] 10
                         , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                         , Run Memory ["-t","Mem: <usedratio>%"] 10
                         , Run Swap [] 10
                         , Run Com "uname" ["-s","-r"] "" 36000
-                        , Run BatteryP ["BAT1"]
-                          ["-t", "<acstatus><left>%",
-                           "-L", "10", "-H", "80", "-p", "3", "--",
-                           "-O", "", "-o", "<fc=red>B:</fc>",
-                           "-i", "", "-l", "red", "-m", "blue",
-                           "-h", "green"]
-                          10
+--                        , Run BatteryP ["BAT1"]
+--                          ["-t", "<acstatus><left>%",
+--                           "-L", "10", "-H", "80", "-p", "3", "--",
+--                           "-O", "", "-o", "<fc=red>B:</fc>",
+--                           "-i", "", "-l", "red", "-m", "blue",
+--                           "-h", "green"]
+--                          10
                         , Run Date "%a %b %_d %Y <fn=1></fn> %I:%M %p" "date" 10
                         , Run MPD ["-t", "[<state>] <artist> - <track>", "--"
                         , "-p", "6600"
                         , "-h", "127.0.0.1"
                         ] 10
                         , Run StdinReader
-                        ]
+                    ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template = "%StdinReader% | %cpu% | %memory% * %swap% | %eth0% - %wlan0wi% | %battery%}{MPD: %mpd% | <fc=#ee9a00><fn=1></fn> %date%</fc> | %uname%         "
+  --      , template = "%StdinReader%}{<box type=Bottom width=2 mb=2 color=#d3869b> MPD: %mpd% </box>|<box type=Bottom width=2 mb=2 color=#b8bb26> %eth0% - %wlan0wi% </box>| %battery% | %cpu% | %memory% * %swap% |<box type=Bottom width=2 color=#83a598> <fc=#ee9a00><fn=1></fn> %date%</fc> </box>| %uname%         "
+
+
+        , template = "%StdinReader%}{<box type=Bottom width=2 mb=2 color=#d3869b><fc=#d3869b>MPD: %mpd%</fc></box> | <box type=Bottom width=2 mb=2 color=#b8bb26><fc=#b8bb26>%eth0% - %wlan0wi%</fc></box> | <box type=Bottom width=2 mb=2 color=#458588><fc=#458588>%cpu%</fc></box> | <box type=Bottom width=2 mb=2 color=#83a598><fc=#83a598>%memory% * %swap%</fc></box> | <box type=Bottom width=2 mb=2 color=#d79921><fc=#d79921><fn=1></fn> %date%</fc></box> | <box type=Bottom width=2 mb=2 color=#b16286><fc=#b16286>%uname%</fc></box> "
         }

@@ -173,10 +173,11 @@ customPP :: PP
 customPP = defaultPP
            { ppCurrent = xmobarColor "#FFEE00" "" . wrap "[" "]"
            , ppVisible = xmobarColor "#5599FF" "" . wrap "<" ">"
-           , ppTitle =  shorten 80
+           , ppTitle =  shorten 40
            , ppSep =  "<fc=#AFAF87> | </fc>"
            , ppHiddenNoWindows = xmobarColor "#404040" ""
            , ppUrgent = xmobarColor "#ff0000" "" . wrap "!" "!"
+           , ppOrder = \(ws:l:t:_) -> ws : l : [t]
            }
 
 -- Whether focus follows the mouse pointer.
