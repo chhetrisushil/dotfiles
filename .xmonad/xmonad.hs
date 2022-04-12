@@ -57,22 +57,42 @@ import XMonad.Hooks.SetWMName
 -- import XMonad.Util.Scratchpad
 
 -- color definitions
-fg        = "#ebdbb2"
-bg        = "#282828"
-gray      = "#a89984"
-bg1       = "#3c3836"
-bg2       = "#504945"
-bg3       = "#665c54"
-bg4       = "#7c6f64"
+-- fg        = "#ebdbb2"
+-- bg        = "#282828"
+-- gray      = "#a89984"
+-- bg1       = "#3c3836"
+-- bg2       = "#504945"
+-- bg3       = "#665c54"
+-- bg4       = "#7c6f64"
+--
+-- green     = "#b8bb26"
+-- darkgreen = "#98971a"
+-- red       = "#fb4934"
+-- darkred   = "#cc241d"
+-- yellow    = "#fabd2f"
+-- blue      = "#83a598"
+-- purple    = "#d3869b"
+-- aqua      = "#8ec07c"
 
-green     = "#b8bb26"
-darkgreen = "#98971a"
-red       = "#fb4934"
-darkred   = "#cc241d"
-yellow    = "#fabd2f"
-blue      = "#83a598"
-purple    = "#d3869b"
-aqua      = "#8ec07c"
+colorBack = "#282828"
+colorFore = "#ebdbb2"
+
+color01 = "#282828"
+color02 = "#cc241d"
+color03 = "#98971a"
+color04 = "#d79921"
+color05 = "#458588"
+color06 = "#b16286"
+color07 = "#689d6a"
+color08 = "#a89984"
+color09 = "#928374"
+color10 = "#fb4934"
+color11 = "#b8bb26"
+color12 = "#fabd2f"
+color13 = "#83a598"
+color14 = "#d3869b"
+color15 = "#8ec07c"
+color16 = "#ebdbb2"
 
 -------------------------------------------------------------------------------
 -- Main --
@@ -171,14 +191,25 @@ layoutHook' = customLayout
 -- bar
 customPP :: PP
 customPP = defaultPP
-           { ppCurrent = xmobarColor "#FFEE00" "" . wrap "[" "]"
-           , ppVisible = xmobarColor "#5599FF" "" . wrap "<" ">"
-           , ppTitle =  shorten 40
-           , ppSep =  "<fc=#AFAF87> | </fc>"
+           {
+            ppCurrent = xmobarColor color06 "" . wrap ("<box type=Bottom width=2 mb=2 color=" ++ color06 ++ ">") "</box>"
+           , ppVisible = xmobarColor color05 "" . wrap "<" ">"
+           , ppTitle =  xmobarColor color13 "" . shorten 40
+           , ppSep =  "<fc=" ++ color09 ++ "> | </fc>"
+           , ppHidden = xmobarColor color04 "" . wrap
+                           ("<box type=Bottom width=2 mb=2 color=" ++ color04 ++ ">") "</box>"
+
            , ppHiddenNoWindows = xmobarColor "#404040" ""
-           , ppUrgent = xmobarColor "#ff0000" "" . wrap "!" "!"
-           , ppOrder = \(ws:l:t:_) -> ws : l : [t]
+           , ppUrgent = xmobarColor color02 "" . wrap "!" "!"
+           , ppLayout = xmobarColor color07 "" . wrap ("<box type=Bottom width=2 mb=2 color=" ++ color07 ++ ">") "</box>" . myLayoutPrinter
+           , ppOrder = \(ws:l:t:_) -> [ws, l, t]
            }
+
+myLayoutPrinter :: String -> String
+myLayoutPrinter "Full" = "Full"
+myLayoutPrinter "Spacing Tiled" = "Tiled"
+myLayoutPrinter "Spacing Wide" = "ThreeCol"
+myLayoutPrinter "Tabs" = "Tabs"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
