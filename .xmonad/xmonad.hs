@@ -277,7 +277,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- move focus between screens
     , ((modMask .|. controlMask, xK_j   ),  nextScreen)
     , ((modMask .|. controlMask, xK_k   ),  prevScreen)
-    , ((modMask,                 xK_z   ),  toggleWS)
+    , ((modMask,                 xK_z   ),  toggleWS' ["NSP"])
     , ((modMask,                 xK_o   ),  shiftNextScreen)
 
     -- focus
