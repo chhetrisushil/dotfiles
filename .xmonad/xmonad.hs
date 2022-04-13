@@ -204,8 +204,11 @@ customPP = defaultPP
            , ppHiddenNoWindows = xmobarColor "#404040" ""
            , ppUrgent = xmobarColor color02 "" . wrap "!" "!"
            , ppLayout = xmobarColor color07 "" . wrap ("<box type=Bottom width=2 mb=2 color=" ++ color07 ++ ">") "</box>" . myLayoutPrinter
-           , ppOrder = \(ws:l:t:_) -> [ws, l, t]
+           , ppExtras = [windowCount]
+           , ppOrder = \(ws:l:t:ex) -> [ws, l]++ex++[t]
            }
+           where
+            windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
 
 myLayoutPrinter :: String -> String
 myLayoutPrinter "Spacing Full" = "Full"
