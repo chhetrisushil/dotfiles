@@ -94,6 +94,8 @@ color14 = "#d3869b"
 color15 = "#8ec07c"
 color16 = "#ebdbb2"
 
+windowSpacing = 10
+
 -------------------------------------------------------------------------------
 -- Main --
 {-main :: IO()-}
@@ -206,7 +208,7 @@ customPP = defaultPP
            }
 
 myLayoutPrinter :: String -> String
-myLayoutPrinter "Full" = "Full"
+myLayoutPrinter "Spacing Full" = "Full"
 myLayoutPrinter "Spacing Tiled" = "Tiled"
 myLayoutPrinter "Spacing Wide" = "ThreeCol"
 myLayoutPrinter "Tabs" = "Tabs"
@@ -230,7 +232,7 @@ workspaces' :: [WorkspaceId]
 workspaces' = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 -- layouts
-myTiled = spacing 10
+myTiled = spacing windowSpacing
           $ smartBorders
           $ windowNavigation
           $ subLayout [] myTabbed
@@ -238,7 +240,7 @@ myTiled = spacing 10
           $ named "Tiled"
           $ ResizableTall 1 (3/100) (52/100) []
 
-myWide = spacing 10
+myWide = spacing windowSpacing
          $smartBorders
          $ windowNavigation
          $ subLayout [] myTabbed
@@ -246,7 +248,7 @@ myWide = spacing 10
          $ named "Wide"
          $ ThreeColMid 1 (1/20) (1/2)
 
-myFull = noBorders $ named "Full" $ Full
+myFull = spacing windowSpacing $ noBorders $ named "Full" $ Full
 myTabbed = noBorders $ named "Tabs" $ tabbed shrinkText defaultTheme {
   fontName = myFont
 }
@@ -310,9 +312,9 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,               xK_space ), sendMessage NextLayout)
     , ((modMask .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
     , ((modMask              , xK_b     ), sendMessage ToggleStruts)
-    , ((modMask              , xK_f     ), sendMessage $ JumpToLayout "Full")
-    , ((modMask              , xK_r     ), sendMessage $ JumpToLayout "Spacing ResizableTall")
-    , ((modMask              , xK_w     ), sendMessage $ JumpToLayout "Spacing ThreeCol")
+    , ((modMask              , xK_f     ), sendMessage $ JumpToLayout "Spacing Full")
+    , ((modMask              , xK_r     ), sendMessage $ JumpToLayout "Spacing Tiled")
+    , ((modMask              , xK_w     ), sendMessage $ JumpToLayout "Spacing Wide")
     -- Don't need split screens right now :)
     --, ((modMask .|. controlMask, xK_l   ), layoutSplitScreen 2 (TwoPane 0.5 0.5))
     --, ((modMask .|. controlMask, xK_r   ), rescreen)
@@ -331,8 +333,8 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,                 xK_o   ),  shiftNextScreen)
 
     -- focus
-    , ((modMask,               xK_j     ), bindOn LD [("Full", windows W.focusDown), ("", focusDown)])
-    , ((modMask,               xK_k     ), bindOn LD [("Full", windows W.focusUp), ("", focusUp)])
+    , ((modMask,               xK_j     ), bindOn LD [("Spacing Full", windows W.focusDown), ("", focusDown)])
+    , ((modMask,               xK_k     ), bindOn LD [("Spacing Full", windows W.focusUp), ("", focusUp)])
     , ((modMask,               xK_m     ), focusMaster)
 
     -- Scratchpad
