@@ -97,10 +97,6 @@ main = do
   n <- countScreens
   xmprocs <- mapM(\i -> spawnPipe $ "/usr/bin/xmobar -x " ++ show i ++ " /home/chhetrisushil/.xmobarrc") [0..n-1]
   xmprocs' <- mapM(\j -> spawnPipe $ "/usr/bin/xmobar -x " ++ show j ++ " /home/chhetrisushil/.xmobarrc-bottom") [0..n-1]
-  -- h <- spawnPipe "/usr/bin/xmobar -x 0"
-  -- h' <- spawnPipe "/usr/bin/xmobar -x 1"
-  -- b <- spawnPipe "/usr/bin/xmobar -b -x 0 /home/chhetrisushil/.xmobarrc-bottom"
-  -- b' <- spawnPipe "/usr/bin/xmobar -b -x 1 /home/chhetrisushil/.xmobarrc-bottom"
 
   xmonad $ ewmh $ withUrgencyHook NoUrgencyHook $ docks defaultConfig
              { workspaces = myWorkspaces
@@ -271,9 +267,8 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- , ((modMask .|. shiftMask,                   xK_p     ), spawn "gmrun")
     , ((modMask .|. shiftMask,                      xK_p     ), shellPrompt myXPConfig)
     , ((modMask .|. shiftMask .|. controlMask,   xK_s     ), spawn "poweroff")
-    -- , ((modMask .|. shiftMask .|. controlMask,   xK_l     ), spawn "pkill -u chhetrisushil")
-    , ((modMask,                                 xK_d     ), spawn "alock -bg none -c glyph")
-    , ((modMask .|. controlMask,                 xK_d     ), spawn "alock -bg image:file=/home/chhetrisushil/Pictures/1752231.jpg -c glyph")
+    -- , ((modMask,                                 xK_d     ), spawn "alock -bg none -c glyph")
+    -- , ((modMask .|. controlMask,                 xK_d     ), spawn "alock -bg image:file=/home/chhetrisushil/Pictures/1752231.jpg -c glyph")
 
     -- layouts
     , ((modMask,               xK_space ), sendMessage NextLayout)
@@ -335,27 +330,6 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- cycle through sublayout windows
     , ((modMask, xK_semicolon), bindOn LD [("Tabs", windows W.focusUp), ("", onGroup W.focusUp')])
     , ((modMask, xK_quoteright), bindOn LD [("Tabs", windows W.focusDown), ("", onGroup W.focusDown')])
-
-    -- XF86AudioMute
-    , ((0 , 0x1008ff12), spawn "amixer -q set Master toggle")
-    -- XF86AudioLowerVolume
-    , ((0 , 0x1008ff11), spawn "amixer -q set Master 1- unmute")
-    -- XF86AudioRaiseVolume
-    , ((0 , 0x1008ff13), spawn "amixer -q set Master 1+ unmute")
-    -- XF86AudioNext
-    , ((0 , 0x1008ff17), spawn "mpc next")
-    -- XF86AudioPrev
-    , ((0 , 0x1008ff16), spawn "mpc prev")
-    -- XF86AudioPlay
-    , ((0 , 0x1008ff14), spawn "mpc toggle")
-    -- XF86Display
-    , ((0 , 0x1008ff59), spawn "xset dpms force off")
-    -- XF86Display
-    , ((0 , 0x1008ff59), spawn "xset dpms force off")
-    -- XF86MonBrightnessDown
-    -- , ((0 , 0x1008ff03), spawn "xbacklight -dec 2")
-    -- XF86MonBrightnessUp
-    -- , ((0 , 0x1008ff02), spawn "xbacklight -inc 2")
 
     -- quit, or restart
     , ((modMask .|. shiftMask, xK_q     ), io exitSuccess)
