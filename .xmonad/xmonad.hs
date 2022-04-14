@@ -74,6 +74,10 @@ color14 = "#d3869b"
 color15 = "#8ec07c"
 color16 = "#ebdbb2"
 
+colorTrayer :: String
+colorTrayer = "--tint 0x282828"
+
+-- window spacing
 windowSpacing = 10
 
 -- scratchpads
@@ -118,12 +122,17 @@ main = do
              , manageHook = namedScratchpadManageHook scratchpads <+> manageHook' <+> manageHook defaultConfig
              , handleEventHook = fullscreenEventHook
              , focusFollowsMouse  = myFocusFollowsMouse
-             , startupHook = do
-                              ewmhDesktopsStartup >> setWMName "LG3D"
+             , startupHook = myStartupHook
              }
 
 -------------------------------------------------------------------------------
 -- Hooks --
+
+myStartupHook :: X ()
+myStartupHook = do
+                  spawn "killall trayer" -- kill all trayer instances
+                  spawn ("sleep 2 && trayer --edge bottom --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 " ++ colorTrayer ++ " --height 25")
+                  ewmhDesktopsStartup >> setWMName "LG3D"
 
 manageHook' :: ManageHook
 manageHook' = composeAll

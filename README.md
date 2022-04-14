@@ -82,6 +82,10 @@ install 'yakuake' for drop-down terminal
 - github: https://github.com/rupa/z
 - path on arch linux `/usr/share/z/z.sh`
 
+## Install `trayer` lightweight system tray
+- documentation: http://manpages.ubuntu.com/manpages/bionic/man1/trayer.1.html
+- `yay -Syu trayer`
+
 ## Neovim plugins
 - Telescope: fuzzy finder https://github.com/nvim-telescope/telescope.nvim
 - github copilot: https://github.com/github/copilot.vim

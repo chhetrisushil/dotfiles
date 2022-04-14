@@ -22,9 +22,10 @@ Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
                            "-h", "green"]
                           10
                         , Run Weather "VOBL" ["-t", "<tempC>C"] 50
+                        , Run Com "/home/chhetrisushil/scripts/bin/trayer-padding-icon.sh" [] "trayerpad" 20
                         , Run StdinReader
                     ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template = "}%StdinReader%{<fc=#b8bb26>%dynnetwork%</fc> <fc=#928374>|</fc> <fc=#458588><fn=1></fn> %VOBL%</fc> <fc=#928374>|</fc> <fc=#d79921><fn=1></fn>%battery%</fc> <fc=#928374>|</fc> <fc=#d3869b>%uname%</fc> "
+        , template = "}%StdinReader%{<fc=#b8bb26>%dynnetwork%</fc> <fc=#928374>|</fc> <fc=#458588><fn=1></fn> %VOBL%</fc> <fc=#928374>|</fc> <fc=#d79921><fn=1></fn>%battery%</fc> <fc=#928374>|</fc> <fc=#d3869b>%uname%</fc> %trayerpad%"
         }
