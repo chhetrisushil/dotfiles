@@ -131,7 +131,8 @@ main = do
 myStartupHook :: X ()
 myStartupHook = do
                   spawn "killall trayer" -- kill all trayer instances
-                  spawn ("sleep 2 && trayer --edge bottom --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 " ++ colorTrayer ++ " --height 25")
+                  -- start trayer on extended monitor (NOTE: to start on main/laptop monitor add `--monitor 1` flag)
+                  spawn ("sleep 2 && trayer --edge bottom --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 " ++ colorTrayer ++ " --height 25")
                   ewmhDesktopsStartup >> setWMName "LG3D"
 
 manageHook' :: ManageHook
