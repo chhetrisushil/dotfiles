@@ -25,5 +25,5 @@ Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
                     ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template = "}{%dynnetwork% | <fn=1></fn> %VOBL% | <fn=1></fn>%battery% | <fc=#d3869b>%uname%</fc> "
+        , template = "}{<fc=#b8bb26>%dynnetwork%</fc> | <fc=#458588><fn=1></fn> %VOBL%</fc> | <fc=#d79921><fn=1></fn>%battery%</fc> | <fc=#d3869b>%uname%</fc> "
         }
