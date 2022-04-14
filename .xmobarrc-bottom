@@ -22,8 +22,9 @@ Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
                            "-h", "green"]
                           10
                         , Run Weather "VOBL" ["-t", "<tempC>C"] 50
+                        , Run StdinReader
                     ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template = "}{<fc=#b8bb26>%dynnetwork%</fc> | <fc=#458588><fn=1></fn> %VOBL%</fc> | <fc=#d79921><fn=1></fn>%battery%</fc> | <fc=#d3869b>%uname%</fc> "
+        , template = "%StdinReader%}{<fc=#b8bb26>%dynnetwork%</fc> | <fc=#458588><fn=1></fn> %VOBL%</fc> | <fc=#d79921><fn=1></fn>%battery%</fc> | <fc=#d3869b>%uname%</fc> "
         }

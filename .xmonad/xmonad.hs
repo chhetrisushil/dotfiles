@@ -44,6 +44,7 @@ import XMonad.Layout.Named
 import XMonad.Layout.SubLayouts
 import XMonad.Layout.WindowNavigation
 import XMonad.Layout.BoringWindows
+import XMonad.Layout.IndependentScreens
 
 -- java swing support
 import XMonad.Hooks.SetWMName
@@ -89,13 +90,16 @@ scratchpads = [
 -- Main --
 {-main :: IO()-}
 main = do
-  h <- spawnPipe "/usr/bin/xmobar -x 0"
-  h' <- spawnPipe "/usr/bin/xmobar -x 1"
-  b <- spawnPipe "/usr/bin/xmobar -b -x 0 /home/chhetrisushil/.xmobarrc-bottom"
-  b' <- spawnPipe "/usr/bin/xmobar -b -x 1 /home/chhetrisushil/.xmobarrc-bottom"
+  n <- countScreens
+  xmprocs <- mapM(\i -> spawnPipe $ "/usr/bin/xmobar -x " ++ show i ++ " /home/chhetrisushil/.xmobarrc") [0..n-1]
+  xmprocs' <- mapM(\j -> spawnPipe $ "/usr/bin/xmobar -x " ++ show j ++ " /home/chhetrisushil/.xmobarrc-bottom") [0..n-1]
+  -- h <- spawnPipe "/usr/bin/xmobar -x 0"
+  -- h' <- spawnPipe "/usr/bin/xmobar -x 1"
+  -- b <- spawnPipe "/usr/bin/xmobar -b -x 0 /home/chhetrisushil/.xmobarrc-bottom"
+  -- b' <- spawnPipe "/usr/bin/xmobar -b -x 1 /home/chhetrisushil/.xmobarrc-bottom"
 
   xmonad $ ewmh $ withUrgencyHook NoUrgencyHook $ docks defaultConfig
-             { workspaces = workspaces'
+             { workspaces = myWorkspaces
              , modMask = modMask'
              , borderWidth = borderWidth'
              , normalBorderColor = normalBorderColor'
@@ -104,10 +108,12 @@ main = do
              , keys = keys'
              -- , mouseBindings = mouseBindings'
              , logHook = do
-                          logHook' h
-                          logHook' h'
-                          logHook' b
-                          logHook' b'
+                          mapM_(\h -> logHook' $ h) (xmprocs)
+                          mapM_(\h -> dynamicLogWithPP $ defaultPP {
+                              ppOutput = hPutStrLn h
+                            , ppTitle =  xmobarColor color13 "" . shorten 40
+                            , ppOrder = \(ws:l:t:_) -> [t]
+                          })(xmprocs')
              , layoutHook = layoutHook'
              , manageHook = namedScratchpadManageHook scratchpads <+> manageHook' <+> manageHook defaultConfig
              , handleEventHook = fullscreenEventHook
@@ -144,7 +150,6 @@ customPP = defaultPP
            {
             ppCurrent = xmobarColor color06 "" . wrap ("<box type=Bottom width=2 mb=2 color=" ++ color06 ++ ">") "</box>"
            , ppVisible = xmobarColor color05 "" . wrap "<" ">"
-           , ppTitle =  xmobarColor color13 "" . shorten 40
            , ppSep =  "<fc=" ++ color09 ++ "> | </fc>"
            , ppHidden = xmobarColor color04 "" . wrap
                            ("<box type=Bottom width=2 mb=2 color=" ++ color04 ++ ">") "</box>"
@@ -153,7 +158,7 @@ customPP = defaultPP
            , ppUrgent = xmobarColor color02 "" . wrap "!" "!"
            , ppLayout = xmobarColor color07 "" . wrap ("<box type=Bottom width=2 mb=2 color=" ++ color07 ++ ">") "</box>" . myLayoutPrinter
            , ppExtras = [windowCount]
-           , ppOrder = \(ws:l:t:ex) -> [ws, l]++ex++[t]
+           , ppOrder = \(ws:l:t:ex) -> [ws, l]++ex
            , ppSort = fmap (.namedScratchpadFilterOutWorkspace) getSortByIndex
            }
            where
@@ -180,8 +185,8 @@ myFont = "xft:MesloLGSForPowerline Nerd Font:pixelsize=12:bold:antialias=true:hi
 myFontLarge = "xft:MesloLGSForPowerline Nerd Font:pixelsize=60:bold:antialias=true:hinting=true"
 
 -- workspaces
-workspaces' :: [WorkspaceId]
-workspaces' = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+myWorkspaces :: [WorkspaceId]
+myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 -- layouts
 myTiled = spacing windowSpacing
