@@ -91,6 +91,8 @@ scratchpads = [
 main = do
   h <- spawnPipe "/usr/bin/xmobar -x 0"
   h' <- spawnPipe "/usr/bin/xmobar -x 1"
+  b <- spawnPipe "/usr/bin/xmobar -b -x 0 /home/chhetrisushil/.xmobarrc-bottom"
+  b' <- spawnPipe "/usr/bin/xmobar -b -x 1 /home/chhetrisushil/.xmobarrc-bottom"
 
   xmonad $ ewmh $ withUrgencyHook NoUrgencyHook $ docks defaultConfig
              { workspaces = workspaces'
@@ -104,6 +106,8 @@ main = do
              , logHook = do
                           logHook' h
                           logHook' h'
+                          logHook' b
+                          logHook' b'
              , layoutHook = layoutHook'
              , manageHook = namedScratchpadManageHook scratchpads <+> manageHook' <+> manageHook defaultConfig
              , handleEventHook = fullscreenEventHook

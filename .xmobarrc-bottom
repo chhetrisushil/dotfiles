@@ -1,0 +1,29 @@
+-- -*-Haskell-*-
+Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
+        , additionalFonts = [
+          "xft:Font Awesome 6 Free Solid:size=10:antialias=true"
+        ]
+        , allDesktops = True
+--        , borderColor = "black"
+--        , border = BottomB
+        , bgColor = "#282828"
+        , fgColor = "#ebdbb2"
+        , position = BottomSize L 100 25
+        , textOffset = -1
+        , commands = [
+                          Run Com "uname" ["-s","-r"] "" 36000
+                        , Run DynNetwork ["-t", "<fn=1></fn> <rx>KB/<fn=1></fn> <tx>KB"] 10
+--                        , Run Volume "pulse" "Master" ["-t", "Pulse: <volume>% <status>"] 10
+                        , Run BatteryP ["BAT1"]
+                          ["-t", "<acstatus><left>%",
+                           "-L", "10", "-H", "80", "-p", "3", "--",
+                           "-O", "", "-o", "<fc=red>B:</fc>",
+                           "-i", "", "-l", "red", "-m", "blue",
+                           "-h", "green"]
+                          10
+                        , Run Weather "VOBL" ["-t", "<tempC>C"] 50
+                    ]
+        , sepChar = "%"
+        , alignSep = "}{"
+        , template = "}{%dynnetwork% | <fn=1></fn> %VOBL% | <fn=1></fn>%battery% | <fc=#d3869b>%uname%</fc> "
+        }
