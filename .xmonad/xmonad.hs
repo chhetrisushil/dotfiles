@@ -111,7 +111,7 @@ main = do
                           mapM_(\h -> logHook' $ h) (xmprocs)
                           mapM_(\h -> dynamicLogWithPP $ defaultPP {
                               ppOutput = hPutStrLn h
-                            , ppTitle =  xmobarColor color13 "" . shorten 40
+                            , ppTitle =  xmobarColor color13 "" . shorten 80
                             , ppOrder = \(ws:l:t:_) -> [t]
                           })(xmprocs')
              , layoutHook = layoutHook'
