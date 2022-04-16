@@ -118,6 +118,10 @@ install 'yakuake' for drop-down terminal
 - github: https://github.com/polybar/polybar
 - documentation: https://polybar.readthedocs.io/en/stable/, https://polybar.github.io/
 
+## Install `betterlockscreen` for screen lock on arch linux
+- `yay -Syu betterlockscreen`
+- github: https://github.com/betterlockscreen/betterlockscreen
+
 ## How to configure/customize Neovim
 - github: https://github.com/LunarVim/Neovim-from-scratch
 
