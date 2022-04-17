@@ -23,9 +23,14 @@ Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
                           10
                         , Run Weather "VOBL" ["-t", "<tempC>C"] 50
                         , Run Com "/home/chhetrisushil/scripts/bin/trayer-padding-icon.sh" [] "trayerpad" 20
+                        , Run MPD ["-t", "[<state>] <artist> - <title>", "--"
+                        , "-p", "6600"
+                        , "-h", "127.0.0.1"
+                        ] 10
+                        , Run Com "bash" ["-c", "mpc volume | awk '{print $2}'"] "mpd_vol" 10
                         , Run StdinReader
                     ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template = "}%StdinReader%{<fc=#b8bb26>%dynnetwork%</fc> <fc=#928374>|</fc> <fc=#458588><fn=1></fn> %VOBL%</fc> <fc=#928374>|</fc> <fc=#d79921><fn=1></fn>%battery%</fc> <fc=#928374>|</fc> <fc=#d3869b>%uname%</fc> %trayerpad%"
+        , template = " %StdinReader%}{<box type=Bottom width=2 mb=2 color=#d3869b><fc=#d3869b><fn=1></fn> MPD: [vol: %mpd_vol% Track: %mpd%]</fc></box> <fc=#928374>|</fc> <fc=#b8bb26>%dynnetwork%</fc> <fc=#928374>|</fc> <fc=#458588><fn=1></fn> %VOBL%</fc> <fc=#928374>|</fc> <fc=#d79921><fn=1></fn>%battery%</fc> <fc=#928374>|</fc> <fc=#d3869b>%uname%</fc> %trayerpad%"
         }
