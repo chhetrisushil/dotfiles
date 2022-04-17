@@ -32,5 +32,5 @@ Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
                     ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template = " %StdinReader%}{<fc=#d3869b><fn=1></fn> MPD: [vol: %mpd_vol% Track: %mpd%]</fc> <fc=#928374>|</fc> <fc=#b8bb26>%dynnetwork%</fc> <fc=#928374>|</fc> <fc=#458588><fn=1></fn> %VOBL%</fc> <fc=#928374>|</fc> <fc=#d79921><fn=1></fn>%battery%</fc> <fc=#928374>|</fc> <fc=#d3869b>%uname%</fc> %trayerpad%"
+        , template = " %StdinReader%}{<fc=#b8bb26>%dynnetwork%</fc> <fc=#928374>|</fc> <fc=#d3869b><fn=1></fn> MPD: [vol: %mpd_vol% Track: %mpd%]</fc> <fc=#928374>|</fc> <fc=#458588><fn=1></fn> %VOBL%</fc> <fc=#928374>|</fc> <fc=#d79921><fn=1></fn>%battery%</fc> <fc=#928374>|</fc> <fc=#d3869b>%uname%</fc> %trayerpad%"
         }

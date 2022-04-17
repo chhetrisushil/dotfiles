@@ -115,8 +115,7 @@ main = do
                           mapM_(\h -> logHook' $ h) (xmprocs)
                           mapM_(\h -> dynamicLogWithPP $ defaultPP {
                               ppOutput = hPutStrLn h
-                            , ppTitle =  xmobarColor color13 "" . shorten 80
-                            , ppOrder = \(ws:l:t:_) -> [t]
+                            , ppOrder = \(ws:l:t:_) -> []
                           })(xmprocs')
              , layoutHook = layoutHook'
              , manageHook = namedScratchpadManageHook scratchpads <+> manageHook' <+> manageHook defaultConfig
@@ -167,8 +166,9 @@ customPP = defaultPP
            , ppHiddenNoWindows = xmobarColor "#404040" ""
            , ppUrgent = xmobarColor color02 "" . wrap "!" "!"
            , ppLayout = xmobarColor color07 "" . wrap ("<box type=Bottom width=2 mb=2 color=" ++ color07 ++ ">") "</box>" . myLayoutPrinter
+           , ppTitle =  xmobarColor color13 "" . shorten 80
            , ppExtras = [windowCount]
-           , ppOrder = \(ws:l:t:ex) -> [ws, l]++ex
+           , ppOrder = \(ws:l:t:ex) -> [ws, l]++ex++[t]
            , ppSort = fmap (.namedScratchpadFilterOutWorkspace) getSortByIndex
            }
            where
