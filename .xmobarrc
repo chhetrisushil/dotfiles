@@ -26,7 +26,7 @@ Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
 --                           "-h", "green"]
 --                          10
                         , Run Date "%a %b %_d %Y <fn=1></fn> %I:%M %p" "date" 10
-                        , Run MPD ["-t", "[<state>] <artist> - <track>", "--"
+                        , Run MPD ["-t", "[<state>] <artist> - <title>", "--"
                         , "-p", "6600"
                         , "-h", "127.0.0.1"
                         ] 10
