@@ -28,6 +28,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.FadeInactive
 
 -- layouts
 import XMonad.Layout.NoBorders
@@ -112,6 +113,7 @@ main = do
              , keys = keys'
              -- , mouseBindings = mouseBindings'
              , logHook = do
+                          fadeInactiveLogHook 0.7 -- fade inactive windows by 70%
                           mapM_(\h -> logHook' $ h) (xmprocs)
                           mapM_(\h -> dynamicLogWithPP $ defaultPP {
                               ppOutput = hPutStrLn h
