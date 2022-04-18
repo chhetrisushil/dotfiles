@@ -48,8 +48,8 @@ import XMonad.Layout.BoringWindows
 import XMonad.Layout.IndependentScreens
 
 -- imports for splitting screens
--- import XMonad.Layout.LayoutScreens
--- import XMonad.Layout.TwoPane
+import XMonad.Layout.LayoutScreens
+import XMonad.Layout.TwoPane
 
 -- java swing support
 import XMonad.Hooks.SetWMName
@@ -271,7 +271,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,                                 xK_p     ), spawn "dmenu_run -p 'Run:'")
     , ((modMask .|. shiftMask,                   xK_c     ), kill)
     -- , ((modMask .|. shiftMask,                   xK_p     ), spawn "gmrun")
-    , ((modMask .|. shiftMask,                      xK_p     ), shellPrompt myXPConfig)
+    , ((modMask .|. shiftMask,                   xK_p     ), shellPrompt myXPConfig)
     , ((modMask .|. shiftMask .|. controlMask,   xK_s     ), spawn "poweroff")
     , ((modMask,                                 xK_d     ), spawn "betterlockscreen -l -- --time-str '%I:%M %p'")
     -- , ((modMask .|. controlMask,                 xK_d     ), spawn "alock -bg image:file=/home/chhetrisushil/Pictures/1752231.jpg -c glyph")
@@ -284,8 +284,8 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask              , xK_r     ), sendMessage $ JumpToLayout "Spacing Tiled")
     , ((modMask              , xK_w     ), sendMessage $ JumpToLayout "Spacing Wide")
     -- Don't need split screens right now :)
-    -- , ((modMask .|. controlMask, xK_l   ), layoutSplitScreen 2 (TwoPane 0.5 0.5))
-    -- , ((modMask .|. controlMask, xK_r   ), rescreen)
+    , ((modMask .|. controlMask, xK_l   ), layoutSplitScreen 2 (TwoPane 0.5 0.5))
+    , ((modMask .|. controlMask, xK_r   ), rescreen)
 
     -- floating layer stuff
     , ((modMask,               xK_t     ), withFocused $ windows . W.sink)
