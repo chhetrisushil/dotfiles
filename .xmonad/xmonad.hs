@@ -159,7 +159,7 @@ layoutHook' = customLayout
 customPP :: PP
 customPP = defaultPP
            {
-            ppCurrent = xmobarColor color06 "" . wrap ("<box type=Bottom width=2 mb=2 color=" ++ color06 ++ ">") "</box>"
+            ppCurrent = xmobarColor color06 "" . wrap ("[<box type=Bottom width=2 mb=2 color=" ++ color06 ++ ">") "</box>]"
            , ppVisible = xmobarColor color05 "" . wrap "<" ">"
            , ppSep =  "<fc=" ++ color09 ++ "> | </fc>"
            , ppHidden = xmobarColor color04 "" . wrap
