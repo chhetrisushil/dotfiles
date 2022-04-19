@@ -131,4 +131,7 @@ Plug 'APZelos/blamer.nvim'
 " ranger in neovim
 Plug 'kevinhwang91/rnvimr'
 
+" tab styling
+Plug 'nanozuki/tabby.nvim'
+
 call plug#end()
