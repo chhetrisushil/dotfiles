@@ -142,8 +142,10 @@ manageHook' = composeAll
               , isDialog                      --> doFloat
               , className     =? "Xmessage"   --> doFloat
               , className     =? "Yakuake"    --> doFloat
-              , className     =? "MPlayer"    --> ask >>= doF . W.sink
+              -- , className     =? "MPlayer"    --> ask >>= doF . W.sink -- sink mplayer to avoid overlapping
+              , className     =? "MPlayer"    --> doFloat
               , className     =? "MPlayer"    --> doShift "9"
+              , className     =? "mpv"        --> doFloat
               , manageDocks
               ]
 
