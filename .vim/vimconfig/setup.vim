@@ -53,8 +53,8 @@ set dictionary+=/usr/share/dict/words
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Cool tab completion stuff while entering commands
-set wildmenu
-set wildmode=list:longest,full
+" set wildmenu
+" set wildmode=list:longest,full
 " autoread to check for changes on disk
 set autoread
 " set search hightlighting on
