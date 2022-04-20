@@ -45,7 +45,7 @@ URxvt.font: xft:MesloLGMDZ Nerd Font Mono:pixelsize=14:italic:antialias=true:hin
 URxvt.boldFont: xft:MesloLGMDZ Nerd Font Mono:pixelsize=14:bold:antialias=true:hinting=true
 URxvt.italicFont: xft:MesloLGMDZ Nerd Font Mono:pixelsize=14:italic:antialias=true:hinting=true
 URxvt.boldItalicfont: xft:MesloLGMDZ Nerd Font Mono:pixelsize=14:boldItalic:antialias=true:hinting=true
-URxvt.letterSpace: -1
+URxvt.letterSpace: -2
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
 !URxvt.internalBorder: 24
