@@ -6,8 +6,8 @@
 export PATH=$PATH:$HOME/.cabal/bin:$HOME/.scripts
 
 # Set background image with feh
-# feh --bg-scale /home/chhetrisushil/Pictures/Wallpapers/wallpapers-master/0074.jpg &
-wal -i ~/Pictures/Wallpapers/wallpapers-master/0031.jpg -a 75
+feh --bg-fill -z /home/chhetrisushil/Pictures/Wallpapers/wallpapers-master/ &
+# wal -i ~/Pictures/Wallpapers/wallpapers-master/ -a 75
 
 # setxkbmap -model thinkpad -layout us
 # convert caps lock to additional esc-key
