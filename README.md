@@ -146,3 +146,4 @@ install 'yakuake' for drop-down terminal
   - install `clipit` for clipboard management (paste from history) for linux
   - install `pywal` for setting wallpaper and corresponding theme
   - install `nerd-fonts-complete` from AUR for arch linux for nerd font support (powerline support)
+  - terminator config path `.config/terminator/config`
