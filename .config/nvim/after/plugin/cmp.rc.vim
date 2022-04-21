@@ -35,18 +35,6 @@ lua <<EOF
     }
   })
 
-  cmp.setup.cmdline(':', {
-    sources = {
-      { name = 'cmdline' }
-    }
-  })
-
-  cmp.setup.cmdline('/', {
-    sources = {
-      { name = 'buffer' }
-    }
-  })
-
   vim.cmd [[highlight! default link CmpItemKind CmpItemMenuDefault]]
 EOF
 
