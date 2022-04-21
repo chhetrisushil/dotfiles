@@ -45,6 +45,7 @@ Plug 'xolox/vim-session'
 " Plug 'ElmCast/elm-vim'
 Plug 'vimwiki/vimwiki'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Emmet for html and css tag/selector completion
 Plug 'mattn/emmet-vim'
@@ -93,6 +94,8 @@ Plug 'cljoly/telescope-repo.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim6.0' }
 Plug 'onsails/lspkind-nvim'

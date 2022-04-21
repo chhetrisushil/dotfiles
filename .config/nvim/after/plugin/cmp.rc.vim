@@ -9,7 +9,8 @@ lua <<EOF
   cmp.setup({
     snippet = {
       expand = function(args)
-        require('luasnip').lsp_expand(args.body)
+        --require('luasnip').lsp_expand(args.body)
+        vim.fn["UltiSnips#Anon"](args.body)
       end,
     },
     mapping = cmp.mapping.preset.insert({
@@ -24,6 +25,7 @@ lua <<EOF
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
+      { name = 'ultisnips' }
     }, {
       { name = 'buffer' },
     }),
