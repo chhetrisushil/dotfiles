@@ -97,7 +97,6 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim6.0' }
 Plug 'onsails/lspkind-nvim'
 Plug 'L3MON4D3/LuaSnip'
-Plug 'onsails/lspkind-nvim'
 
 Plug 'github/copilot.vim'
 
