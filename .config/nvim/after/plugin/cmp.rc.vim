@@ -28,9 +28,22 @@ lua <<EOF
       { name = 'ultisnips' }
     }, {
       { name = 'buffer' },
+      { name = 'path' }
     }),
     formatting = {
       format = lspkind.cmp_format({with_text = false, maxwidth = 50})
+    }
+  })
+
+  cmp.setup.cmdline(':', {
+    sources = {
+      { name = 'cmdline' }
+    }
+  })
+
+  cmp.setup.cmdline('/', {
+    sources = {
+      { name = 'buffer' }
     }
   })
 
