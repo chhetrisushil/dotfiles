@@ -2,6 +2,7 @@
   focus = system
   title_transmit_bg_color = "#d30102"
 [keybindings]
+  help = <Primary>F1
 [profiles]
   [[default]]
     background_color = "#282828"
