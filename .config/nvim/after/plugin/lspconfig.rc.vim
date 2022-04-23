@@ -213,7 +213,7 @@ wk.register({
     l = {"<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", "List workspace"},
   },
   D = {"<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition"},
-  ["rn"] = {"<cmd>lua vim.lsp.buf.rename()<CR>", "Rename variable"},
+  ["rn"] = {"<cmd>Lspsaga rename<CR>", "Rename variable"},
   ["ca"] = {"<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action"}
 }, {prefix = "<space>", silent = true, noremap = true})
 
