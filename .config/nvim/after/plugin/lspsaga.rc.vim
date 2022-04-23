@@ -9,13 +9,21 @@ saga.init_lsp_saga {
   hint_sign = '',
   infor_sign = '',
   border_style = "round",
+  finder_action_keys = {
+    open = 'o',
+    vsplit = 'v',
+    split = 's',
+    quit = 'q',
+    scroll_down = '<C-f>',
+    scroll_up = '<C-b>'
+  },
 }
 
 EOF
 
 nnoremap <silent> <C-j> :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
-nnoremap <silent> gh :Lspsaga lsp_finder<CR>
+nnoremap <silent> gh <cmd>lua require('lspsaga.provider').lsp_finder()<CR>
 nnoremap <silent> gp :Lspsaga preview_definition<CR>
 nnoremap <silent><leader>ca :Lspsaga code_action<CR>
 vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
