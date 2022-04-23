@@ -14,8 +14,6 @@ saga.init_lsp_saga {
     vsplit = 'v',
     split = 's',
     quit = 'q',
-    scroll_down = '<C-f>',
-    scroll_up = '<C-b>'
   },
 }
 
