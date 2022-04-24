@@ -2,6 +2,9 @@ if !exists('g:lspconfig')
   finish
 endif
 
+" mapping for references
+nnoremap <silent>gr <cmd>lua vim.lsp.buf.references()<CR>
+
 lua << EOF
 --vim.lsp.set_log_level("debug")
 EOF
