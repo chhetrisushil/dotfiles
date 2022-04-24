@@ -72,5 +72,6 @@ wk.register({
     g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "Lazygit Terminal" },
     h = { "<cmd>lua _GTOP_TOGGLE()<cr>", "Gtop Terminal" },
     d = { "<cmd>lua _LAZYDOCKER_TOGGLE()<cr>", "Lazydocker Terminal" },
+    b = { "<cmd>2ToggleTerm size=20 direction=horizontal<cr>", "Bottom Terminal" },
   }
 }, {prefix = "<leader>"})
