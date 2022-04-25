@@ -87,7 +87,7 @@ windowSpacing = 10
 
 -- scratchpads
 scratchpads = [
-    NS "terminal" "urxvtc" (className =? "URxvt") (customFloating $ W.RationalRect l t w h)
+    NS "terminal" "urxvtc -name UrxvtScratchpad" (appName =? "UrxvtScratchpad") (customFloating $ W.RationalRect l t w h)
     ]
   where
     h = 0.3               -- terminal height, 35%
