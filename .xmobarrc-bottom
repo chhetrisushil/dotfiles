@@ -23,7 +23,10 @@ Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
                           10
                         , Run Weather "VOBL" ["-t", "<tempC>C"] 50
                         , Run Com "/home/chhetrisushil/scripts/bin/trayer-padding-icon.sh" [] "trayerpad" 20
-                        , Run MPD ["-t", "<action=`mpc toggle`><action=`mpc stop` button=3><fn=1></fn> <artist> - <title></action></action> <action=`mpc prev`><fn=1></fn></action> <action=`mpc toggle`><statei></action> <action=`mpc next`><fn=1></fn></action>", "--"
+                        , Run MPD ["-t", "<action=`mpc toggle`><action=`mpc stop` button=3><fn=1></fn> <artist> - <title></action></action> <action=`mpc prev`><fn=1></fn></action> <action=`mpc toggle`><statei></action> <action=`mpc next`><fn=1></fn></action>"
+                        , "-M", "15"
+                        , "-e", "..."
+                        , "--"
                         , "-p", "6600"
                         , "-h", "127.0.0.1"
                         , "-Z", "<fn=1></fn>"
