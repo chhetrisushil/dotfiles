@@ -23,7 +23,7 @@ Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
                           10
                         , Run Weather "VOBL" ["-t", "<tempC>C"] 50
                         , Run Com "/home/chhetrisushil/scripts/bin/trayer-padding-icon.sh" [] "trayerpad" 20
-                        , Run MPD ["-t", "<action=`mpc prev`><fn=1></fn></action> <action=`mpc toggle`><statei></action> <action=`mpc next`><fn=1></fn></action> <action=`mpc toggle`><action=`mpc stop` button=3><fn=1></fn> <artist> - <title></action></action>", "--"
+                        , Run MPD ["-t", "<action=`mpc toggle`><action=`mpc stop` button=3><fn=1></fn> <artist> - <title></action></action> <action=`mpc prev`><fn=1></fn></action> <action=`mpc toggle`><statei></action> <action=`mpc next`><fn=1></fn></action>", "--"
                         , "-p", "6600"
                         , "-h", "127.0.0.1"
                         , "-Z", "<fn=1></fn>"
@@ -37,14 +37,14 @@ Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
         , alignSep = "}{"
         , template = " <fc=#b8bb26>%dynnetwork%</fc> %StdinReader%}{\
 
-                      -- volume template -----------------------
-                      \<fc=#d3869b><action=`mpc volume +5`><action=`mpc volume -5` button=3><fn=1></fn></action></action><action=`mpc volume +5`>\
-                      \<action=`mpc volume -5` button=3>+/-</action></action> <action=`mpc volume 0`><action=`mpc volume 50` button=3>%mpd_vol%</action></action></fc> \
+                      -- mpd tempate ---------------------------
+                      \<fc=#d3869b>%mpd%</fc>\
 
                       -- no separator --------------------------
 
-                      -- mpd tempate ---------------------------
-                      \<fc=#d3869b>%mpd%</fc>\
+                      -- volume template -----------------------
+                      \ <fc=#d3869b><action=`mpc volume +5`><action=`mpc volume -5` button=3><fn=1></fn></action></action><action=`mpc volume +5`>\
+                      \<action=`mpc volume -5` button=3>+/-</action></action> <action=`mpc volume 0`><action=`mpc volume 50` button=3>%mpd_vol%</action></action></fc>\
 
                       -- separator -----------------------------
                       \ <fc=#928374>|</fc> \
