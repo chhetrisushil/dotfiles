@@ -55,7 +55,7 @@ xset s off -dpms
 pkill mpd; mpd &
 # pkill mpdscribble;mpdscribble &
 # pkill notification-da; /usr/lib/notification-daemon-1.0/notification-daemon &
-# pkill urxvtd; urxvtd &
+pkill urxvtd; urxvtd &
 pkill trayer; trayer --edge top --SetDockType true --align right --height 14 \
       --widthtype request --tint 0x000000 --transparent true --alpha 0 &
 

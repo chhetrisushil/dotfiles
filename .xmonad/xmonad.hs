@@ -87,7 +87,7 @@ windowSpacing = 10
 
 -- scratchpads
 scratchpads = [
-    NS "terminal" "urxvt" (className =? "URxvt") (customFloating $ W.RationalRect l t w h)
+    NS "terminal" "urxvtc" (className =? "URxvt") (customFloating $ W.RationalRect l t w h)
     ]
   where
     h = 0.3               -- terminal height, 35%
