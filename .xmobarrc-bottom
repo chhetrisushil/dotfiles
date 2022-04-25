@@ -23,9 +23,12 @@ Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
                           10
                         , Run Weather "VOBL" ["-t", "<tempC>C"] 50
                         , Run Com "/home/chhetrisushil/scripts/bin/trayer-padding-icon.sh" [] "trayerpad" 20
-                        , Run MPD ["-t", "[<state>] <artist> - <title>", "--"
+                        , Run MPD ["-t", "<statei> <artist> - <title> <ipat>", "--"
                         , "-p", "6600"
                         , "-h", "127.0.0.1"
+                        , "-P", "<fn=1></fn>"
+                        , "-S", "<fn=1></fn>"
+                        , "-Z", "<fn=1></fn>"
                         ] 10
                         , Run Com "bash" ["-c", "mpc volume | awk '{print $2}'"] "mpd_vol" 10
                         , Run StdinReader
