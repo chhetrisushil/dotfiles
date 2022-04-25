@@ -30,7 +30,7 @@ Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
                         , "-S", "<fn=1></fn>"
                         , "-P", "<fn=1></fn>"
                         ] 10
-                          , Run Com "bash" ["-c", "mpc volume | awk -F '[^0-9%]*' '$0=$2'"] "mpd_vol" 10
+                        , Run Com "bash" ["-c", "mpc volume | awk -F '[^0-9%]*' '$0=$2'"] "mpd_vol" 10
                         , Run StdinReader
                     ]
         , sepChar = "%"
