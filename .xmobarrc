@@ -35,13 +35,22 @@ Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
         , template = " %StdinReader%}{\
 
                       -- network hadware template ---------------------
-                      \<box type=Bottom width=2 mb=2 color=#b8bb26><fc=#b8bb26><fn=1></fn> %eth0% - <fn=1></fn> %wlan0wi%</fc></box> <fc=#928374>|</fc> \
+                      \<box type=Bottom width=2 mb=2 color=#b8bb26><fc=#b8bb26><fn=1></fn> %eth0% - <fn=1></fn> %wlan0wi%</fc></box>\
+
+                      -- seperator ------------------------------------
+                      \ <fc=#928374>|</fc> \
 
                       -- cpu template ---------------------------------
-                      \<box type=Bottom width=2 mb=2 color=#458588><fc=#458588><fn=1></fn> %cpu%</fc></box> <fc=#928374>|</fc> \
+                      \<box type=Bottom width=2 mb=2 color=#458588><fc=#458588><fn=1></fn> %cpu%</fc></box>\
+
+                      -- seperator ------------------------------------
+                      \ <fc=#928374>|</fc> \
 
                       -- memory template ------------------------------
-                      \<box type=Bottom width=2 mb=2 color=#83a598><fc=#83a598><fn=1></fn> %memory% * %swap%</fc></box> <fc=#928374>|</fc> \
+                      \<box type=Bottom width=2 mb=2 color=#83a598><fc=#83a598><fn=1></fn> %memory% * %swap%</fc></box>\
+
+                      -- seperator ------------------------------------
+                      \ <fc=#928374>|</fc> \
 
                       -- date template --------------------------------
                       \<box type=Bottom width=2 mb=2 color=#d79921><fc=#d79921><fn=1></fn> %date%</fc></box> "
