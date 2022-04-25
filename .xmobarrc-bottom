@@ -26,9 +26,9 @@ Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
                         , Run MPD ["-t", "<statei> <artist> - <title>", "--"
                         , "-p", "6600"
                         , "-h", "127.0.0.1"
-                        , "-P", "<fn=1></fn>"
+                        , "-Z", "<fn=1></fn>"
                         , "-S", "<fn=1></fn>"
-                        , "-Z", "<fn=1></fn>"
+                        , "-P", "<fn=1></fn>"
                         ] 10
                         , Run Com "bash" ["-c", "mpc volume | awk '{print $2}'"] "mpd_vol" 10
                         , Run StdinReader
