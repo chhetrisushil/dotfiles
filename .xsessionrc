@@ -52,7 +52,7 @@ xset b off
 xset s off -dpms
 
 ## Start some useful programms
-# pkill mpd; mpd &
+pkill mpd; mpd &
 # pkill mpdscribble;mpdscribble &
 # pkill notification-da; /usr/lib/notification-daemon-1.0/notification-daemon &
 # pkill urxvtd; urxvtd &
