@@ -15,6 +15,7 @@ import System.Exit
 import System.IO (Handle, hPutStrLn)
 import XMonad.Actions.CycleWS
 import XMonad.Actions.NoBorders
+import Data.Default
 
 -- utils
 import XMonad.Util.Run (spawnPipe)
@@ -82,7 +83,12 @@ color16 = "#ebdbb2"
 colorTrayer :: String
 colorTrayer = "--tint 0x282828"
 
+-- screen spacing
+screenSpacing :: Integer
+screenSpacing = 10
+
 -- window spacing
+windowSpacing :: Integer
 windowSpacing = 10
 
 -- scratchpads
@@ -103,7 +109,7 @@ main = do
   xmprocs <- mapM(\i -> spawnPipe $ "/usr/bin/xmobar -x " ++ show i ++ " /home/chhetrisushil/.xmobarrc") [0..n-1]
   xmprocs' <- mapM(\j -> spawnPipe $ "/usr/bin/xmobar -x " ++ show j ++ " /home/chhetrisushil/.xmobarrc-bottom") [0..n-1]
 
-  xmonad $ ewmh $ withUrgencyHook NoUrgencyHook $ docks defaultConfig
+  xmonad $ ewmh $ withUrgencyHook NoUrgencyHook $ docks def
              { workspaces = myWorkspaces
              , modMask = modMask'
              , borderWidth = borderWidth'
@@ -115,12 +121,12 @@ main = do
              , logHook = do
                           -- fadeInactiveLogHook 0.7 -- fade inactive windows by 70%
                           mapM_(\h -> logHook' $ h) (xmprocs)
-                          mapM_(\h -> dynamicLogWithPP $ defaultPP {
+                          mapM_(\h -> dynamicLogWithPP $ def {
                               ppOutput = hPutStrLn h
                             , ppOrder = \(ws:l:t:_) -> []
                           })(xmprocs')
              , layoutHook = layoutHook'
-             , manageHook = namedScratchpadManageHook scratchpads <+> manageHook' <+> manageHook defaultConfig
+             , manageHook = namedScratchpadManageHook scratchpads <+> manageHook' <+> manageHook def
              , handleEventHook = fullscreenEventHook
              , focusFollowsMouse  = myFocusFollowsMouse
              , startupHook = myStartupHook
@@ -159,7 +165,7 @@ layoutHook' = customLayout
 -- Looks --
 -- bar
 customPP :: PP
-customPP = defaultPP
+customPP = def
            {
             ppCurrent = xmobarColor color06 "" . wrap ("[<box type=Bottom width=2 mb=2 color=" ++ color06 ++ ">") "</box>]"
            , ppVisible = xmobarColor color05 "" . wrap "<" ">"
@@ -202,8 +208,12 @@ myFontLarge = "xft:MesloLGSForPowerline Nerd Font:pixelsize=60:bold:antialias=tr
 myWorkspaces :: [WorkspaceId]
 myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
+-- spacing
+-- mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
+mySpacing screenSpacing windowSpacing = spacingRaw False (Border screenSpacing screenSpacing screenSpacing screenSpacing) True (Border windowSpacing windowSpacing windowSpacing windowSpacing) True
+
 -- layouts
-myTiled = spacing windowSpacing
+myTiled = mySpacing screenSpacing windowSpacing
           $ smartBorders
           $ windowNavigation
           $ subLayout [] myTabbed
@@ -211,7 +221,7 @@ myTiled = spacing windowSpacing
           $ named "Tiled"
           $ ResizableTall 1 (3/100) (52/100) []
 
-myWide = spacing windowSpacing
+myWide = mySpacing screenSpacing windowSpacing
          $ smartBorders
          $ windowNavigation
          $ subLayout [] myTabbed
@@ -219,11 +229,11 @@ myWide = spacing windowSpacing
          $ named "Wide"
          $ ThreeColMid 1 (1/20) (1/2)
 
-myFull = spacing windowSpacing $ noBorders $ named "Full" $ Full
-myTabbed = noBorders $ named "Tabs" $ tabbed shrinkText defaultTheme {
+myFull = mySpacing screenSpacing windowSpacing $ noBorders $ named "Full" $ Full
+myTabbed = noBorders $ named "Tabs" $ tabbed shrinkText def {
   fontName = myFont
 }
-mySWNConfig = defaultSWNConfig
+mySWNConfig = def
               { swn_font = myFontLarge
               , swn_fade = 1
               , swn_bgcolor = "#dddddd"
@@ -250,7 +260,7 @@ terminal' :: String
 terminal' = "terminator"
 -- terminal' = "urxvt"
 
-myXPConfig = defaultXPConfig
+myXPConfig = def
              { promptKeymap = emacsLikeXPKeymap
              , position = Top
              , promptBorderWidth = 1
