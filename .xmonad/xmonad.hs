@@ -211,7 +211,7 @@ mySpacing screenSpacing windowSpacing = spacingRaw False (Border screenSpacing s
 myTiled = renamed [XMonad.Layout.Renamed.Replace "Tiled"]
           $ smartBorders
           $ windowNavigation
-          $ subLayout [] myTabSublayout
+          $ subLayout [] myTabs
           $ mySpacing screenSpacing windowSpacing
           $ boringWindows
           $ ResizableTall 1 (3/100) (52/100) []
@@ -219,7 +219,7 @@ myTiled = renamed [XMonad.Layout.Renamed.Replace "Tiled"]
 myWide = renamed [XMonad.Layout.Renamed.Replace "Wide"]
          $ smartBorders
          $ windowNavigation
-         $ subLayout [] myTabSublayout
+         $ subLayout [] myTabs
          $ mySpacing screenSpacing windowSpacing
          $ boringWindows
          $ ThreeColMid 1 (1/20) (1/2)
@@ -231,14 +231,11 @@ myFull = renamed [XMonad.Layout.Renamed.Replace "Full"]
 
 myTabbed = renamed [XMonad.Layout.Renamed.Replace "Tabs"]
            $ noBorders
-           $ tabbed shrinkText def {
-              fontName = myFont
-            }
+           $ myTabs
 
-myTabSublayout = spacingRaw False (Border 0 0 0 0) False (Border 0 0 0 0) False
-                 $ tabbed shrinkText def {
-                    fontName = myFont
-                  }
+myTabs = tabbed shrinkText def {
+          fontName = myFont
+         }
 
 mySWNConfig = def
               { swn_font = myFontLarge
