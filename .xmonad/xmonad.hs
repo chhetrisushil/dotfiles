@@ -1,5 +1,5 @@
 {- xmonad.hs
- - Author: Rohan Jain <crodjer AT gmail DOT com>
+ - Author: Sushil Chhetri <chhetrisushil@gmail.com>
  -}
 
 -- Borrowed from the xmonad.hs by �yvind 'Mr.Elendig' Heggstad <mrelendig AT
@@ -47,6 +47,7 @@ import XMonad.Layout.SubLayouts
 import XMonad.Layout.WindowNavigation
 import XMonad.Layout.BoringWindows
 import XMonad.Layout.IndependentScreens
+import XMonad.Layout.Renamed
 
 -- imports for splitting screens
 import XMonad.Layout.LayoutScreens
@@ -85,11 +86,11 @@ colorTrayer = "--tint 0x282828"
 
 -- screen spacing
 screenSpacing :: Integer
-screenSpacing = 10
+screenSpacing = 8
 
 -- window spacing
 windowSpacing :: Integer
-windowSpacing = 10
+windowSpacing = 8
 
 -- scratchpads
 scratchpads = [
@@ -175,7 +176,7 @@ customPP = def
 
            , ppHiddenNoWindows = xmobarColor "#404040" ""
            , ppUrgent = xmobarColor color02 "" . wrap "!" "!"
-           , ppLayout = xmobarColor color07 "" . wrap ("<box type=Bottom width=2 mb=2 color=" ++ color07 ++ ">") "</box>" . myLayoutPrinter
+           , ppLayout = xmobarColor color07 "" . wrap ("<box type=Bottom width=2 mb=2 color=" ++ color07 ++ ">") "</box>"
            , ppTitle =  xmobarColor color13 "" . shorten 80
            , ppExtras = [windowCount]
            , ppOrder = \(ws:l:t:ex) -> [ws, l]++ex++[t]
@@ -184,19 +185,13 @@ customPP = def
            where
             windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
 
-myLayoutPrinter :: String -> String
-myLayoutPrinter "Spacing Full" = "Full"
-myLayoutPrinter "Spacing Tiled" = "Tiled"
-myLayoutPrinter "Spacing Wide" = "ThreeCol"
-myLayoutPrinter "Tabs" = "Tabs"
-
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = False
 
 -- borders
 borderWidth' :: Dimension
-borderWidth' = 1
+borderWidth' = 2
 
 normalBorderColor', focusedBorderColor' :: String
 normalBorderColor'  = "#CCCCCC"
@@ -213,26 +208,38 @@ myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 mySpacing screenSpacing windowSpacing = spacingRaw False (Border screenSpacing screenSpacing screenSpacing screenSpacing) True (Border windowSpacing windowSpacing windowSpacing windowSpacing) True
 
 -- layouts
-myTiled = mySpacing screenSpacing windowSpacing
+myTiled = renamed [XMonad.Layout.Renamed.Replace "Tiled"]
           $ smartBorders
           $ windowNavigation
-          $ subLayout [] myTabbed
+          $ subLayout [] myTabSublayout
+          $ mySpacing screenSpacing windowSpacing
           $ boringWindows
-          $ named "Tiled"
           $ ResizableTall 1 (3/100) (52/100) []
 
-myWide = mySpacing screenSpacing windowSpacing
+myWide = renamed [XMonad.Layout.Renamed.Replace "Wide"]
          $ smartBorders
          $ windowNavigation
-         $ subLayout [] myTabbed
+         $ subLayout [] myTabSublayout
+         $ mySpacing screenSpacing windowSpacing
          $ boringWindows
-         $ named "Wide"
          $ ThreeColMid 1 (1/20) (1/2)
 
-myFull = mySpacing screenSpacing windowSpacing $ noBorders $ named "Full" $ Full
-myTabbed = noBorders $ named "Tabs" $ tabbed shrinkText def {
-  fontName = myFont
-}
+myFull = renamed [XMonad.Layout.Renamed.Replace "Full"]
+         $ mySpacing screenSpacing windowSpacing 
+         $ noBorders
+         $ Full
+
+myTabbed = renamed [XMonad.Layout.Renamed.Replace "Tabs"]
+           $ noBorders
+           $ tabbed shrinkText def {
+              fontName = myFont
+            }
+
+myTabSublayout = spacingRaw False (Border 0 0 0 0) False (Border 0 0 0 0) False
+                 $ tabbed shrinkText def {
+                    fontName = myFont
+                  }
+
 mySWNConfig = def
               { swn_font = myFontLarge
               , swn_fade = 1
@@ -292,9 +299,9 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,               xK_space ), sendMessage NextLayout)
     , ((modMask .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
     , ((modMask              , xK_b     ), sendMessage ToggleStruts)
-    , ((modMask              , xK_f     ), sendMessage $ JumpToLayout "Spacing Full")
-    , ((modMask              , xK_r     ), sendMessage $ JumpToLayout "Spacing Tiled")
-    , ((modMask              , xK_w     ), sendMessage $ JumpToLayout "Spacing Wide")
+    , ((modMask              , xK_f     ), sendMessage $ JumpToLayout "Full")
+    , ((modMask              , xK_r     ), sendMessage $ JumpToLayout "Tiled")
+    , ((modMask              , xK_w     ), sendMessage $ JumpToLayout "Wide")
     -- Don't need split screens right now :)
     , ((modMask .|. controlMask, xK_l   ), layoutSplitScreen 2 (TwoPane 0.5 0.5))
     , ((modMask .|. controlMask, xK_r   ), rescreen)
@@ -313,8 +320,8 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,                 xK_o   ),  shiftNextScreen)
 
     -- focus
-    , ((modMask,               xK_j     ), bindOn LD [("Spacing Full", windows W.focusDown), ("", focusDown)])
-    , ((modMask,               xK_k     ), bindOn LD [("Spacing Full", windows W.focusUp), ("", focusUp)])
+    , ((modMask,               xK_j     ), bindOn LD [("Full", windows W.focusDown), ("", focusDown)])
+    , ((modMask,               xK_k     ), bindOn LD [("Full", windows W.focusUp), ("", focusUp)])
     , ((modMask,               xK_m     ), focusMaster)
 
     -- Scratchpad
