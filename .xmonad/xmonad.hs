@@ -195,7 +195,7 @@ borderWidth' = 2
 
 normalBorderColor', focusedBorderColor' :: String
 normalBorderColor'  = "#4A4A4A"
-focusedBorderColor' = "#005595"
+focusedBorderColor' = "#00FF15"
 myFont = "xft:MesloLGSForPowerline Nerd Font:pixelsize=12:bold:antialias=true:hinting=true"
 myFontLarge = "xft:MesloLGSForPowerline Nerd Font:pixelsize=60:bold:antialias=true:hinting=true"
 
