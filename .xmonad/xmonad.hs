@@ -59,6 +59,7 @@ import XMonad.Hooks.SetWMName
 -- Scratchpad
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.WorkspaceCompare
+import XMonad.Util.EZConfig
 
 -- color definitions
 colorBack = "#282828"
@@ -131,7 +132,7 @@ main = do
              , handleEventHook = fullscreenEventHook
              , focusFollowsMouse  = myFocusFollowsMouse
              , startupHook = myStartupHook
-             }
+             } `additionalKeysP` myAdditionalKeys
 
 -------------------------------------------------------------------------------
 -- Hooks --
@@ -370,3 +371,12 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 --   [((0, 7), (\w -> nextWS))
 --   , ((0, 6), (\w -> prevWS))
 --   ]
+
+---------------------------------------------------------------------------
+-- Add additional key bindings, best part is we can add sequencing which --
+-- brings more combination possibilities                                 --
+---------------------------------------------------------------------------
+myAdditionalKeys :: [(String, X ())]
+myAdditionalKeys = [
+  ("M-a r", spawn "urxvtc -e ranger")
+  ]
