@@ -95,13 +95,26 @@ windowSpacing = 8
 
 -- scratchpads
 scratchpads = [
-    NS "terminal" "urxvtc -name UrxvtScratchpad" (appName =? "UrxvtScratchpad") (customFloating $ W.RationalRect l t w h)
+    NS "terminal" spawnTerm findTerm manageTerm
+    , NS "music" spawnMusic findMusic manageMusic
     ]
   where
-    h = 0.3               -- terminal height, 35%
-    w = 1                 -- terminal width, 100%
-    t = 0                 -- terminal distance from top edge, 0
-    l = 0                 -- terminal distance from left edge, 0
+    spawnTerm = "urxvtc -name UrxvtScratchpad"
+    findTerm = (appName =? "UrxvtScratchpad")
+    manageTerm = (customFloating $ W.RationalRect l t w h)
+      where
+        h = 0.3               -- terminal height, 35%
+        w = 1                 -- terminal width, 100%
+        t = 0                 -- terminal distance from top edge, 0
+        l = 0                 -- terminal distance from left edge, 0
+    spawnMusic = "urxvtc -name MusicScratchpad -e ncmpcpp"
+    findMusic = (appName =? "MusicScratchpad")
+    manageMusic = (customFloating $ W.RationalRect l t w h)
+      where
+        h = 0.9               -- terminal height, 90%
+        w = 0.9               -- terminal width, 90%
+        t = 0.95 -h
+        l = 0.95 -w
 
 -------------------------------------------------------------------------------
 -- Main --
@@ -378,5 +391,15 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 ---------------------------------------------------------------------------
 myAdditionalKeys :: [(String, X ())]
 myAdditionalKeys = [
-  ("M-a r", spawn "urxvtc -e ranger")
+  ("M-a " ++ key, f)
+    | (key, f) <- [
+    -- this section will bind a sequence with prefix `Mod+a <key>`
+    ("r", spawn "urxvtc -e ranger")
+    , ("m", namedScratchpadAction scratchpads "music")
+    ]
+  ]
+  ++
+  [
+  -- this section will bind whatever key bindings you add
+  ("M-u", spawn "urxvtc")
   ]
