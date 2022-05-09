@@ -35,6 +35,10 @@ lua <<EOF
     }
   })
 
-  vim.cmd [[highlight! default link CmpItemKind CmpItemMenuDefault]]
+  vim.cmd [[highlight! default link CmpItemAbbr Pmenu]]
+  vim.cmd [[highlight! default link CmpItemAbbrMatch PmenuSel]]
+  vim.cmd [[highlight! default link CmpItemAbbrMatchFuzzy PmenuSel]]
+  vim.cmd [[highlight! default link CmpItemKind Pmenu]]
+  vim.cmd [[highlight! default link CmpItemMenu Pmenu]]
 EOF
 
