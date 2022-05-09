@@ -134,4 +134,7 @@ Plug 'kevinhwang91/rnvimr'
 " tab styling
 Plug 'nanozuki/tabby.nvim'
 
+" style todo comments
+Plug 'folke/todo-comments.nvim'
+
 call plug#end()
