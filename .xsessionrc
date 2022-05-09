@@ -53,13 +53,10 @@ xset s off -dpms
 
 ## Start some useful programms
 pkill mpd; mpd &
-# pkill mpdscribble;mpdscribble &
 # pkill notification-da; /usr/lib/notification-daemon-1.0/notification-daemon &
 pkill urxvtd; urxvtd &
-# pkill trayer; trayer --edge top --SetDockType true --align right --height 14 \
-#       --widthtype request --tint 0x000000 --transparent true --alpha 0 &
+pkill trayer; trayer --edge bottom --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x282828 --height 25 &
+pkill clipit; clipit &
+pkill flameshot; flameshot &
 
-# pkill nm-applet; nm-applet &
-# dropbox start
-# xautolock -exit; xautolock -time 10 -locker "alock -c glyph" &
 compton -c -b
