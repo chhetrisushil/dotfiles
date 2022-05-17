@@ -137,4 +137,7 @@ Plug 'nanozuki/tabby.nvim'
 " style todo comments
 Plug 'folke/todo-comments.nvim'
 
+" org mode
+Plug 'nvim-orgmode/orgmode'
+
 call plug#end()
