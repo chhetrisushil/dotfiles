@@ -139,5 +139,7 @@ Plug 'folke/todo-comments.nvim'
 
 " org mode
 Plug 'nvim-orgmode/orgmode'
+Plug 'lukas-reineke/headlines.nvim'
+Plug 'akinsho/org-bullets.nvim'
 
 call plug#end()
