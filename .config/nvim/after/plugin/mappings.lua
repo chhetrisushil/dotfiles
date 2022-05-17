@@ -10,7 +10,7 @@ wk.register({
     name = "Misc Bindings",
     n = {"<cmd>setlocal number!<CR>", "Toggle Line Numbers"},
   },
-  o = {"<cmd>set paste!<CR>", "Toggle Paste"},
+  ["ot"] = {"<cmd>set paste!<CR>", "Toggle Paste"},
   a = {":tab split<CR>:Ack ''<Left>", "Search in new Tab", silent=false},
   A = {":tab split<CR>:Ack <C-r><C-w><CR>", "Search word in new Tab", silent=false},
   e = {
