@@ -132,7 +132,7 @@ Plug 'APZelos/blamer.nvim'
 Plug 'kevinhwang91/rnvimr'
 
 " tab styling
-Plug 'nanozuki/tabby.nvim'
+Plug 'seblj/nvim-tabline'
 
 " style todo comments
 Plug 'folke/todo-comments.nvim'
