@@ -53,7 +53,7 @@ SOLARIZED_THEME="dark"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git svn zsh-autosuggestions zsh-syntax-highlighting zsh-z)
+plugins=(git svn mercurial zsh-autosuggestions zsh-syntax-highlighting zsh-z)
 
 # User configuration
 
