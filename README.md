@@ -5,7 +5,20 @@ This repo is just to store my dot config files for example .vimrc etc
 reference: https://github.com/sagarrakshe/dotvim, https://github.com/sagarrakshe/dotfiles
 
 # Setup
-Run the following command to set up the environment `bash -c "$(wget https://https://raw.githubusercontent.com/chhetrisushil/dotfiles/master/setup.sh -O -)"`
+Run the following command to set up the environment
+
+with `wget`:
+```
+bash -c "$(wget https://raw.githubusercontent.com/chhetrisushil/dotfiles/master/setup.sh -O -)"
+```
+
+OR
+
+with `curl`:
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/chhetrisushil/dotfiles/master/setup.sh)"
+```
+----------------------------------------------
 
 ## Autolock 'alock'
 install alock from https://github.com/chhetrisushil/alock
