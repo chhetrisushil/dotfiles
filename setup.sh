@@ -3,6 +3,13 @@
 # return errors
 set -e
 
+PREFIX_SUDO=''
+
+# check if user is root
+if [ "$(id -u)" != "0" ]; then
+    PREFIX_SUDO='sudo'
+fi
+
 # some dir path variables
 SSH_DIR="$HOME/.ssh"
 DOTFILES_DIR="$HOME/dotfiles"
@@ -11,7 +18,7 @@ DOTFILES_DIR="$HOME/dotfiles"
 if ! [ -x "$(command -v ansible)" ]; then
     # install ansible
     echo "Installing Ansible..."
-    sudo pacman -S ansible --noconfirm
+    $PREFIX_SUDO pacman -S ansible --noconfirm
 fi
 
 # check if public key is already in place
@@ -25,7 +32,7 @@ if ! [[ -f "$SSH_DIR/id_rsa" ]]; then
     if ! [ -x "$(command -v ssh-keygen)" ]; then
         # install openssh
         echo "Installing OpenSSH..."
-        sudo pacman -S openssh --noconfirm
+        PREFIX_SUDO pacman -S openssh --noconfirm
     fi
 
     # create ssh key
@@ -45,7 +52,7 @@ fi
 if ! [ -x "$(command -v git)" ]; then
     # install git
     echo "Installing git..."
-    sudo pacman -S git --noconfirm
+    PREFIX_SUDO pacman -S git --noconfirm
 fi
 
 # check if dotfiles are already present
