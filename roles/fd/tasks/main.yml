@@ -1,6 +1,6 @@
 ---
 - name: Install fd
-  community.general.pacman:
+  package:
     name: fd
     state: present
   become: yes

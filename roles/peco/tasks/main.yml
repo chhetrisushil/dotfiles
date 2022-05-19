@@ -1,6 +1,6 @@
 ---
 - name: Install peco
-  community.general.pacman:
+  package:
     name: peco
     state: present
   become: yes

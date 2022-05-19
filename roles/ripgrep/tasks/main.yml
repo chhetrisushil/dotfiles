@@ -1,6 +1,6 @@
 ---
 - name: Install ripgrep
-  community.general.pacman:
+  package:
     name: ripgrep
     state: present
   become: yes

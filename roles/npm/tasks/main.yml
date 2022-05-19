@@ -1,6 +1,6 @@
 ---
 - name: Install npm
-  community.general.pacman:
+  package:
     name: npm
     state: present
   become: yes

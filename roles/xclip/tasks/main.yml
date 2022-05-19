@@ -1,6 +1,6 @@
 ---
 - name: Install xclip
-  community.general.pacman:
+  package:
     name: xclip
     state: present
   become: yes

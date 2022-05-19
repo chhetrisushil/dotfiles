@@ -1,6 +1,6 @@
 ---
 - name: Install plocate
-  community.general.pacman:
+  package:
     name: plocate
     state: present
   become: yes

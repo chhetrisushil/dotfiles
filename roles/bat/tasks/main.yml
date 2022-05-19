@@ -1,6 +1,6 @@
 ---
 - name: Install bat
-  community.general.pacman:
+  package:
     name: bat
     state: present
   become: yes

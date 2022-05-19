@@ -1,6 +1,6 @@
 ---
 - name: Install ueberzug
-  community.general.pacman:
+  package:
     name: ueberzug
     state: present
   become: yes

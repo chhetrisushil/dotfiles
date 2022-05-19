@@ -1,6 +1,6 @@
 ---
 - name: Install ruby
-  community.general.pacman:
+  package:
     name: ruby
     state: present
   become: yes

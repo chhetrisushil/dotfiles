@@ -1,6 +1,6 @@
 ---
 - name: Install glow
-  community.general.pacman:
+  package:
     name: glow
     state: present
   become: yes

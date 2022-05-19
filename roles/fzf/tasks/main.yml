@@ -1,6 +1,6 @@
 ---
 - name: Install fzf
-  community.general.pacman:
+  package:
     name: fzf
     state: present
   become: yes

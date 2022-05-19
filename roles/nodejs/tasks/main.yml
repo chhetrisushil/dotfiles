@@ -1,6 +1,6 @@
 ---
 - name: Install nodejs
-  community.general.pacman:
+  package:
     name: nodejs
     state: present
   become: yes
