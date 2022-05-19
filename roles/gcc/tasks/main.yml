@@ -1,0 +1,6 @@
+---
+- name: Install gcc
+  community.general.pacman:
+    name: gcc
+    state: present
+  become: yes

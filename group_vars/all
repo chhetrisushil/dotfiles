@@ -2,4 +2,7 @@ default_roles:
   - rsync
   - ctags
   - peco
+  - gcc
+  - make
+  - fzf
   - neovim

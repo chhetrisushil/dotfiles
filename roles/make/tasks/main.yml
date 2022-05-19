@@ -1,0 +1,6 @@
+---
+- name: Install make
+  community.general.pacman:
+    name: make
+    state: present
+  become: yes
