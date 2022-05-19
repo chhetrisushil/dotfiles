@@ -12,7 +12,7 @@ fi
 
 # some dir path variables
 SSH_DIR="$HOME/.ssh"
-DOTFILES_DIR="$HOME/dotfiles"
+DOTFILES_DIR="$HOME/.dotfiles"
 
 # check if ansible is installed
 if ! [ -x "$(command -v ansible)" ]; then
