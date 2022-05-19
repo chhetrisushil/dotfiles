@@ -64,4 +64,4 @@
   become: yes
 
 - name: Configure neovim plugins
-  command: neovim --headless +PlugInstall +qa
+  command: nvim --headless +PlugInstall +qa
