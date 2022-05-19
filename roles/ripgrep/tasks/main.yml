@@ -1,6 +1,6 @@
 ---
-- name: Install rg
+- name: Install ripgrep
   community.general.pacman:
-    name: rg
+    name: ripgrep
     state: present
   become: yes
