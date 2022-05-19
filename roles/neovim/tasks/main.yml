@@ -22,3 +22,7 @@
     dest: "{{ ansible_user_dir }}/.config/"
     src: "../../../.config/nvim"
     owner: yes
+
+- name: Install pynvim
+  pip:
+    name: pynvim

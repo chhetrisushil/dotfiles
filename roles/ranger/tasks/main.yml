@@ -1,0 +1,7 @@
+---
+- name: Install ranger
+  pip:
+    name: ranger-fm
+
+- name: Configure ranger
+  command: ranger --copy-config=all

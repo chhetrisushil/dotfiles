@@ -5,4 +5,5 @@ default_roles:
   - gcc
   - make
   - fzf
+  - ranger
   - neovim
