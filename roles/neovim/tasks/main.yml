@@ -4,3 +4,8 @@
     name: neovim
     state: present
   become: yes
+
+- name: Copy .vimrc
+  ansible.builtin.copy:
+    dest: "{{ ansible_user_dir }}"
+    src: "../../../.vimrc"
