@@ -1,0 +1,6 @@
+---
+- name: Install rsync
+  community.general.pacman:
+    name: rsync
+    state: present
+  become: yes
