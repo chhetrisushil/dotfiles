@@ -47,7 +47,7 @@
 
 - name: Install instant markdown daemon
   community.general.npm:
-    name: instant-markdown-d@next
+    name: instant-markdown-d
     global: yes
   become: yes
 
