@@ -30,6 +30,7 @@
 - name: Install neovim gem
   community.general.gem:
     name: neovim
+    norc: false
   become: yes
 
 - name: Install npm neovim
