@@ -1,5 +1,11 @@
+local status_ok, orgmode = pcall(require, 'orgmode')
+
+if not status_ok then
+  return
+end
+
 -- Load custom tree-sitter grammar for org filetype
-require('orgmode').setup_ts_grammar()
+orgmode.setup_ts_grammar()
 
 -- Tree-sitter configuration
 require'nvim-treesitter.configs'.setup {

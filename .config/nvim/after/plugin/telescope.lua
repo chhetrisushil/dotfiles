@@ -1,5 +1,5 @@
 -- load extensions for telescope
-local telescope = require 'telescope'
+local status_ok, telescope = pcall(require, 'telescope')
 
 -- set this variable if you want to change the repo listing path. Use `:lua workspace_loc='<path you want to look for repos>'`
 workspace_loc = '~/workspace'
