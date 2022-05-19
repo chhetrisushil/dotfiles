@@ -105,9 +105,6 @@ let g:airline_theme='lucius'
 " color scheme
 colorscheme gruvbox
 
-" fix yankstack key mapping
-call yankstack#setup()
-
 " ack.vim config to remap to ag (silver searcher)
 let g:ackprg = 'ag --vimgrep --smart-case'
 cnoreabbrev ag Ack

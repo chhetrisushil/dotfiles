@@ -34,7 +34,7 @@ Plug 'sagarrakshe/ack.vim'
 " Plug 'jceb/vim-orgmode'
 
 " Paste from history
-Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'maxbrunsfeld/vim-yankstack', { 'do': { -> yankstack#setup() } }
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'heavenshell/vim-jsdoc'
