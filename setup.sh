@@ -66,7 +66,6 @@ else
     git -C "$DOTFILES_DIR" pull
 fi
 
-# TODO: find out how and why to use requirements.yml in ansible
 # check if requirements.yml is present
 if [[ -f "$DOTFILES_DIR/requirements.yml" ]]; then
     # change into dotfiles dir
