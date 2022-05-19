@@ -7,7 +7,7 @@ default_roles:
   - fzf
   - pip
   - ranger
-  - node
+  - nodejs
   - npm
   - fd
   - ripgrep
