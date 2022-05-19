@@ -3,3 +3,4 @@
   community.general.pacman:
     name: peco
     state: present
+    become: yes
