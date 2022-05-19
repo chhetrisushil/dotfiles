@@ -1,0 +1,5 @@
+---
+- name: Install peco
+  community.general.pacman:
+    name: peco
+    state: present
