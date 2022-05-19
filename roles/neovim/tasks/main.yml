@@ -3,3 +3,4 @@
   community.general.pacman:
     name: neovim
     state: present
+    become: yes
