@@ -38,3 +38,27 @@
     name: neovim
     global: yes
   become: yes
+
+- name: Install diagnostic languageserver
+  community.general.npm:
+    name: diagnostic-languageserver
+    global: yes
+  become: yes
+
+- name: Install instant markdown daemon
+  community.general.npm:
+    name: instant-markdown-d@next
+    global: yes
+  become: yes
+
+- name: Install typescript
+  community.general.npm:
+    name: typescript
+    global: yes
+  become: yes
+
+- name: Install typescript language server
+  community.general.npm:
+    name: typescript-language-server
+    global: yes
+  become: yes
