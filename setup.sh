@@ -33,3 +33,39 @@ if ! [[ -f "$SSH_DIR/id_rsa" ]]; then
     echo "Giving user permissions to authorized_keys..."
     chmod 600 "$SSH_DIR/authorized_keys"
 fi
+
+# check if git is present
+if ! [ -x "$(command -v git)" ]; then
+    # install git
+    echo "Installing git..."
+    sudo pacman -S git --noconfirm
+fi
+
+# check if dotfiles are already present
+if ! [[ -d "$DOTFILES_DIR" ]]; then
+    # clone dotfiles
+    echo "Cloning dotfiles..."
+    git clone https://github.com/chhetrisushil/dotfiles.git "$DOTFILES_DIR"
+fi
+
+# check if requirements.yml is present
+if [[ -f "$DOTFILES_DIR/requirements.yml" ]]; then
+    # change into dotfiles dir
+    echo "Changing into dotfiles dir..."
+    cd "$DOTFILES_DIR"
+
+    # check if requirements
+    echo "Checking requirements..."
+    ansible-galaxy install -r "$DOTFILES_DIR/requirements.yml"
+fi
+
+# check if main.yml is present
+if [[ -f "$DOTFILES_DIR/main.yml" ]]; then
+    # change into dotfiles dir
+    echo "Changing into dotfiles dir..."
+    cd "$DOTFILES_DIR"
+
+    # run ansible
+    echo "Running ansible..."
+    ansible-playbook --diff "$DOTFILES_DIR/main.yml"
+fi
