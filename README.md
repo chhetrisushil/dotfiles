@@ -9,14 +9,14 @@ Run the following command to set up the environment
 
 with `wget`:
 ```
-bash -c "$(wget https://raw.githubusercontent.com/chhetrisushil/dotfiles/master/setup.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/chhetrisushil/dotfiles/master/setup.sh -O -)"
 ```
 
 OR
 
 with `curl`:
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/chhetrisushil/dotfiles/master/setup.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/chhetrisushil/dotfiles/master/setup.sh)"
 ```
 ----------------------------------------------
 
