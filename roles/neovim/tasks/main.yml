@@ -6,11 +6,19 @@
   become: yes
 
 - name: Copy .vimrc
-  ansible.builtin.copy:
+  synchronize:
     dest: "{{ ansible_user_dir }}"
     src: "../../../.vimrc"
+    owner: yes
 
 - name: Copy .vim folder
-  ansible.builtin.copy:
+  synchronize:
     dest: "{{ ansible_user_dir }}"
     src: "../../../.vim"
+    owner: yes
+
+- name: Copy nvim folder
+  synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: "../../../.config/nvim"
+    owner: yes
