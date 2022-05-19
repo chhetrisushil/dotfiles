@@ -21,6 +21,13 @@ if ! [[ -f "$SSH_DIR/id_rsa" ]]; then
     mkdir -p "$SSH_DIR"
     chmod 700 "$SSH_DIR"
 
+    # check if openssh is installed
+    if ! [ -x "$(command -v ssh-keygen)" ]; then
+        # install openssh
+        echo "Installing OpenSSH..."
+        sudo pacman -S openssh --noconfirm
+    fi
+
     # create ssh key
     echo "Creating SSH key..."
     ssh-keygen -t ed25519 -N "" -C "$USER@$HOSTNAME" -f "$SSH_DIR/id_rsa"
