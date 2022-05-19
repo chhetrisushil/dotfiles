@@ -60,6 +60,10 @@ if ! [[ -d "$DOTFILES_DIR" ]]; then
     # clone dotfiles
     echo "Cloning dotfiles..."
     git clone https://github.com/chhetrisushil/dotfiles.git "$DOTFILES_DIR"
+else
+    # update dotfiles
+    echo "Updating dotfiles..."
+    git -C "$DOTFILES_DIR" pull
 fi
 
 # TODO: find out how and why to use requirements.yml in ansible
