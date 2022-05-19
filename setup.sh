@@ -48,6 +48,7 @@ if ! [[ -d "$DOTFILES_DIR" ]]; then
     git clone https://github.com/chhetrisushil/dotfiles.git "$DOTFILES_DIR"
 fi
 
+# TODO: find out how and why to use requirements.yml in ansible
 # check if requirements.yml is present
 if [[ -f "$DOTFILES_DIR/requirements.yml" ]]; then
     # change into dotfiles dir
