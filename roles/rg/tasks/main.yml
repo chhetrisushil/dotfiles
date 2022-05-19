@@ -1,0 +1,6 @@
+---
+- name: Install rg
+  community.general.pacman:
+    name: rg
+    state: present
+  become: yes

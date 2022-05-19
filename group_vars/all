@@ -7,4 +7,13 @@ default_roles:
   - fzf
   - pip
   - ranger
+  - node
+  - fd
+  - rg
+  - xclip
+  - ruby
+  - ueberzug
+  - glow
+  - bat
+  - plocate
   - neovim

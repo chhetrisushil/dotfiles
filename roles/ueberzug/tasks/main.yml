@@ -1,0 +1,6 @@
+---
+- name: Install ueberzug
+  community.general.pacman:
+    name: ueberzug
+    state: present
+  become: yes
