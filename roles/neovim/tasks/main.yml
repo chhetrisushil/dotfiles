@@ -26,3 +26,14 @@
 - name: Install pynvim
   pip:
     name: pynvim
+
+- name: Install neovim gem
+  community.general.gem:
+    name: neovim
+  become: yes
+
+- name: Install npm neovim
+  community.general.npm:
+    name: neovim
+    global: yes
+  become: yes
