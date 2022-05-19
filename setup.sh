@@ -32,7 +32,7 @@ if ! [[ -f "$SSH_DIR/id_rsa" ]]; then
     if ! [ -x "$(command -v ssh-keygen)" ]; then
         # install openssh
         echo "Installing OpenSSH..."
-        PREFIX_SUDO pacman -S openssh --noconfirm
+        $PREFIX_SUDO pacman -S openssh --noconfirm
     fi
 
     # create ssh key
@@ -52,7 +52,7 @@ fi
 if ! [ -x "$(command -v git)" ]; then
     # install git
     echo "Installing git..."
-    PREFIX_SUDO pacman -S git --noconfirm
+    $PREFIX_SUDO pacman -S git --noconfirm
 fi
 
 # check if dotfiles are already present
