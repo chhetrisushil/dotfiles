@@ -10,16 +10,19 @@
     repo: https://github.com/ohmyzsh/ohmyzsh.git
     dest: "{{ansible_user_dir}}/.oh-my-zsh"
 
+- name: Copy .zshrc
+  synchronize:
+    dest: "{{ ansible_user_dir }}"
+    src: "../../../.zshrc"
+
+- name: Copy .zshrc_local
+  synchronize:
+    dest: "{{ ansible_user_dir }}"
+    src: "../../../.zshrc_local"
+
 - name: set default shell for users
-  become: yes
   user:
-    name: '{{ user.username }}'
     shell: /bin/zsh
-  with_items: "{{ users }}"
-  when: "((user.oh_my_zsh | default({})).install | default(oh_my_zsh_install)) | bool"
-  loop_control:
-    loop_var: user
-    label: '{{ user.username }}'
 
 - name: Setup oh-my-zsh gruvbox theme
   command: curl -L https://raw.githubusercontent.com/sbugzu/gruvbox-zsh/master/gruvbox.zsh-theme > ~/.oh-my-zsh/custom/themes/gruvbox.zsh-theme
@@ -38,13 +41,3 @@
   git:
     repo: https://github.com/agkozak/zsh-z
     dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/zsh-z"
-
-- name: Copy .zshrc
-  synchronize:
-    dest: "{{ ansible_user_dir }}"
-    src: "../../../.zshrc"
-
-- name: Copy .zshrc_local
-  synchronize:
-    dest: "{{ ansible_user_dir }}"
-    src: "../../../.zshrc_local"
