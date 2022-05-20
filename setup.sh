@@ -28,6 +28,13 @@ if [ "$SHELL" != "$(command -v zsh)" ]; then
     $PREFIX_SUDO chsh -s $(command -v zsh)
 fi
 
+# check if git is present
+if ! [ -x "$(command -v git)" ]; then
+    # install git
+    echo "Installing git..."
+    $PREFIX_SUDO pacman -S git --noconfirm
+fi
+
 # check if oh-my-zsh is setup
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     # setup oh-my-zsh
@@ -67,13 +74,6 @@ if ! [[ -f "$SSH_DIR/id_rsa" ]]; then
     # give user permissions to authorized_keys
     echo "Giving user permissions to authorized_keys..."
     chmod 600 "$SSH_DIR/authorized_keys"
-fi
-
-# check if git is present
-if ! [ -x "$(command -v git)" ]; then
-    # install git
-    echo "Installing git..."
-    $PREFIX_SUDO pacman -S git --noconfirm
 fi
 
 # check if dotfiles are already present
