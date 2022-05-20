@@ -48,7 +48,7 @@ alias view='cat $(fd -H . | peco)'
 
 export EDITOR=nvim
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export PATH=/usr/local/go/bin:$GEM_HOME/bin:$PATH
+export PATH=/usr/local/go/bin:$GEM_HOME/bin:$HOME/.local/bin:$PATH
 
 # Peco history selection
 function peco-history-selection() {
