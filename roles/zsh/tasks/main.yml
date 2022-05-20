@@ -6,7 +6,12 @@
   become: yes
 
 - name: Install oh-my-zsh
-  command: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: "{{ansible_user_dir}}/.oh-my-zsh"
+
+- name: Set zsh default shell
+  command: "chsh -s $(which zsh) {{ansible_user}}"
 
 - name: Setup oh-my-zsh gruvbox theme
   command: curl -L https://raw.githubusercontent.com/sbugzu/gruvbox-zsh/master/gruvbox.zsh-theme > ~/.oh-my-zsh/custom/themes/gruvbox.zsh-theme
