@@ -22,10 +22,10 @@ if ! [ -x "$(command -v zsh)" ]; then
 fi
 
 # check if zsh is default shell
-if [ "$SHELL" != "$(which zsh)" ]; then
+if [ "$SHELL" != "$(command -v zsh)" ]; then
     # set zsh as default shell
     echo "Setting zsh as default shell..."
-    $PREFIX_SUDO chsh -s $(which zsh)
+    $PREFIX_SUDO chsh -s $(command -v zsh)
 fi
 
 # check if oh-my-zsh is setup
