@@ -14,6 +14,27 @@ fi
 SSH_DIR="$HOME/.ssh"
 DOTFILES_DIR="$HOME/.dotfiles"
 
+# check if zsh is installed
+if ! [ -x "$(command -v zsh)" ]; then
+    #install zsh
+    echo "Installing zsh..."
+    $PREFIX_SUDO pacman -S zsh --noconfirm
+fi
+
+# check if zsh is default shell
+if [ "$SHELL" != "$(which zsh)" ]; then
+    # set zsh as default shell
+    echo "Setting zsh as default shell..."
+    $PREFIX_SUDO chsh -s $(which zsh)
+fi
+
+# check if oh-my-zsh is setup
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    # setup oh-my-zsh
+    echo "Setting up oh-my-zsh..."
+    $PREFIX_SUDO sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+
 # check if ansible is installed
 if ! [ -x "$(command -v ansible)" ]; then
     # install ansible

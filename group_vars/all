@@ -1,5 +1,5 @@
 default_roles:
-  - zsh
+  - ohmyzsh
   - rsync
   - ctags
   - peco
