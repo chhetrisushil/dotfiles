@@ -1,0 +1,6 @@
+---
+- name: Install exa
+  package:
+    name: exa
+    state: present
+  become: yes
