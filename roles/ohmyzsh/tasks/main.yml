@@ -4,11 +4,6 @@
     dest: "{{ ansible_user_dir }}"
     src: "../../../.zshrc"
 
-- name: Copy .zshrc_local
-  synchronize:
-    dest: "{{ ansible_user_dir }}"
-    src: "../../../.zshrc_local"
-
 - name: Setup oh-my-zsh gruvbox theme
   shell: curl -L https://raw.githubusercontent.com/sbugzu/gruvbox-zsh/master/gruvbox.zsh-theme > ~/.oh-my-zsh/custom/themes/gruvbox.zsh-theme
 
