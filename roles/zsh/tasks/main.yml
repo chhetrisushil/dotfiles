@@ -20,7 +20,7 @@
     src: "../../../.zshrc_local"
 
 - name: Setup oh-my-zsh gruvbox theme
-  command: curl -L https://raw.githubusercontent.com/sbugzu/gruvbox-zsh/master/gruvbox.zsh-theme > ~/.oh-my-zsh/custom/themes/gruvbox.zsh-theme
+  shell: curl -L https://raw.githubusercontent.com/sbugzu/gruvbox-zsh/master/gruvbox.zsh-theme > ~/.oh-my-zsh/custom/themes/gruvbox.zsh-theme
 
 - name: Setup oh-my-zsh zsh-autosuggestions plugin
   git:
