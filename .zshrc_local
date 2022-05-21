@@ -64,7 +64,7 @@ function peco-history-selection() {
 zle -N peco-history-selection
 bindkey -a '/' peco-history-selection
 
-fortune | cowsay -f tux
+# fortune | cowsay -f tux
 
 
 # example to write shell script function to handle options
