@@ -1,0 +1,36 @@
+---
+- name: Copy .bashrc
+  synchronize:
+    dest: "{{ansible_user_dir}}"
+    src: "../../../.bashrc"
+    owner: yes
+
+- name: Copy .bash_profile
+  synchronize:
+    dest: "{{ansible_user_dir}}"
+    src: "../../../.bash_profile"
+    owner: yes
+
+- name: Copy .Xresources
+  synchronize:
+    dest: "{{ansible_user_dir}}"
+    src: "../../../.Xresources"
+    owner: yes
+
+- name: Copy .xinitrc
+  synchronize:
+    dest: "{{ansible_user_dir}}"
+    src: "../../../.xinitrc"
+    owner: yes
+
+- name: Copy .xsession
+  synchronize:
+    dest: "{{ansible_user_dir}}"
+    src: "../../../.xsession"
+    owner: yes
+
+- name: Copy .xsessionrc
+  synchronize:
+    dest: "{{ansible_user_dir}}"
+    src: "../../../.xsessionrc"
+    owner: yes

@@ -1,0 +1,12 @@
+---
+- name: Install terminator
+  package:
+    name: terminator
+    state: present
+  become: yes
+
+- name: Copy terminator config
+  synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: "../../../.config/terminator"
+    owner: yes

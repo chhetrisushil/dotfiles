@@ -1,6 +1,10 @@
 default_roles:
   - rsync
   - ohmyzsh
+  - copyconfigs
+  - tmux
+  - ag
+  - terminator
   - exa
   - ctags
   - peco

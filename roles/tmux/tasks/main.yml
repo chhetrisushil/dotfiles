@@ -1,0 +1,18 @@
+---
+- name: Install tmux
+  package:
+    name: tmux
+    state: present
+  become: yes
+
+- name: Copy .tmux.conf
+  synchronize:
+    dest: "{{ ansible_user_dir }}"
+    src: "../../../.tmux/.tmux.conf"
+    owner: yes
+
+- name: Copy .tmux.conf.local
+  synchronize:
+    dest: "{{ ansible_user_dir }}"
+    src: "../../../.tmux/.tmux.conf.local"
+    owner: yes
