@@ -81,6 +81,12 @@ if ! [[ -d "$DOTFILES_DIR" ]]; then
     # clone dotfiles
     echo "Cloning dotfiles..."
     git clone https://github.com/chhetrisushil/dotfiles.git "$DOTFILES_DIR"
+
+    # checek if .bashrc is present, if yes source it
+    if [ -f "$DOTFILES_DIR/.bashrc" ]; then
+        echo "Sourcing .bashrc..."
+        source "$DOTFILES_DIR/.bashrc"
+    fi
 else
     # update dotfiles
     echo "Updating dotfiles..."
