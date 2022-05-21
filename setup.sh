@@ -39,7 +39,7 @@ fi
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     # setup oh-my-zsh
     echo "Setting up oh-my-zsh..."
-    $PREFIX_SUDO sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 fi
 
 # check if ansible is installed
