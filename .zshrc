@@ -57,7 +57,7 @@ plugins=(git svn mercurial zsh-autosuggestions zsh-syntax-highlighting zsh-z)
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/.cabal/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/.cabal/bin:/usr/local/go/bin:$HOME/.local/bin:$PATH"
 export TERM=xterm-256color
 # export MANPATH="/usr/local/man:$MANPATH"
 
