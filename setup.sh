@@ -56,17 +56,6 @@ if ! [ -x "$(command -v fakeroot)" ]; then
     $PREFIX_SUDO pacman -S fakeroot --noconfirm
 fi
 
-# check if yay is present
-if ! [ -x "$(command -v yay)" ]; then
-    # install yay
-    echo "Installing yay..."
-    git clone https://aur.archlinux.org/yay.git $HOME/yay
-    cd $HOME/yay
-    makepkg -si --noconfirm
-    cd $HOME
-    rm -rf $HOME/yay
-fi
-
 # check if ansible is installed
 if ! [ -x "$(command -v ansible)" ]; then
     # install ansible
