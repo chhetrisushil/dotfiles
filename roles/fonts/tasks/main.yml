@@ -13,7 +13,7 @@
 
 - name: Install custom hacked font
   synchronize:
-    dest: "{{ ansible_user_dir }}/.local/share/"
+    dest: "{{ ansible_user_dir }}/.local/share/fonts"
     src: "../../../.local/share/fonts"
 
 - name: Install nerd fonts complete
