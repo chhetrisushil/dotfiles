@@ -14,6 +14,18 @@ fi
 SSH_DIR="$HOME/.ssh"
 DOTFILES_DIR="$HOME/.dotfiles"
 
+# check if make is present
+if ! [ -x "$(command -v make)" ]; then
+    # install make
+    $PREFIX_SUDO pacman -S make --noconfirm
+fi
+
+# check if binutils is present
+if ! [ -x "$(command -v ar)" ]; then
+    # install binutils
+    $PREFIX_SUDO pacman -S binutils --noconfirm
+fi
+
 # check if zsh is installed
 if ! [ -x "$(command -v zsh)" ]; then
     #install zsh

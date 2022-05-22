@@ -10,7 +10,6 @@ default_roles:
   - ctags
   - peco
   - gcc
-  - make
   - fzf
   - pip
   - ranger
