@@ -1,5 +1,6 @@
 default_roles:
   - rsync
+  - fakeroot
   - fonts
   - ohmyzsh
   - copyconfigs
