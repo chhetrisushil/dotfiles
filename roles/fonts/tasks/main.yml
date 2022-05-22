@@ -13,9 +13,10 @@
 
 - name: Install nerd fonts complete
   kewlfft.aur.aur:
-    use: auto
+    use: yay
     name:
       - nerd-fonts-complete
+    state: present
 
 - name: Install custom hacked font
   synchronize:

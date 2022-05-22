@@ -39,7 +39,18 @@ fi
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     # setup oh-my-zsh
     echo "Setting up oh-my-zsh..."
-    git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+    git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
+fi
+
+# check if yay is present
+if ! [ -x "$(command -v yay)" ]; then
+    # install yay
+    echo "Installing yay..."
+    git clone https://aur.archlinux.org/yay.git $HOME/yay
+    cd $HOME/yay
+    makepkg -si
+    cd $HOME
+    rm -rf $HOME/yay
 fi
 
 # check if ansible is installed
