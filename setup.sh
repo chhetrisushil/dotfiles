@@ -21,6 +21,13 @@ if ! [ -x "$(command -v zsh)" ]; then
     $PREFIX_SUDO pacman -S zsh --noconfirm
 fi
 
+# check if zsh is in /etc/shells
+if ! grep -q "$(command -v zsh)" /etc/shells; then
+    # add zsh to /etc/shells
+    echo "Adding zsh to /etc/shells..."
+    echo "$(command -v zsh)" | $PREFIX_SUDO tee -a /etc/shells
+fi
+
 # check if zsh is default shell
 if [ "$SHELL" != "$(command -v zsh)" ]; then
     # set zsh as default shell
