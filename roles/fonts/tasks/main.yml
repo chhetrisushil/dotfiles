@@ -12,10 +12,10 @@
   become: yes
 
 - name: Install nerd fonts complete
-  package:
-    name: nerd-fonts-complete
-    state: present
-  become: yes
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - nerd-fonts-complete
 
 - name: Install custom hacked font
   synchronize:
