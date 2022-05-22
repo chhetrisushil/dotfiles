@@ -1,6 +1,6 @@
 ---
 - name: Check if yay is already installed
-  shell: command -v yay >/dev/null 2>&1
+  shell: command -v yay
   register: yay_check
   ignore_errors: yes
 
