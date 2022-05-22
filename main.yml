@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   connection: local
+  strategy: debug
   tasks:
     - name: set roles
       set_fact:

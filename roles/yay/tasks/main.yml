@@ -1,11 +1,18 @@
 ---
+- name: Check if yay is already installed
+  command: command -v yay
+  register: yay_check
+
 - name: Clone yay.git
   git:
     repo: https://aur.archlinux.org/yay.git
     dest: "{{ ansible_user_dir }}/yay"
+  when: yay_check.stdout == ""
 
 - name: Install yay
   shell: "cd {{ ansible_user_dir }}/yay && makepkg -si --noconfirm"
+  when: yay_check.stdout == ""
 
 - name: Delete yay folder
   shell: "cd {{ ansible_user_dir }} && rm -rf {{ ansible_user_dir }}/yay"
+  when: yay_check.stdout == ""
