@@ -1,0 +1,26 @@
+---
+- name: Install otf awesome fonts
+  package:
+    name: otf-font-awesome
+    state: present
+  become: yes
+
+- name: Install ttf awesome fonts
+  package:
+    name: ttf-font-awesome
+    state: present
+  become: yes
+
+- name: Install nerd fonts complete
+  package:
+    name: nerd-fonts-complete
+    state: present
+  become: yes
+
+- name: Install custom hacked font
+  synchronize:
+    dest: "{{ ansible_user_dir }}/.local/share/"
+    src: "../../../.local/share/fonts"
+
+- name: Update the fontconfig cache
+  command: fc-cache

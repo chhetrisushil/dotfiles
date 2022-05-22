@@ -1,5 +1,6 @@
 default_roles:
   - rsync
+  - fonts
   - ohmyzsh
   - copyconfigs
   - tmux
