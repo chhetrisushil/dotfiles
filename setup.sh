@@ -48,7 +48,7 @@ if ! [ -x "$(command -v yay)" ]; then
     echo "Installing yay..."
     git clone https://aur.archlinux.org/yay.git $HOME/yay
     cd $HOME/yay
-    makepkg -si
+    makepkg -si --noconfirm
     cd $HOME
     rm -rf $HOME/yay
 fi
