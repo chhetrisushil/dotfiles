@@ -42,6 +42,13 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
     git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
 fi
 
+# check if patch is present
+if ! [ -x "$(command -v patch)" ]; then
+    # install patch
+    echo "Installing patch..."
+    $PREFIX_SUDO pacman -S patch --noconfirm
+fi
+
 # check if yay is present
 if ! [ -x "$(command -v yay)" ]; then
     # install yay
