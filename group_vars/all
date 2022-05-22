@@ -1,5 +1,9 @@
 default_roles:
   - rsync
+  - make
+  - binutils
+  - gcc
+  - yay
   - ohmyzsh
   - copyconfigs
   - tmux

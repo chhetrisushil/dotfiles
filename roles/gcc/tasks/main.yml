@@ -1,0 +1,6 @@
+---
+- name: Install gcc
+  package:
+    name: gcc
+    state: present
+  become: yes

@@ -1,0 +1,6 @@
+---
+- name: Install binutils
+  package:
+    name: binutils
+    state: present
+  become: yes

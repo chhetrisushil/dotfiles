@@ -1,0 +1,11 @@
+---
+- name: Clone yay.git
+  git:
+    repo: https://aur.archlinux.org/yay.git
+    dest: "{{ ansible_user_dir }}/yay"
+
+- name: Install yay
+  shell: "cd {{ ansible_user_dir }}/yay && makepkg -si --noconfirm"
+
+- name: Delete yay folder
+  shell: "cd {{ ansible_user_dir }} && rm -rf {{ ansible_user_dir }}/yay"
