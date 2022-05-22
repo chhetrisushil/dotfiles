@@ -1,6 +1,6 @@
 ---
 - name: Check if yay is already installed
-  command: command -v yay
+  shell: command -v yay
   register: yay_check
 
 - name: Clone yay.git
