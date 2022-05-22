@@ -49,6 +49,13 @@ if ! [ -x "$(command -v patch)" ]; then
     $PREFIX_SUDO pacman -S patch --noconfirm
 fi
 
+# check if fakeroot is present
+if ! [ -x "$(command -v fakeroot)" ]; then
+    # install fakeroot
+    echo "Installing fakeroot..."
+    $PREFIX_SUDO pacman -S fakeroot --noconfirm
+fi
+
 # check if yay is present
 if ! [ -x "$(command -v yay)" ]; then
     # install yay

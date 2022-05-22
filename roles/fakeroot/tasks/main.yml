@@ -1,6 +1,0 @@
----
-- name: Install fakeroot
-  package:
-    name: fakeroot
-    state: present
-  become: yes
