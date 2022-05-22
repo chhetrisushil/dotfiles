@@ -28,6 +28,13 @@ if ! [ -x "$(command -v ar)" ]; then
     $PREFIX_SUDO pacman -S binutils --noconfirm
 fi
 
+# check if gcc is present
+if ! [ -x "$(command -v gcc)" ]; then
+    # install gcc
+    echo "Installing gcc..."
+    $PREFIX_SUDO pacman -S gcc --noconfirm
+fi
+
 # check if zsh is installed
 if ! [ -x "$(command -v zsh)" ]; then
     #install zsh

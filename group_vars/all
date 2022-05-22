@@ -9,7 +9,6 @@ default_roles:
   - exa
   - ctags
   - peco
-  - gcc
   - fzf
   - pip
   - ranger
