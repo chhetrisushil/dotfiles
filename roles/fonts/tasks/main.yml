@@ -13,7 +13,7 @@
 
 - name: Install nerd fonts complete
   kewlfft.aur.aur:
-    use: yay
+    use: auto
     name:
       - nerd-fonts-complete
 
