@@ -16,7 +16,12 @@ OR
 
 with `curl`:
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/chhetrisushil/dotfiles/master/setup.sh)"
+sh -c "$(curl -fsSL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/chhetrisushil/dotfiles/master/setup.sh)"
+```
+
+_NOTE: Run the following command to see verbose logs_
+```
+curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/chhetrisushil/dotfiles/master/setup.sh | sh -s -- -vvv
 ```
 ----------------------------------------------
 
