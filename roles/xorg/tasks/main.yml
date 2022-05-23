@@ -2,6 +2,7 @@
 - name: Install xorg
   package:
     name:
+      - xorg
       - xorg-server
       - xorg-apps
     state: present
