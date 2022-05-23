@@ -1,8 +1,14 @@
 ---
+- name: Check if xmobar is already installed
+  shell: command -v xmobar
+  ignore_errors: yes
+  register: xmobar_check
+
 - name: Install xmobar
   package:
     name: xmobar
     state: present
+  when: xmobar_check.stdout == ""
 
 - name: Copy xmobar config
   synchronize:

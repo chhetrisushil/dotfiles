@@ -1,12 +1,19 @@
 ---
+- name: Check if terminator is already installed
+  shell: command -v terminator
+  ignore_errors: yes
+  register: terminator_check
+
 - name: Install terminator
   package:
     name: terminator
     state: present
   become: yes
+  when: terminator_check.stdout == ""
 
 - name: Copy terminator config
   synchronize:
     dest: "{{ ansible_user_dir }}/.config/"
     src: "../../../.config/terminator"
     owner: yes
+  when: terminator_check.stdout == ""

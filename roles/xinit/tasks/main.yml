@@ -1,6 +1,12 @@
 ---
+- name: Check if xinit is already installed
+  shell: command -v startx
+  ignore_errors: yes
+  register: xinit_check
+
 - name: Install xinit
   package:
     name: xorg-xinit
     state: present
   become: yes
+  when: xinit_check.stdout == ""

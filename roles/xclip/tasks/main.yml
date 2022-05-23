@@ -1,6 +1,12 @@
 ---
+- name: Check if xclip is already installed
+  shell: command -v xclip
+  ignore_errors: yes
+  register: xclip_check
+
 - name: Install xclip
   package:
     name: xclip
     state: present
   become: yes
+  when: xclip_check.stdout == ""

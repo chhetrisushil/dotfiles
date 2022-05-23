@@ -1,6 +1,12 @@
 ---
+- name: Check if trayer is already installed
+  shell: command -v trayer
+  ignore_errors: yes
+  register: trayer_check
+
 - name: Install trayer
   package:
     name: trayer
     state: present
   become: yes
+  when: trayer_check.stdout == ""

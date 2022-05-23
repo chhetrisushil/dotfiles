@@ -1,6 +1,12 @@
 ---
+- name: Check if ueberzug is already installed
+  shell: command -v ueberzug
+  ignore_errors: yes
+  register: ueberzug_check
+
 - name: Install ueberzug
   package:
     name: ueberzug
     state: present
   become: yes
+  when: ueberzug_check.stdout == ""

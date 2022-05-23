@@ -1,18 +1,26 @@
 ---
+- name: Check if tmux is already installed
+  shell: command -v tmux
+  ignore_errors: yes
+  register: tmux_check
+
 - name: Install tmux
   package:
     name: tmux
     state: present
   become: yes
+  when: tmux_check.stdout == ""
 
 - name: Copy .tmux.conf
   synchronize:
     dest: "{{ ansible_user_dir }}"
     src: "../../../.tmux/.tmux.conf"
     owner: yes
+  when: tmux_check.stdout == ""
 
 - name: Copy .tmux.conf.local
   synchronize:
     dest: "{{ ansible_user_dir }}"
     src: "../../../.tmux/.tmux.conf.local"
     owner: yes
+  when: tmux_check.stdout == ""

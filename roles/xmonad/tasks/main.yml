@@ -1,4 +1,9 @@
 ---
+- name: Check if xmonad is already installed
+  shell: command -v xmonad
+  ignore_errors: yes
+  register: xmonad_check
+
 - name: Install xmonad
   package:
     name:
@@ -6,6 +11,7 @@
       - xmonad-contrib
     state: present
   become: yes
+  when: xmonad_check.stdout == ""
 
 - name: Configure xmonad
   synchronize:
