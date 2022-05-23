@@ -8,6 +8,7 @@
   package:
     name: xmobar
     state: present
+  become: yes
   when: xmobar_check.stdout == ""
 
 - name: Copy xmobar config
