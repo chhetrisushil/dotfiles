@@ -26,4 +26,5 @@ default_roles:
   - bat
   - plocate
   - fonts
+  - dmenu
   - neovim
