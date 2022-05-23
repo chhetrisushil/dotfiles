@@ -131,5 +131,5 @@ if [[ -f "$DOTFILES_DIR/main.yml" ]]; then
 
     # run ansible
     echo "Running ansible..."
-    ansible-playbook --diff "$DOTFILES_DIR/main.yml" --ask-become-pass
+    ansible-playbook --diff "$DOTFILES_DIR/main.yml" --ask-become-pass $@
 fi
