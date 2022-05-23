@@ -4,5 +4,7 @@
     use: yay
     name:
       - automake
+      - autom4te
+      - autoheader
       - clipit
     state: present
