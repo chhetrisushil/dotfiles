@@ -1,6 +1,12 @@
 ---
+- name: Check if bat is already installed
+  shell: command -v bat
+  ignore_errors: yes
+  register: bat_check
+
 - name: Install bat
   package:
     name: bat
     state: present
   become: yes
+  when: bat_check.stdout == ""

@@ -1,6 +1,12 @@
 ---
+- name: Check if binutils is already installed
+  shell: command -v ld
+  ignore_errors: yes
+  register: binutils_check
+
 - name: Install binutils
   package:
     name: binutils
     state: present
   become: yes
+  when: binutils_check.stdout == ""

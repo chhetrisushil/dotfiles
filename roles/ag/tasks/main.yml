@@ -1,6 +1,12 @@
 ---
+- name: Check if ag is already installed
+  shell: command -v ag
+  ignore_errors: yes
+  register: ag_check
+
 - name: Install ag
   package:
     name: the_silver_searcher
     state: present
   become: yes
+  when: ag_check.stdout == ""
