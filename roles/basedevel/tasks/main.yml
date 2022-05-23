@@ -1,0 +1,6 @@
+---
+- name: Install base-devel
+  package:
+    name: base-devel
+    state: latest
+  become: yes

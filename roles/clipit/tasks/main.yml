@@ -3,8 +3,7 @@
   kewlfft.aur.aur:
     use: yay
     name:
-      - automake
-      - autom4te
-      - autoheader
+      - libtool
+      - intltool
       - clipit
     state: present

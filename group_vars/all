@@ -1,4 +1,5 @@
 default_roles:
+  - basedevel
   - rsync
   - make
   - binutils
