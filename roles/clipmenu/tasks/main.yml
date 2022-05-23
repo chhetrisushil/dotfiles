@@ -1,0 +1,11 @@
+---
+- name: Check if clipmenu is already installed
+  shell: command -v clipmenu
+  ignore_errors: yes
+  register: clipmenu_check
+
+- name: Install clipit
+  package:
+    name: clipmenu
+    state: present
+  when: clipit_check.stdout == ""
