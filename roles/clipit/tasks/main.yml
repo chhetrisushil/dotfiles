@@ -3,5 +3,6 @@
   kewlfft.aur.aur:
     use: yay
     name:
+      - automake
       - clipit
     state: present
