@@ -8,4 +8,5 @@
   package:
     name: clipmenu
     state: present
+  become: yes
   when: clipmenu_check.stdout == ""
