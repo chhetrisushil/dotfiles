@@ -401,4 +401,5 @@ myAdditionalKeys = [
   [
   -- this section will bind whatever key bindings you add
   ("M-u", spawn "urxvtc")
+  , ("M-M1-c", spawn "clipmenu -p 'clipboard:'")
   ]
