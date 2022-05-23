@@ -18,6 +18,10 @@
     name:
       - nerd-fonts-complete
     state: present
+  register: nerd_fonts_output
+
+- debug:
+    var: nerd_fonts_output.stdout_lines
 
 - name: Update the fontconfig cache
   command: fc-cache

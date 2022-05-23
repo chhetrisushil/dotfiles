@@ -5,6 +5,10 @@
     name:
       - xmobar-git
     state: present
+  register: xmobar_output
+
+- debug:
+    var: xmobar_output.stdout_lines
 
 - name: Copy xmobar config
   synchronize:
