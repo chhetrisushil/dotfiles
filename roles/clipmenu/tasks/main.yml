@@ -4,8 +4,8 @@
   ignore_errors: yes
   register: clipmenu_check
 
-- name: Install clipit
+- name: Install clipmenu
   package:
     name: clipmenu
     state: present
-  when: clipit_check.stdout == ""
+  when: clipmenu_check.stdout == ""
