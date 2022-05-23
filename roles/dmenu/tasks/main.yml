@@ -1,6 +1,12 @@
 ---
+- name: Check if dmenu is already installed
+  shell: command -v dmenu
+  ignore_errors: yes
+  register: dmenu_check
+
 - name: Install dmenu
   package:
     name: dmenu
     state: present
   become: yes
+  when: dmenu_check.stdout == ""

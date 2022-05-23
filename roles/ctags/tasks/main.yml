@@ -1,6 +1,12 @@
 ---
+- name: Check if ctags is already installed
+  shell: command -v ctags
+  ignore_errors: yes
+  register: ctags_check
+
 - name: Install ctags
   package:
     name: ctags
     state: present
   become: yes
+  when: ctags_check.stdout == ""

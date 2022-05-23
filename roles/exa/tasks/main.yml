@@ -1,6 +1,12 @@
 ---
+- name: Check if exa is already installed
+  shell: command -v exa
+  ignore_errors: yes
+  register: exa_check
+
 - name: Install exa
   package:
     name: exa
     state: present
   become: yes
+  when: exa_check.stdout == ""
