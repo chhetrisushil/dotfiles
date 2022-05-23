@@ -1,8 +1,6 @@
 ---
 - name: Install xinit
   package:
-    name:
-      - xorg-xinit
-      - startx
+    name: xorg-xinit
     state: present
   become: yes
