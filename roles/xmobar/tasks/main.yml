@@ -1,14 +1,8 @@
 ---
 - name: Install xmobar
-  kewlfft.aur.aur:
-    use: yay
-    name:
-      - xmobar-git
+  package:
+    name: xmobar
     state: present
-  register: xmobar_output
-
-- debug:
-    var: xmobar_output.stdout_lines
 
 - name: Copy xmobar config
   synchronize:
