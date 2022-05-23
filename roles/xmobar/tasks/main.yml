@@ -1,0 +1,19 @@
+---
+- name: Install xmobar
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - xmobar-git
+    state: present
+
+- name: Copy xmobar config
+  synchronize:
+    dest: "{{ ansible_user_dir }}"
+    src: "../../../.xmobarrc"
+    owner: yes
+
+- name: Copy bottom xmobar config
+  synchronize:
+    dest: "{{ ansible_user_dir }}"
+    src: "../../../.xmobarrc-bottom"
+    owner: yes

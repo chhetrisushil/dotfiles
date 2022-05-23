@@ -1,0 +1,6 @@
+---
+- name: Install xorg
+  package:
+    name: xorg
+    present: xorg
+  become: yes

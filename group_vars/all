@@ -27,4 +27,12 @@ default_roles:
   - plocate
   - fonts
   - dmenu
+  - trayer
+  - clipit
+  - flameshot
+  - picom
+  - xorg
+  - xinit
+  - xmonad
+  - xmobar
   - neovim

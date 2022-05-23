@@ -1,0 +1,7 @@
+---
+- name: Install clipit
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - clipit
+    state: present

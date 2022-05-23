@@ -1,0 +1,20 @@
+---
+- name: Install xmonad
+  package:
+    name:
+      - xmonad
+      - xmonad-contrib
+    state: present
+  become: yes
+
+- name: Configure xmonad
+  synchronize:
+    dest: "{{ ansible_user_dir }}"
+    src: "../../../.xmonad"
+    owner: yes
+
+- name: Copy script required by xmonad
+  sychronize:
+    dest: "{{ ansible_user_dir }}"
+    src: "../../../scripts"
+    owner: yes

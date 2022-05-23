@@ -1,0 +1,6 @@
+---
+- name: Install trayer
+  package:
+    name: trayer
+    state: present
+  become: yes

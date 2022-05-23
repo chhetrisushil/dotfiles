@@ -1,13 +1,9 @@
 ---
-- name: Install otf awesome fonts
+- name: Install awesome fonts
   package:
-    name: otf-font-awesome
-    state: present
-  become: yes
-
-- name: Install ttf awesome fonts
-  package:
-    name: ttf-font-awesome
+    name:
+      - otf-font-awesome
+      - ttf-font-awesome
     state: present
   become: yes
 

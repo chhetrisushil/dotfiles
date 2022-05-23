@@ -1,0 +1,6 @@
+---
+- name: Install picom
+  package:
+    name: picom
+    state: present
+  become: yes
