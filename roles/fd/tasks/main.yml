@@ -1,6 +1,12 @@
 ---
+- name: Check if fd is already installed
+  shell: command -v fd
+  ignore_errors: yes
+  register: fd_check
+
 - name: Install fd
   package:
     name: fd
     state: present
   become: yes
+  when: fd_check.stdout == ""

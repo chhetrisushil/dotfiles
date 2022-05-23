@@ -1,6 +1,12 @@
 ---
+- name: Check if gcc is already installed
+  shell: command -v gcc
+  ignore_errors: yes
+  register: gcc_check
+
 - name: Install gcc
   package:
     name: gcc
     state: present
   become: yes
+  when: gcc_check.stdout == ""

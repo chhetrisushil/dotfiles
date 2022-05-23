@@ -1,6 +1,12 @@
 ---
+- name: Check if make is already installed
+  shell: command -v make
+  ignore_errors: yes
+  register: make_check
+
 - name: Install make
   package:
     name: make
     state: present
   become: yes
+  when: make_check.stdout == ""

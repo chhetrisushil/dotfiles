@@ -1,6 +1,12 @@
 ---
+- name: Check if rg is already installed
+  shell: command -v rg
+  ignore_errors: yes
+  register: rg_check
+
 - name: Install ripgrep
   package:
     name: ripgrep
     state: present
   become: yes
+  when: rg_check.stdout == ""

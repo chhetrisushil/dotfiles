@@ -1,6 +1,12 @@
 ---
+- name: Check if fzf is already installed
+  shell: command -v fzf
+  ignore_errors: yes
+  register: fzf_check
+
 - name: Install fzf
   package:
     name: fzf
     state: present
   become: yes
+  when: fzf_check.stdout == ""

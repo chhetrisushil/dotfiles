@@ -1,6 +1,12 @@
 ---
+- name: Check if flameshot is already installed
+  shell: command -v flameshot
+  ignore_errors: yes
+  register: flameshot_check
+
 - name: Install flameshot
   package:
     name: flameshot
     state: present
   become: yes
+  when: flameshot_check.stdout == ""

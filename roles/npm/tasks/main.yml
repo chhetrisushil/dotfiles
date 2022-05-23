@@ -1,6 +1,12 @@
 ---
+- name: Check if npm is already installed
+  shell: command -v npm
+  ignore_errors: yes
+  register: npm_check
+
 - name: Install npm
   package:
     name: npm
     state: present
   become: yes
+  when: npm_check.stdout == ""

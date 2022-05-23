@@ -1,9 +1,15 @@
 ---
+- name: Check if nvim is already installed
+  shell: command -v nvim
+  ignore_errors: yes
+  register: nvim_check
+
 - name: Install neovim
   package:
     name: neovim
     state: present
   become: yes
+  when: nvim_check.stdout == ""
 
 - name: Copy .vimrc
   synchronize:

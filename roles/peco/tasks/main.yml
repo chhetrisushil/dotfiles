@@ -1,6 +1,12 @@
 ---
+- name: Check if peco is already installed
+  shell: command -v peco
+  ignore_errors: yes
+  register: peco_check
+
 - name: Install peco
   package:
     name: peco
     state: present
   become: yes
+  when: peco_check.stdout == ""

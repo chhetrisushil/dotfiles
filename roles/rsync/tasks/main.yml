@@ -1,6 +1,12 @@
 ---
+- name: Check if rsync is already installed
+  shell: command -v rsync
+  ignore_errors: yes
+  register: rsync_check
+
 - name: Install rsync
   package:
     name: rsync
     state: present
   become: yes
+  when: rsync_check.stdout == ""

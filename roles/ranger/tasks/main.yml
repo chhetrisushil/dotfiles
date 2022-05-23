@@ -1,7 +1,14 @@
 ---
+- name: Check if ranger is already installed
+  shell: command -v ranger
+  ignore_errors: yes
+  register: ranger_check
+
 - name: Install ranger
   pip:
     name: ranger-fm
+  when: ranger_check.stdout == ""
 
 - name: Configure ranger
   command: ranger --copy-config=all
+  when: ranger_check.stdout == ""

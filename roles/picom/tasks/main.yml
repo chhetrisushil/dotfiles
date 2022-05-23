@@ -1,6 +1,12 @@
 ---
+- name: Check if picom is already installed
+  shell: command -v picom
+  ignore_errors: yes
+  register: picom_check
+
 - name: Install picom
   package:
     name: picom
     state: present
   become: yes
+  when: picom_check.stdout == ""

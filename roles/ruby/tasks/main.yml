@@ -1,6 +1,12 @@
 ---
+- name: Check if ruby is already installed
+  shell: command -v ruby
+  ignore_errors: yes
+  register: ruby_check
+
 - name: Install ruby
   package:
     name: ruby
     state: present
   become: yes
+  when: ruby_check.stdout == ""

@@ -1,6 +1,12 @@
 ---
+- name: Check if plocate is already installed
+  shell: command -v plocate
+  ignore_errors: yes
+  register: plocate_check
+
 - name: Install plocate
   package:
     name: plocate
     state: present
   become: yes
+  when: plocate_check.stdout == ""

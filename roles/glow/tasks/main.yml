@@ -1,6 +1,12 @@
 ---
+- name: Check if glow is already installed
+  shell: command -v glow
+  ignore_errors: yes
+  register: glow_check
+
 - name: Install glow
   package:
     name: glow
     state: present
   become: yes
+  when: glow_check.stdout == ""
