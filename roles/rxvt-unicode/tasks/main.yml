@@ -1,0 +1,12 @@
+---
+- name: Check if urxvt is already installed
+  shell: command -v urxvt
+  ignore_errors: yes
+  register: urxvt_check
+
+- name: Install urxvt
+  package:
+    name: rxvt-unicode
+    state: present
+  become: yes
+  when: urxvt_check.stdout == ""

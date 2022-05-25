@@ -4,6 +4,7 @@ default_roles:
   - make
   - binutils
   - gcc
+  - rxvt-unicode
   - yay
   - ohmyzsh
   - copyconfigs
