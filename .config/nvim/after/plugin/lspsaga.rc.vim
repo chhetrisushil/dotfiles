@@ -19,7 +19,7 @@ saga.init_lsp_saga {
 
 EOF
 
-nnoremap <silent> <C-j> :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> gj :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
 nnoremap <silent> gh <cmd>lua require('lspsaga.provider').lsp_finder()<CR>
 nnoremap <silent> gp :Lspsaga preview_definition<CR>
