@@ -57,7 +57,7 @@ plugins=(git svn mercurial zsh-autosuggestions zsh-syntax-highlighting zsh-z)
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/.cabal/bin:/usr/local/go/bin:$HOME/.local/bin:$PATH"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.cabal/bin:/usr/local/go/bin:$HOME/.local/bin:$PATH"
 export TERM=xterm-256color
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -80,8 +80,8 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # load local alias files
-if [[ -f ~/.zshrc_local && -r ~/.zshrc_local ]]; then
-    source ~/.zshrc_local
+if [[ -f $HOME/.zshrc_local && -r $HOME/.zshrc_local ]]; then
+    source $HOME/.zshrc_local
 fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
