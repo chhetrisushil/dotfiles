@@ -77,6 +77,7 @@ Plug 'alvan/vim-closetag'
 
 " color scheme plugin
 Plug 'trevordmiller/nova-vim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " tag jump in new tab
 Plug 'ipod825/TagJump'
