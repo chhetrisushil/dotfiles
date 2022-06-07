@@ -49,6 +49,16 @@ URxvt.background: [70]#1A1B26
 *.color7:        #ACB0D0
 *.color15:       #ABB2BF
 
+XTerm*faceName: xft:MesloLGSForPowerline Nerd Font:pixelsize=12:regular:antialias=true:hinting=true
+! XTerm*faceSize: 8
+XTerm*renderFont: true
+XTerm*scrollBar: false
+XTerm*highlightSelection: true
+XTerm*trimSelection: true
+XTerm*saveLines: 4096
+XTerm*scrollbackLines: 4096
+XTerm*scrollTtyOutput: true
+XTerm*scaleHeight: 1.0
 XTerm.vt100.bellIsUrgent: true
 XTerm.vt100.alternateScroll: true
 XTerm.vt100.selectToClipboard: true
