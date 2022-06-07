@@ -1,0 +1,19 @@
+---
+- name: Check if alacritty is already installed
+  shell: command -v alacritty
+  ignore_errors: yes
+  register: alacritty_check
+
+- name: Install alacritty
+  package:
+    name: alacritty
+    state: present
+  become: yes
+  when: alacritty_check.stdout == ""
+
+- name: Copy alacritty config
+  synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: "../../../.config/alacritty"
+    owner: yes
+  when: alacritty_check.stdout == ""
