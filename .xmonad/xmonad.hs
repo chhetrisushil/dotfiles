@@ -395,6 +395,7 @@ myAdditionalKeys = [
     , ("m", namedScratchpadAction scratchpads "music")
     , ("d o t", spawn "urxvtc -e lazygit -p ~/.dotfiles")
     , ("g", spawn "google-chrome-stable")
+    , ("a l", spawn "alacritty")
     ]
   ]
   ++
