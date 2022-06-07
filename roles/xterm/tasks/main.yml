@@ -1,0 +1,12 @@
+---
+- name: Check if xterm is already installed
+  shell: command -v xterm
+  ignore_errors: yes
+  register: xterm_check
+
+- name: Install xterm
+  package:
+    name: xterm
+    state: present
+  become: yes
+  when: xterm_check.stdout == ""
