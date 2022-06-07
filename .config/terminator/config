@@ -28,12 +28,27 @@
     cursor_color = "#002b36"
     foreground_color = "#002b36"
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+  [[tokyonight]]
+    icon_bell = False
+    cursor_color = "#a9b1d6"
+    show_titlebar = False
+    split_to_group = True
+    copy_on_selection = True
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    use_system_font = False
+    font = MesloLGMDZ Nerd Font Mono Italic 10
+    background_color = "#1a1b26"
+    background_darkness = 0.7
+    background_type = transparent
+    foreground_color = "#a9b1d6"
+    palette = "#1a1b26:#f7768e:#9ece6a:#e0af68:#7aa2f7:#9a7ecc:#4abaaf:#acb0d0:#4e5173:#f7768e:#9ece6a:#e0af68:#7aa2f7:#9a7ecc:#4abaaf:#acb0d0"
 [layouts]
   [[default]]
     [[[child1]]]
       type = Terminal
       parent = window0
-      profile = gruvbox-dark
+      profile = tokyonight
     [[[window0]]]
       type = Window
       parent = ""
