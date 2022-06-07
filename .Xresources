@@ -3,73 +3,119 @@
 ! Colorscheme
 
 ! special
-*.background: [70]#282828
-*.foreground: #ebdbb2
-*.cursorColor: #afbfbf
+*.background: #1A1B26
+URxvt.background: [70]#1A1B26
+*.foreground: #A9B1D6
+*.cursorColor: #A9B1D6
 
-! black
-*.color0: #282828
-*.color8: #7c6f64
+!*fading:                  40
+!*fadeColor:               S_base03
+!*pointerColorBackground:  S_base01
+!*pointerColorForeground:  S_base1
 
-! red
-*.color1: #fb4934
-*.color9: #cc241d
+! Normal      Bright
+! --------    -------
+! 0 Black      8 Black
+! 1 Red        9 Red
+! 2 Yellow    10 Yellow
+! 3 Green     11 Green
+! 4 Blue      12 Blue
+! 5 Magenta   13 Magenta
+! 6 Cyan      14 Cyan
+! 7 White     15 White
 
-! green
-*.color2: #819400
-*.color10: #a4bd00
+! Black colours
+*.color0:        #1A1B26
+*.color8:        #4E5173
+! Red colours
+*.color1:        #F7768E
+*.color9:        #E06C75
+! Yellow colours
+*.color2:        #E0AF68
+*.color10:       #D19A66
+! Green colours
+*.color3:        #9ECE6A
+*.color11:       #98C379
+! Blue colours
+*.color4:        #7AA2F7
+*.color12:       #61AFEF
+! Magenta (pink, !green) colours
+*.color5:        #9A7ECC
+*.color13:       #C678DD
+! Cyan (blue + green)
+*.color6:        #4ABAAF
+*.color14:       #56B6C2
+! White colours
+*.color7:        #ACB0D0
+*.color15:       #ABB2BF
 
-! yellow
-*.color3: #b08500
-*.color11: #d9a400
-
-! blue
-*.color4: #2587cc
-*.color12: #2ca2f5
-
-! magenta
-*.color5: #696ebf
-*.color13: #8086e8
-
-! cyan
-*.color6: #289c93
-*.color14: #33c5ba
-
-! white
-*.color7: #bfbaac
-*.color15: #fdf6e3
-
-! gruvbox color theme
-*.color24:  #076678
-*.color66:  #427b58
-*.color88:  #9d0006
-*.color96:  #8f3f71
-*.color100: #79740e
-*.color108: #8ec07c
-*.color109: #83a598
-*.color130: #af3a03
-*.color136: #b57614
-*.color142: #b8bb26
-*.color167: #fb4934
-*.color175: #d3869b
-*.color208: #fe8019
-*.color214: #fabd2f
-*.color223: #ebdbb2
-*.color228: #f2e5bc
-*.color229: #fbf1c7
-*.color230: #f9f5d7
-*.color234: #1d2021
-*.color235: #282828
-*.color236: #32302f
-*.color237: #3c3836
-*.color239: #504945
-*.color241: #665c54
-*.color243: #7c6f64
-*.color244: #928374
-*.color245: #928374
-*.color246: #a89984
-*.color248: #bdae93
-*.color250: #d5c4a1
+XTerm.vt100.bellIsUrgent: true
+XTerm.vt100.alternateScroll: true
+XTerm.vt100.selectToClipboard: true
+!
+! ! black
+! *.color0: #282828
+! *.color8: #7c6f64
+!
+! ! red
+! *.color1: #fb4934
+! *.color9: #cc241d
+!
+! ! green
+! *.color2: #819400
+! *.color10: #a4bd00
+!
+! ! yellow
+! *.color3: #b08500
+! *.color11: #d9a400
+!
+! ! blue
+! *.color4: #2587cc
+! *.color12: #2ca2f5
+!
+! ! magenta
+! *.color5: #696ebf
+! *.color13: #8086e8
+!
+! ! cyan
+! *.color6: #289c93
+! *.color14: #33c5ba
+!
+! ! white
+! *.color7: #bfbaac
+! *.color15: #fdf6e3
+!
+! ! gruvbox color theme
+! *.color24:  #076678
+! *.color66:  #427b58
+! *.color88:  #9d0006
+! *.color96:  #8f3f71
+! *.color100: #79740e
+! *.color108: #8ec07c
+! *.color109: #83a598
+! *.color130: #af3a03
+! *.color136: #b57614
+! *.color142: #b8bb26
+! *.color167: #fb4934
+! *.color175: #d3869b
+! *.color208: #fe8019
+! *.color214: #fabd2f
+! *.color223: #ebdbb2
+! *.color228: #f2e5bc
+! *.color229: #fbf1c7
+! *.color230: #f9f5d7
+! *.color234: #1d2021
+! *.color235: #282828
+! *.color236: #32302f
+! *.color237: #3c3836
+! *.color239: #504945
+! *.color241: #665c54
+! *.color243: #7c6f64
+! *.color244: #928374
+! *.color245: #928374
+! *.color246: #a89984
+! *.color248: #bdae93
+! *.color250: #d5c4a1
 
 !! URxvt Appearance
 URxvt.font: xft:MesloLGMDZ Nerd Font Mono:pixelsize=14:italic:antialias=true:hinting=true, \
@@ -111,3 +157,9 @@ URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.urlLauncher: /usr/bin/xdg-open
 URxvt.underlineURLs: true
 URxvt.urlButton: 1
+
+Xft.dpi: 96
+Xft.Hinting: 1
+Xft.RGBA: rgb
+Xft.HintStyle: hintslight
+Xft.Antialias: 1
