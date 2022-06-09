@@ -66,7 +66,7 @@ noremap <silent> <C-N> :tabnew<CR>
 noremap <C-L> :nohl<CR><C-L>
 
 " save keystroke
-nnoremap ; :
+" nnoremap ; :
 
 " Arrow keys are evil
 noremap <Up> <nop>
