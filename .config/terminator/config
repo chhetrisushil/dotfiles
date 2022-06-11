@@ -2,6 +2,7 @@
   focus = system
   title_transmit_bg_color = "#d30102"
 [keybindings]
+  layout_launcher = <Alt>Home
   help = <Primary>F1
 [profiles]
   [[default]]
