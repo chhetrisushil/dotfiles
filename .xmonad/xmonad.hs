@@ -396,6 +396,7 @@ myAdditionalKeys = [
     , ("d o t", spawn "urxvtc -e lazygit -p ~/.dotfiles")
     , ("g", spawn "google-chrome-stable")
     , ("a l", spawn "alacritty")
+    , ("d p h", spawn "clipdel '.*' | dmenu -p 'Delete paste history: ' -l 10 | clipdel -d")
     ]
   ]
   ++
