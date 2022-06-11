@@ -28,5 +28,6 @@ wk.register({
         e = {"<cmd>Telescope file_browser<cr>", "File explorer"},
     },
     ["<C-p>"] = {":lua require'telescope.builtin'.find_files()<cr>", "Find files"},
-    ["<leader>lr"] = {function () require'telescope'.extensions.repo.list{search_dirs={workspace_loc}} end, "Open repo list"}
+    ["<leader>lr"] = {function () require'telescope'.extensions.repo.list{search_dirs={workspace_loc}} end, "Open repo list"},
+    ["<leader>lc"] = {"<cmd>Telescope repo cached_list<cr>", "Open cached repo list"},
 }, {nnoremap = true, silent = true})
