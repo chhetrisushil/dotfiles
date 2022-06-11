@@ -167,3 +167,7 @@ else
   inoremap <Esc>u <C-o>u
   inoremap <Esc>x <C-o>x
 endif
+
+" insert mode foward delete mapping
+inoremap <silent> <C-f> <C-o>cl
+inoremap <silent> <C-d> <C-o>ce
