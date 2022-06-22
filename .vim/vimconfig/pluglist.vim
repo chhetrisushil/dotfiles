@@ -100,8 +100,6 @@ Plug 'tami5/lspsaga.nvim'
 Plug 'onsails/lspkind-nvim'
 Plug 'L3MON4D3/LuaSnip'
 
-" Plug 'github/copilot.vim', { 'do': ':Copilot setup' }
-
 " which-key
 Plug 'folke/which-key.nvim'
 
