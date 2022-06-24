@@ -80,5 +80,9 @@
     state: present
   become: yes
 
+- name: Install debugpy
+  pip:
+    name: debugpy
+
 - name: Configure neovim plugins
   command: nvim --headless +PlugInstall +qa

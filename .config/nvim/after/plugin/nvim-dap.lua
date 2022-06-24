@@ -1,3 +1,5 @@
+local dap = require("dap")
+
 -- dap virtual text setup
 local status_ok, dapvirtualtext = pcall(require, "nvim-dap-virtual-text")
 
@@ -15,8 +17,6 @@ if not status_ok then
 end
 
 dapui.setup()
-
-local dap = require("dap")
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
@@ -49,3 +49,15 @@ wk.register({
     c = {":lua require'dap'.continue()<cr>", "Continue"},
   }
 }, {prefix = "<space>", nnoremap = true, silent = true})
+
+-- python debugging setup
+local status_ok, dappython = pcall(require, "dap-python")
+
+if not status_ok then
+  return
+end
+
+dappython.setup("python3", {
+  include_configs = true,
+})
+dappython.test_runner = 'pytest'
