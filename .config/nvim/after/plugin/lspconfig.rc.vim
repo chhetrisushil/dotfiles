@@ -128,6 +128,8 @@ nvim_lsp.pylsp.setup {
   capabilities = capabilities,
 }
 
+nvim_lsp.bashls.setup({})
+
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
   filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },

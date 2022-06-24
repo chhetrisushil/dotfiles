@@ -11,6 +11,7 @@ workspace_loc = '~/workspace'
 telescope.load_extension('fzf')
 telescope.load_extension('file_browser')
 telescope.load_extension('repo')
+telescope.load_extension('dap')
 
 local status_ok, wk = pcall(require, 'which-key')
 

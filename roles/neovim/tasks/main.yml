@@ -68,5 +68,17 @@
     global: yes
   become: yes
 
+- name: Install bash language server
+  community.general.npm:
+    name: bash-language-server
+    global: yes
+  become: yes
+
+- name: Install shellcheck
+  package:
+    name: shellcheck
+    state: present
+  become: yes
+
 - name: Configure neovim plugins
   command: nvim --headless +PlugInstall +qa

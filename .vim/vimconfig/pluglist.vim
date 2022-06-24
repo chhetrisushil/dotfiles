@@ -144,5 +144,10 @@ Plug 'akinsho/org-bullets.nvim'
 " Debugging
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
+Plug 'nvim-telescope/telescope-dap.nvim'
+
+" python debugger
+Plug 'mfussenegger/nvim-dap-python'
 
 call plug#end()
