@@ -26,6 +26,7 @@ wk.register({
         b = {":lua require'telescope.builtin'.buffers()<cr>", "Find buffers"},
         h = {":lua require'telescope.builtin'.help_tags()<cr>", "Help tags"},
         e = {"<cmd>Telescope file_browser<cr>", "File explorer"},
+        c = {"<cmd>Telescope current_buffer_fuzzy_find<cr>", "Find in current buffer"},
     },
     ["<C-p>"] = {":lua require'telescope.builtin'.find_files()<cr>", "Find files"},
     ["<leader>lr"] = {function () require'telescope'.extensions.repo.list{search_dirs={workspace_loc}} end, "Open repo list"},
