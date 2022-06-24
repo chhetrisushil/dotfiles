@@ -141,4 +141,8 @@ Plug 'nvim-orgmode/orgmode'
 Plug 'lukas-reineke/headlines.nvim'
 Plug 'akinsho/org-bullets.nvim'
 
+" Debugging
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+
 call plug#end()
