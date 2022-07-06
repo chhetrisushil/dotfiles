@@ -12,6 +12,7 @@ telescope.load_extension('fzf')
 telescope.load_extension('file_browser')
 telescope.load_extension('repo')
 telescope.load_extension('dap')
+telescope.load_extension('notify')
 
 local status_ok, wk = pcall(require, 'which-key')
 

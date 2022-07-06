@@ -150,4 +150,7 @@ Plug 'nvim-telescope/telescope-dap.nvim'
 " python debugger
 Plug 'mfussenegger/nvim-dap-python'
 
+" notification popup
+Plug 'rcarriga/nvim-notify'
+
 call plug#end()
