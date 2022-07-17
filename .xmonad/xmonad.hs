@@ -124,7 +124,7 @@ main = do
   xmprocs <- mapM(\i -> spawnPipe $ "/usr/bin/xmobar -x " ++ show i ++ " /home/chhetrisushil/.xmobarrc") [0..n-1]
   xmprocs' <- mapM(\j -> spawnPipe $ "/usr/bin/xmobar -x " ++ show j ++ " /home/chhetrisushil/.xmobarrc-bottom") [0..n-1]
 
-  xmonad $ ewmh $ withUrgencyHook NoUrgencyHook $ docks def
+  xmonad $ ewmhFullscreen . ewmh $ withUrgencyHook NoUrgencyHook $ docks def
              { workspaces = myWorkspaces
              , modMask = modMask'
              , borderWidth = borderWidth'
@@ -142,7 +142,6 @@ main = do
                           })(xmprocs')
              , layoutHook = layoutHook'
              , manageHook = namedScratchpadManageHook scratchpads <+> manageHook' <+> manageHook def
-             , handleEventHook = fullscreenEventHook
              , focusFollowsMouse  = myFocusFollowsMouse
              , startupHook = myStartupHook
              } `additionalKeysP` myAdditionalKeys
@@ -152,7 +151,7 @@ main = do
 
 myStartupHook :: X ()
 myStartupHook = do
-                  ewmhDesktopsStartup >> setWMName "LG3D"
+                  setWMName "LG3D"
 
 manageHook' :: ManageHook
 manageHook' = composeAll
