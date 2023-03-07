@@ -1,7 +1,7 @@
 -- -*-Haskell-*-
-Config { font = "xft:MesloLGSForPowerline Nerd Font:size=9:bold"
+Config { font = "MesloLGSForPowerline Nerd Font Bold 9"
         , additionalFonts = [
-          "xft:Font Awesome 6 Free Solid:size=10:antialias=true"
+          "xft:Font Awesome 6 Free Solid Regular 10"
         ]
         , allDesktops = True
 --        , borderColor = "black"
