@@ -44,7 +44,7 @@ local on_attach = function(client, bufnr)
   if client.resolved_capabilities.document_formatting then
     vim.api.nvim_command [[augroup Format]]
     vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
     vim.api.nvim_command [[augroup END]]
   end
 
@@ -210,7 +210,7 @@ end
 
 wk.register({
   q = {"<cmd>lua vim.diagnostic.setloclist()<CR>", "Loc list"},
-  f = {"<cmd>lua vim.lsp.buf.formatting()<CR>", "Formatting"},
+  f = {"<cmd>lua vim.lsp.buf.format({async = true})<CR>", "Formatting"},
   w = {
     name = "Workspace",
     a = {"<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", "Add workspace"},

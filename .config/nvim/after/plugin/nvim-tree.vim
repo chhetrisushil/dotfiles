@@ -11,7 +11,6 @@ end
 
 nt.setup{
   disable_netrw        = false,
-  create_in_closed_folder = true,
   respect_buf_cwd      = true,
   hijack_netrw         = true,
   open_on_setup        = false,
