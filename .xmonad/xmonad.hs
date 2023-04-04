@@ -190,7 +190,7 @@ customPP = def
            , ppTitle =  xmobarColor color13 "" . shorten 80
            , ppExtras = [windowCount]
            , ppOrder = \(ws:l:t:ex) -> [ws, l]++ex++[t]
-           , ppSort = fmap (.namedScratchpadFilterOutWorkspace) getSortByIndex
+           , ppSort = fmap (. filterOutWs ["NSP"]) getSortByIndex
            }
            where
             windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
