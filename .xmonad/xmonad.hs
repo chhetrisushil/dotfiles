@@ -15,7 +15,7 @@ import System.Exit
 import System.IO (Handle, hPutStrLn)
 import XMonad.Actions.CycleWS
 import XMonad.Actions.NoBorders
-import Data.Default
+import XMonad.Config
 
 -- utils
 import XMonad.Util.Run (spawnPipe)
