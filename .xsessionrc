@@ -69,5 +69,6 @@ pkill urxvtd; urxvtd &
 pkill trayer; trayer --edge bottom --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x282828 --height 25 &
 pkill clipmenud; clipmenud &
 pkill flameshot; flameshot &
+pkill sxhkd; sxhkd &
 
 compton -c -b
