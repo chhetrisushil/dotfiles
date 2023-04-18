@@ -1,0 +1,12 @@
+---
+- name: Check if xmodmap is already installed
+  shell: command -v xmodmap
+  ignore_errors: yes
+  register: xmodmap_check
+
+- name: Install xmodmap
+  package:
+    name: xorg-xmodmap
+    state: present
+  become: yes
+  when: xmodmap_check.stdout == ""

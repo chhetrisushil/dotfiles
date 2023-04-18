@@ -1,0 +1,12 @@
+---
+- name: Check if xcape is already installed
+  shell: command -v xcape
+  ignore_errors: yes
+  register: xcape_check
+
+- name: Install xcape
+  package:
+    name: xcape
+    state: present
+  become: yes
+  when: xcape_check.stdout == ""

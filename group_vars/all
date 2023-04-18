@@ -23,6 +23,8 @@ default_roles:
   - fd
   - ripgrep
   - xclip
+  - xcape
+  - xmodmap
   - ruby
   - ueberzug
   - glow
