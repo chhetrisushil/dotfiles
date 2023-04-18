@@ -51,7 +51,7 @@ install 'yakuake' for drop-down terminal
 ## Instant markdown for instant preview
 - Follow install instructions from https://github.com/suan/vim-instant-markdown
 
-## Install ack-grep for ack.vim support
+## Install `ack-grep` for ack.vim support
 - Run command `sudo apt-get install ack-grep` to install ack. _symlink ack-grep to ack if needed_`ln -s /usr/bin/ack-grep /usr/bin/ack`
 
 ## For fish like auto completion in zsh
@@ -59,14 +59,17 @@ install 'yakuake' for drop-down terminal
 - Run the following command `git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions`
 - Plugin is already mapped in `.zshrc` file
 
-## Install xcape to map Caps_Lock to ctrl (on long press) and esc (on tap)
+## Install `xcape` to map Caps_Lock to ctrl (on long press) and esc (on tap) on Archlinux
 - Try `sudo pacman -S xcape` first (archlinux)
 - Install xcape from https://github.com/alols/xcape before setting up the environment
 
-## Install xmodmap to map Tab to Hyper_L (on long press) and Tab (on tap)
+## Install `xmodmap` to map Tab to Hyper_L (on long press) and Tab (on tap) on Archlinux
 - Try `sudo pacman -S xorg-xmodmap` first (archlinux)
 - Install xmodmap before setting up the environment
 - This also maps backslash to Hyper_R (on long press) and backslash (on tap)
+
+## Install `HyperKey.app` to map Caps_Lock to ctrl (on long press) and esc (on tap) on MacOS
+- Install `HyperKey.app` from https://hyperkey.app/
 
 ## Install `jsctags` for javascript ctags
 - `jsctags` for ctags generation for vim read more at https://www.npmjs.com/package/jsctags
