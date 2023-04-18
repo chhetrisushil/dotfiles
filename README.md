@@ -60,8 +60,13 @@ install 'yakuake' for drop-down terminal
 - Plugin is already mapped in `.zshrc` file
 
 ## Install xcape to map Caps_Lock to ctrl (on long press) and esc (on tap)
-- Try `sudo apt-get install xcape` first (ubuntu 15 and above)
+- Try `sudo pacman -S xcape` first (archlinux)
 - Install xcape from https://github.com/alols/xcape before setting up the environment
+
+## Install xmodmap to map Tab to Hyper_L (on long press) and Tab (on tap)
+- Try `sudo pacman -S xorg-xmodmap` first (archlinux)
+- Install xmodmap before setting up the environment
+- This also maps backslash to Hyper_R (on long press) and backslash (on tap)
 
 ## Install `jsctags` for javascript ctags
 - `jsctags` for ctags generation for vim read more at https://www.npmjs.com/package/jsctags

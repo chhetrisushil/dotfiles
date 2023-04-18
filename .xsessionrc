@@ -26,6 +26,16 @@ xcape -e "Caps_Lock=Escape" -t 200
 # xmodmap -e "keycode 37 = Escape"
 # xmodmap -e "keycode 9 = Caps_Lock"
 
+# map tab as Hyper_L on hold and tab on quick tap
+xmodmap -e "keycode 248 = Tab ISO_Left_Tab Tab ISO_Left_Tab"
+xmodmap -e "keycode 23 = Hyper_L"
+xcape -e "Hyper_L=Tab"
+
+#map backslash as Hyper_R on hold and backslash on quick tap
+xmodmap -e "keycode 230 = backslash bar backslash bar"
+xmodmap -e "keycode 51 = Hyper_R"
+xcape -e "Hyper_R=backslash"
+
 ## Touchpad settings
 # synclient TapButton1=1
 # synclient VertEdgeScroll=0, VertTwoFingerScroll=1, HorizTwoFingerScroll=1
