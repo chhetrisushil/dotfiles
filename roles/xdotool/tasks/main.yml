@@ -1,0 +1,12 @@
+---
+- name: Check if xdotool is already installed
+  shell: command -v xdotool
+  ignore_errors: yes
+  register: xdotool_check
+
+- name: Install xdotool
+  package:
+    name: xdotool
+    state: present
+  become: yes
+  when: xdotool_check.stdout == ""

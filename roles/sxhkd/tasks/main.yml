@@ -1,0 +1,12 @@
+---
+- name: Check if sxhkd is already installed
+  shell: command -v sxhkd
+  ignore_errors: yes
+  register: sxhkd_check
+
+- name: Install sxhkd
+  package:
+    name: sxhkd
+    state: present
+  become: yes
+  when: sxhkd_check.stdout == ""

@@ -25,6 +25,8 @@ default_roles:
   - xclip
   - xcape
   - xmodmap
+  - xdotool
+  - sxhkd
   - ruby
   - ueberzug
   - glow
