@@ -313,8 +313,6 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. controlMask, xK_l   ), layoutSplitScreen 2 (TwoPane 0.5 0.5))
     , ((modMask .|. controlMask, xK_r   ), rescreen)
 
-    -- floating layer stuff
-    , ((modMask,               xK_t     ), withFocused $ windows . W.sink)
     , ((modMask,               xK_g     ), withFocused toggleBorder)
 
     -- refresh
@@ -403,4 +401,15 @@ myAdditionalKeys = [
   -- this section will bind whatever key bindings you add
   ("M-u", spawn "urxvtc")
   , ("M-M1-c", spawn "clipmenu -p 'clipboard:'")
+  , ("M-t", withFocused toggleFloat)
   ]
+  where
+      toggleFloat win =
+        windows (\s -> if M.member win (W.floating s)
+                      then W.sink win s
+                      else (W.float win (W.RationalRect l t w h) s)) -- center float the window
+                        where
+                          h = 0.5
+                          w = 0.5
+                          l = 0.25
+                          t = 0.25
