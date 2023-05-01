@@ -15,6 +15,7 @@ import System.Exit
 import System.IO (Handle, hPutStrLn)
 import XMonad.Actions.CycleWS
 import XMonad.Actions.NoBorders
+import XMonad.Actions.CopyWindow
 import XMonad.Config
 
 -- utils
@@ -402,6 +403,10 @@ myAdditionalKeys = [
   ("M-u", spawn "urxvtc")
   , ("M-M1-c", spawn "clipmenu -p 'clipboard:'")
   , ("M-t", withFocused toggleFloat)
+
+  -- keep current window visible in every workspace
+  , ("M-s", windows copyToAll)
+  , ("M-S-s", killAllOtherCopies)
   ]
   where
       toggleFloat win =
