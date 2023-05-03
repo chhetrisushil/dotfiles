@@ -21,7 +21,7 @@
   kewlfft.aur.aur:
     use: yay
     name:
-      - nerd-fonts-complete
+      - nerd-fonts-git
     state: present
 
 - name: Update the fontconfig cache
