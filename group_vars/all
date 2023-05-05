@@ -32,7 +32,6 @@ default_roles:
   - glow
   - bat
   - plocate
-  - fonts
   - dmenu
   - trayer
   - clipmenu
@@ -44,3 +43,4 @@ default_roles:
   - xmonad
   - xmobar
   - neovim
+  - fonts
