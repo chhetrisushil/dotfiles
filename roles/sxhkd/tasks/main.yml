@@ -10,3 +10,10 @@
     state: present
   become: yes
   when: sxhkd_check.stdout == ""
+
+- name: Copy sxhkd config
+  synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: "../../../.config/sxhkd"
+    owner: yes
+  when: sxhkd_check.stdout == ""
