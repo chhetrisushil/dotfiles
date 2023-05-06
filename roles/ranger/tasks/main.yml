@@ -9,6 +9,19 @@
     name: ranger-fm
   when: ranger_check.stdout == ""
 
+- name: Copy ranger config
+  synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: "../../../.config/ranger"
+    owner: yes
+  when: ranger_check.stdout == ""
+
+- name: Setup ranger devicons plugin
+  git:
+    repo: https://github.com/alexanderjeurissen/ranger_devicons
+    dest: "{{ ansible_user_dir }}/.config/ranger/plugins/ranger_devicons"
+  when: ranger_check.stdout == ""
+
 - name: Configure ranger
   command: ranger --copy-config=all
   when: ranger_check.stdout == ""
