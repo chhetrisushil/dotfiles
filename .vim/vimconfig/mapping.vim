@@ -2,9 +2,9 @@
 let mapleader=","
 
 " forward cycling through tabs
-map <C-Tab> gt
+" map <C-Tab> gt
 " backward cycling through tabs
-map <C-S-Tab> gT
+" map <C-S-Tab> gT
 
 " key mapping to switch between the split buffers
 map <C-j> <C-w>j
