@@ -32,8 +32,8 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   --buf_set_keymap('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
-  --buf_set_keymap('n', '<C-j>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', '<S-C-j>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  --buf_set_keymap('n', '<C-j>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+  --buf_set_keymap('n', '<C-S-j>', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 
 
   -- formatting
@@ -211,6 +211,8 @@ end
 wk.register({
   q = {"<cmd>lua vim.diagnostic.setloclist()<CR>", "Loc list"},
   f = {"<cmd>lua vim.lsp.buf.format({async = true})<CR>", "Formatting"},
+  j = {"<cmd>lua vim.diagnostic.goto_next()<CR>", "Goto Next Diagnostic"},
+  k = {"<cmd>lua vim.diagnostic.goto_prev()<CR>", "Goto Prev Diagnostic"},
   w = {
     name = "Workspace",
     a = {"<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", "Add workspace"},
