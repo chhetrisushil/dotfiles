@@ -77,3 +77,9 @@ shift + alt - 9 : yabai -m window --space 9;
 ctrl + alt - q : brew services stop yabai
 ctrl + alt - s : brew services start yabai
 ctrl + alt - r : brew services restart yabai
+
+# simulate arrow keys
+cmd + alt - h : skhd -k left
+cmd + alt - l : skhd -k right
+cmd + alt - k : skhd -k up
+cmd + alt - j : skhd -k down
