@@ -71,4 +71,4 @@ pkill clipmenud; clipmenud &
 pkill flameshot; flameshot &
 pkill sxhkd; sxhkd &
 
-compton -c -b
+picom -c -b
