@@ -43,7 +43,6 @@ import XMonad.Layout.LayoutCombinators
 import XMonad.Layout.ShowWName
 import XMonad.Layout.Spacing
 import XMonad.Layout.PerScreen
-import XMonad.Layout.Renamed
 import XMonad.Layout.SubLayouts
 import XMonad.Layout.WindowNavigation
 import XMonad.Layout.BoringWindows
