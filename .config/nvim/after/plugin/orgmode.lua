@@ -5,7 +5,7 @@ if not status_ok then
 end
 
 -- Load custom tree-sitter grammar for org filetype
-orgmode.setup_ts_grammar()
+-- orgmode.setup_ts_grammar()
 
 -- Tree-sitter configuration
 require'nvim-treesitter.configs'.setup {
