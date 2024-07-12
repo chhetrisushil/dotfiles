@@ -94,13 +94,13 @@
   (olivetti-mode))
 
 ;; Hook to auto-pulbish when a org file in org-roam-dir is saved
-(defun auto-publish-blog-hook ()
+(defun auto-publish-notes-hook ()
   "Auto publish notes on save"
   ;; check if saved file is part of org-roam-dir
   (if (org-publish-get-project-from-filename
        (buffer-file-name (buffer-base-buffer)) 'up)
       (save-excursion (org-publish-current-file)
-             (message "auto published blog") nil)))
+             (message "auto published notes") nil)))
 
 ;; pretty bullets in org mode.
 (require 'org-bullets)
@@ -108,7 +108,7 @@
           (lambda ()
             (my/multi-minor-mode)
             (org-bullets-mode 1)
-            (add-hook 'after-save-hook 'auto-publish-blog-hook nil nil)))
+            (add-hook 'after-save-hook 'auto-publish-notes-hook nil nil)))
 (add-hook 'text-mode-hook #'my/multi-minor-mode)
 
 ;; close todo with time.
