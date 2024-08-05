@@ -11,9 +11,11 @@ lua << EOF
         enabled = true,
       }
     },
-    window = {
+    win = {
       border = "double",
-      winblend = 30
+      wo = {
+        winblend = 30
+      }
     }
   }
 EOF
