@@ -43,7 +43,7 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 " Plug 'lambdatoast/elm.vim'
 " Plug 'ElmCast/elm-vim'
-Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki', {'for': 'vimwiki'}
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
@@ -152,5 +152,11 @@ Plug 'mfussenegger/nvim-dap-python'
 
 " notification popup
 Plug 'rcarriga/nvim-notify'
+
+" svelte plugin
+Plug 'leafOfTree/vim-svelte-plugin'
+
+" markdown view in nvim
+Plug 'OXY2DEV/markview.nvim'
 
 call plug#end()
