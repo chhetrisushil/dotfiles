@@ -16,17 +16,13 @@ if not wk_status_ok then
   return
 end
 
-wk.register({
-  x = {
-    name = "Trouble",
-    x = {"<cmd>TroubleToggle<cr>", "TroubleToggle"},
-    d = {
-      name = "Diagnostics",
-      w = {"<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace"},
-      d = {"<cmd>TroubleToggle document_diagnostics<cr>", "Document"},
-    },
-    q = {"<cmd>TroubleToggle quickfix<cr>", "Quick Fix"},
-    l = {"<cmd>TroubleToggle locllist<cr>", "Loc List"},
-    r = {"<cmd>TroubleToggle lsp_references<cr>", "References"},
-  }
-}, {prefix = "<space>", noremap = true, silent = true})
+wk.add({
+  { "<space>x", group = "Trouble", remap = false },
+  { "<space>xd", group = "Diagnostics", remap = false },
+  { "<space>xdd", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document", remap = false },
+  { "<space>xdw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace", remap = false },
+  { "<space>xl", "<cmd>TroubleToggle locllist<cr>", desc = "Loc List", remap = false },
+  { "<space>xq", "<cmd>TroubleToggle quickfix<cr>", desc = "Quick Fix", remap = false },
+  { "<space>xr", "<cmd>TroubleToggle lsp_references<cr>", desc = "References", remap = false },
+  { "<space>xx", "<cmd>TroubleToggle<cr>", desc = "TroubleToggle", remap = false },
+})

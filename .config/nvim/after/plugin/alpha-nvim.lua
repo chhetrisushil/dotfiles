@@ -12,6 +12,6 @@ if not wk_status_ok then
   return
 end
 
-wk.register({
-  a = {"<cmd>Alpha<cr>", "Alpha - Greeter"}
-}, {prefix = "<space>", nnoremap = true, silent = true})
+wk.add({
+  { "<space>a", "<cmd>Alpha<cr>", desc = "Alpha - Greeter" },
+})

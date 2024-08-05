@@ -35,8 +35,8 @@ if not status_ok then
   return
 end
 
-wk.register({
-  ["lf"] = {"<cmd>RnvimrToggle<CR>", "Ranger"}
-}, {prefix = '<leader>', nnoremap = true, silent = true})
+wk.add({
+  { "<leader>lf", "<cmd>RnvimrToggle<CR>", desc = "Ranger" },
+})
 
 EOF

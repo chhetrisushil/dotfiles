@@ -20,17 +20,15 @@ if not status_ok then
   return
 end
 
-wk.register({
-    ["<leader>f"] = {
-        name = "Telescope",
-        f = {":lua require'telescope.builtin'.find_files({hidden = true})<cr>", "Find files (include hidden)"},
-        g = {":lua require'telescope.builtin'.live_grep()<cr>", "Find files with grep"},
-        b = {":lua require'telescope.builtin'.buffers()<cr>", "Find buffers"},
-        h = {":lua require'telescope.builtin'.help_tags()<cr>", "Help tags"},
-        e = {"<cmd>Telescope file_browser<cr>", "File explorer"},
-        c = {"<cmd>Telescope current_buffer_fuzzy_find<cr>", "Find in current buffer"},
-    },
-    ["<C-p>"] = {":lua require'telescope.builtin'.find_files()<cr>", "Find files"},
-    ["<leader>lr"] = {function () require'telescope'.extensions.repo.list{search_dirs={workspace_loc}} end, "Open repo list"},
-    ["<leader>lc"] = {"<cmd>Telescope repo cached_list<cr>", "Open cached repo list"},
-}, {nnoremap = true, silent = true})
+wk.add({
+  { "<C-p>", ":lua require'telescope.builtin'.find_files()<cr>", desc = "Find files" },
+  { "<leader>f", group = "Telescope" },
+  { "<leader>fb", ":lua require'telescope.builtin'.buffers()<cr>", desc = "Find buffers" },
+  { "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Find in current buffer" },
+  { "<leader>fe", "<cmd>Telescope file_browser<cr>", desc = "File explorer" },
+  { "<leader>ff", ":lua require'telescope.builtin'.find_files({hidden = true})<cr>", desc = "Find files (include hidden)" },
+  { "<leader>fg", ":lua require'telescope.builtin'.live_grep()<cr>", desc = "Find files with grep" },
+  { "<leader>fh", ":lua require'telescope.builtin'.help_tags()<cr>", desc = "Help tags" },
+  { "<leader>lc", "<cmd>Telescope repo cached_list<cr>", desc = "Open cached repo list" },
+  { "<leader>lr", function () require'telescope'.extensions.repo.list{search_dirs={workspace_loc}} end, desc = "Open repo list" },
+})

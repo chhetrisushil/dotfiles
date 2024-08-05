@@ -34,8 +34,8 @@ if not status_ok then
   return
 end
 
-wk.register({
-  e = {"<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>" , "Line diagnostics"}
-}, {prefix = '<space>', nnoremap = true, silent = true})
+wk.add({
+  { "<space>e", "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>", desc = "Line diagnostics" },
+})
 
 EOF

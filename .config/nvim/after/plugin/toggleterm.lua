@@ -65,13 +65,11 @@ if not wk_status_ok then
   return
 end
 
-wk.register({
-  t = {
-    name = "ToggleTerm",
-    n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node Terminal" },
-    g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "Lazygit Terminal" },
-    h = { "<cmd>lua _GTOP_TOGGLE()<cr>", "Gtop Terminal" },
-    d = { "<cmd>lua _LAZYDOCKER_TOGGLE()<cr>", "Lazydocker Terminal" },
-    b = { "<cmd>2ToggleTerm size=20 direction=horizontal<cr>", "Bottom Terminal" },
-  }
-}, {prefix = "<leader>"})
+wk.add({
+  { "<leader>t", group = "ToggleTerm" },
+  { "<leader>tb", "<cmd>2ToggleTerm size=20 direction=horizontal<cr>", desc = "Bottom Terminal" },
+  { "<leader>td", "<cmd>lua _LAZYDOCKER_TOGGLE()<cr>", desc = "Lazydocker Terminal" },
+  { "<leader>tg", "<cmd>lua _LAZYGIT_TOGGLE()<cr>", desc = "Lazygit Terminal" },
+  { "<leader>th", "<cmd>lua _GTOP_TOGGLE()<cr>", desc = "Gtop Terminal" },
+  { "<leader>tn", "<cmd>lua _NODE_TOGGLE()<cr>", desc = "Node Terminal" },
+})

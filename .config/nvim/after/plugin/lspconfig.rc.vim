@@ -208,20 +208,18 @@ if not status_ok then
   return
 end
 
-wk.register({
-  q = {"<cmd>lua vim.diagnostic.setloclist()<CR>", "Loc list"},
-  f = {"<cmd>lua vim.lsp.buf.format({async = true})<CR>", "Formatting"},
-  j = {"<cmd>lua vim.diagnostic.goto_next()<CR>", "Goto Next Diagnostic"},
-  k = {"<cmd>lua vim.diagnostic.goto_prev()<CR>", "Goto Prev Diagnostic"},
-  w = {
-    name = "Workspace",
-    a = {"<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", "Add workspace"},
-    r = {"<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", "Remove workspace"},
-    l = {"<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", "List workspace"},
-  },
-  D = {"<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition"},
-  ["rn"] = {"<cmd>Lspsaga rename<CR>", "Rename variable"},
-  ["ca"] = {"<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action"}
-}, {prefix = "<space>", silent = true, noremap = true})
+wk.add({
+  { "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", desc = "Type Definition", remap = false },
+  { "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", desc = "Code action", remap = false },
+  { "<space>f", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", desc = "Formatting", remap = false },
+  { "<space>j", "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Goto Next Diagnostic", remap = false },
+  { "<space>k", "<cmd>lua vim.diagnostic.goto_prev()<CR>", desc = "Goto Prev Diagnostic", remap = false },
+  { "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", desc = "Loc list", remap = false },
+  { "<space>rn", "<cmd>Lspsaga rename<CR>", desc = "Rename variable", remap = false },
+  { "<space>w", group = "Workspace", remap = false },
+  { "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", desc = "Add workspace", remap = false },
+  { "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", desc = "List workspace", remap = false },
+  { "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", desc = "Remove workspace", remap = false },
+})
 
 EOF

@@ -146,12 +146,10 @@ if not wk_status_ok then
   return
 end
 
-wk.register({
-  n = {
-    name = "nvim-tree",
-    r = {"<cmd>NvimTreeRefresh<CR>", "Refresh nvim-tree"},
-    f = {"<cmd>NvimTreeFindFile<CR>", "Find file in nvim-tree"},
-  }
-}, {prefix = "<leader>", nnoremap = true, silent = true})
+wk.add({
+  {"<leader>n", group = "nvim-tree"},
+  {"<leader>nf", "<cmd>NvimTreeFindFile<CR>", desc = "Find file in nvim-tree"},
+  {"<leader>nr", "<cmd>NvimTreeRefresh<CR>", desc = "Refresh nvim-tree"},
+})
 
 EOF

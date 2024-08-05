@@ -4,6 +4,6 @@ if not status_ok then
     return
 end
 
-wk.register({
-  t = {":TagbarToggle<cr>", "TagbarToggle"}
-}, {prefix = "<space>", noremap = true, silent = true})
+wk.add({
+  { "<space>t", ":TagbarToggle<cr>", desc = "TagbarToggle", remap = false },
+})

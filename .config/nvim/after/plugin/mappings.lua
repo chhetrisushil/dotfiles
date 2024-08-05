@@ -5,30 +5,22 @@ if not status_ok then
 end
 
 -- with <leader> as prefix
-wk.register({
-  l = {
-    name = "Misc Bindings",
-    n = {"<cmd>setlocal number!<CR>", "Toggle Line Numbers"},
-  },
-  ["ot"] = {"<cmd>set paste!<CR>", "Toggle Paste"},
-  a = {":tab split<CR>:Ack ''<Left>", "Search in new Tab", silent=false},
-  A = {":tab split<CR>:Ack <C-r><C-w><CR>", "Search word in new Tab", silent=false},
-  e = {
-    name = "Edit vimrc",
-    v = {"<cmd>e " .. vim.env.MYVIMRC .. "<CR>", "Edit vimrc"}
-  },
-  s = {
-    name = "Source vimrc",
-    v = {"<cmd>so " .. vim.env.MYVIMRC .. "<CR>", "Source vimrc"}
-  },
-  j = {
-    name = "For Javascript",
-    s = {"<cmd>set syntax=javascript<CR>", "Set syntax to Javascript"},
-    d = {"<Plug>(jsdoc)<CR>", "JSDoc"},
-  }
-}, {prefix='<leader>', nnoremap=true, silent=true})
+wk.add({
+    { "<leader>A", ":tab split<CR>:Ack <C-r><C-w><CR>", desc = "Search word in new Tab", silent = false },
+    { "<leader>a", ":tab split<CR>:Ack ''<Left>", desc = "Search in new Tab", silent = false },
+    { "<leader>e", group = "Edit vimrc" },
+    { "<leader>ev", "<cmd>e /home/chhetrisushil/.config/nvim/init.vim<CR>", desc = "Edit vimrc" },
+    { "<leader>j", group = "For Javascript" },
+    { "<leader>jd", "<Plug>(jsdoc)<CR>", desc = "JSDoc" },
+    { "<leader>js", "<cmd>set syntax=javascript<CR>", desc = "Set syntax to Javascript" },
+    { "<leader>l", group = "Misc Bindings" },
+    { "<leader>ln", "<cmd>setlocal number!<CR>", desc = "Toggle Line Numbers" },
+    { "<leader>ot", "<cmd>set paste!<CR>", desc = "Toggle Paste" },
+    { "<leader>s", group = "Source vimrc" },
+    { "<leader>sv", "<cmd>so /home/chhetrisushil/.config/nvim/init.vim<CR>", desc = "Source vimrc" },
+})
 
 -- with <space> as prefix
-wk.register({
-  l = {"<cmd>Limelight!!<cr>", "Toggle Limelight"}
-}, {prefix='<space>', nnoremap=true, silent=true})
+wk.add({
+  { "<space>l", "<cmd>Limelight!!<cr>", desc = "Toggle Limelight" },
+})
