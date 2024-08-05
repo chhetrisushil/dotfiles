@@ -111,3 +111,6 @@ cnoreabbrev ag Ack
 cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
+
+" disable vimwiki filetype for global md files.
+let g:vimwiki_global_ext = 0

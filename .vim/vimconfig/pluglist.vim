@@ -43,7 +43,7 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 " Plug 'lambdatoast/elm.vim'
 " Plug 'ElmCast/elm-vim'
-Plug 'vimwiki/vimwiki', {'for': 'vimwiki'}
+Plug 'vimwiki/vimwiki'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
