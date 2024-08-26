@@ -99,7 +99,7 @@ scratchpads = [
     , NS "music" spawnMusic findMusic manageMusic
     ]
   where
-    spawnTerm = "urxvtc -name UrxvtScratchpad"
+    spawnTerm = "urxvtc -name UrxvtScratchpad -e tmux"
     findTerm = (appName =? "UrxvtScratchpad")
     manageTerm = (customFloating $ W.RationalRect l t w h)
       where
