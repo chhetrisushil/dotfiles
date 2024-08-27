@@ -1,0 +1,10 @@
+configuration {
+  display-drun: "Applications";
+  display-window: "Windows";
+  display-run: "Commands";
+  drun-display-format: "{icon} {name}";
+  modi: "window,run,drun,ssh,combi";
+  show-icons: true;
+}
+
+@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"

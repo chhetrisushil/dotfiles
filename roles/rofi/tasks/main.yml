@@ -10,3 +10,10 @@
     state: present
   become: yes
   when: rofi_check.stdout == ""
+
+- name: Copy rofi config
+  synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: "../../../.config/rofi"
+    owner: yes
+  when: rofi_check.stdout == ""
