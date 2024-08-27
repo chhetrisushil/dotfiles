@@ -292,14 +292,15 @@ modMask' = mod4Mask
 keys' :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- launching and killing programs
-    [ ((modMask,                                 xK_Return), spawn $ XMonad.terminal conf)
+    [ ((modMask,                                    xK_Return), spawn $ XMonad.terminal conf)
     -- , ((modMask,                                 xK_p     ), shellPrompt myXPConfig)
-    , ((modMask,                                 xK_p     ), spawn "dmenu_run -p 'Run:'")
-    , ((modMask .|. shiftMask,                   xK_c     ), kill)
+    , ((modMask,                                    xK_p     ), spawn "rofi -show drun")
+    , ((modMask .|. shiftMask,                      xK_p     ), spawn "dmenu_run -p 'Run:'")
+    , ((modMask .|. shiftMask,                      xK_c     ), kill)
     -- , ((modMask .|. shiftMask,                   xK_p     ), spawn "gmrun")
-    , ((modMask .|. shiftMask,                   xK_p     ), shellPrompt myXPConfig)
-    , ((modMask .|. shiftMask .|. controlMask,   xK_s     ), spawn "poweroff")
-    , ((modMask,                                 xK_d     ), spawn "betterlockscreen -l -- --time-str '%I:%M %p'")
+    -- , ((modMask .|. shiftMask,                   xK_p     ), shellPrompt myXPConfig)
+    , ((modMask .|. shiftMask .|. controlMask,      xK_s     ), spawn "poweroff")
+    , ((modMask,                                    xK_d     ), spawn "betterlockscreen -l -- --time-str '%I:%M %p'")
     -- , ((modMask .|. controlMask,                 xK_d     ), spawn "alock -bg image:file=/home/chhetrisushil/Pictures/1752231.jpg -c glyph")
 
     -- layouts
@@ -388,12 +389,14 @@ myAdditionalKeys = [
   ("M-a " ++ key, f)
     | (key, f) <- [
     -- this section will bind a sequence with prefix `Mod+a <key>`
-    ("r", spawn "urxvtc -e ranger")
+    ("r g", spawn "urxvtc -e ranger")
     , ("m", namedScratchpadAction scratchpads "music")
     , ("d o t", spawn "urxvtc -e lazygit -p ~/.dotfiles")
     , ("g", spawn "google-chrome-stable")
     , ("a l", spawn "alacritty")
     , ("d p h", spawn "clipdel '.*' | dmenu -p 'Delete paste history: ' -l 10 | clipdel -d")
+    , ("r u n", spawn "rofi -show run")
+    , ("w i n", spawn "rofi -show window")
     ]
   ]
   ++

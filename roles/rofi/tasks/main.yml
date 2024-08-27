@@ -1,0 +1,12 @@
+---
+- name: Check if rofi is already installed
+  shell: command -v rofi
+  ignore_errors: yes
+  register: rofi_check
+
+- name: Install rofi
+  package:
+    name: rofi
+    state: present
+  become: yes
+  when: rofi_check.stdout == ""
