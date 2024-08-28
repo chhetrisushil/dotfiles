@@ -294,7 +294,8 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- launching and killing programs
     [ ((modMask,                                    xK_Return), spawn $ XMonad.terminal conf)
     -- , ((modMask,                                 xK_p     ), shellPrompt myXPConfig)
-    , ((modMask,                                    xK_p     ), spawn "rofi -m -1 -show drun")
+    -- , ((modMask,                                    xK_p     ), spawn "rofi -m -1 -show drun")
+    , ((modMask,                                    xK_space     ), spawn "rofi -m -1 -show drun")
     , ((modMask .|. shiftMask,                      xK_p     ), spawn "dmenu_run -p 'Run:'")
     , ((modMask .|. shiftMask,                      xK_c     ), kill)
     -- , ((modMask .|. shiftMask,                   xK_p     ), spawn "gmrun")
@@ -304,12 +305,11 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- , ((modMask .|. controlMask,                 xK_d     ), spawn "alock -bg image:file=/home/chhetrisushil/Pictures/1752231.jpg -c glyph")
 
     -- layouts
-    , ((modMask,               xK_space ), sendMessage NextLayout)
-    , ((modMask .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
-    , ((modMask              , xK_b     ), sendMessage ToggleStruts)
-    , ((modMask              , xK_f     ), sendMessage $ JumpToLayout "Full")
-    , ((modMask              , xK_r     ), sendMessage $ JumpToLayout "Tiled")
-    , ((modMask              , xK_w     ), sendMessage $ JumpToLayout "Wide")
+    , ((modMask .|. controlMask         , xK_bracketleft), setLayout $ XMonad.layoutHook conf)
+    , ((modMask                         , xK_b     ), sendMessage ToggleStruts)
+    , ((modMask                         , xK_f     ), sendMessage $ JumpToLayout "Full")
+    , ((modMask                         , xK_r     ), sendMessage $ JumpToLayout "Tiled")
+    , ((modMask                         , xK_w     ), sendMessage $ JumpToLayout "Wide")
     -- Don't need split screens right now :)
     , ((modMask .|. controlMask, xK_l   ), layoutSplitScreen 2 (TwoPane 0.5 0.5))
     , ((modMask .|. controlMask, xK_r   ), rescreen)
@@ -389,14 +389,12 @@ myAdditionalKeys = [
   ("M-a " ++ key, f)
     | (key, f) <- [
     -- this section will bind a sequence with prefix `Mod+a <key>`
-    ("r g", spawn "urxvtc -e ranger")
+    ("r", spawn "urxvtc -e ranger")
     , ("m", namedScratchpadAction scratchpads "music")
     , ("d o t", spawn "urxvtc -e lazygit -p ~/.dotfiles")
     , ("g", spawn "google-chrome-stable")
     , ("a l", spawn "alacritty")
     , ("d p h", spawn "clipdel '.*' | dmenu -p 'Delete paste history: ' -l 10 | clipdel -d")
-    , ("r u n", spawn "rofi -m -1 -show run")
-    , ("w i n", spawn "rofi -m -1 -show window")
     ]
   ]
   ++
@@ -405,6 +403,9 @@ myAdditionalKeys = [
   ("M-u", spawn "urxvtc")
   , ("M-M1-c", spawn "clipmenu -p 'clipboard:'")
   , ("M-t", withFocused toggleFloat)
+  , ("M-/", spawn "rofi -m -1 -show run")
+  , ("M-\\", spawn "rofi -m -1 -show window")
+  , ("M-]", sendMessage NextLayout)
 
   -- keep current window visible in every workspace
   , ("M-s", windows copyToAll)
