@@ -1,8 +1,8 @@
-hyper + alt + h
+super + alt + h
   xdotool keyup h key --clearmodifiers Left
-hyper + alt + j
+super + alt + j
   xdotool keyup j key --clearmodifiers Down
-hyper + alt + k
+super + alt + k
   xdotool keyup k key --clearmodifiers Up
-hyper + alt + l
+super + alt + l
   xdotool keyup l key --clearmodifiers Right
