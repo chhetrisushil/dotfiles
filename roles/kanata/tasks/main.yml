@@ -1,0 +1,20 @@
+---
+- name: Check if kanata is already installed
+  shell: command -v kanata
+  ignore_errors: yes
+  register: kanata_check
+
+- name: Install kanata
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - kanata
+    state: present
+  when: kanata_check.stdout == ""
+
+- name: Copy kanata config
+  synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: "../../../.config/kanata"
+    owner: yes
+  when: kanata_check.stdout == ""

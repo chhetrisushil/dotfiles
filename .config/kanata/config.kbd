@@ -1,0 +1,21 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  tab
+  caps
+  \
+)
+
+(defalias
+  c2cNe (tap-hold-press 200 200 esc lctl)
+  t2sNt (tap-hold-press 200 200 tab lmet)
+  b2sNb (tap-hold-press 200 200 \ lmet)
+)
+
+(deflayer qwerty
+  @t2sNt
+  @c2cNe
+  @b2sNb
+)
