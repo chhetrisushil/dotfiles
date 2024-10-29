@@ -8,7 +8,7 @@
   kewlfft.aur.aur:
     use: yay
     name:
-      - kanata
+      - kanata-bin
     state: present
   when: kanata_check.stdout == ""
 
