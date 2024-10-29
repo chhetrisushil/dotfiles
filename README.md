@@ -176,3 +176,4 @@ install 'yakuake' for drop-down terminal
   - install `pywal` for setting wallpaper and corresponding theme
   - install `nerd-fonts-complete` from AUR for arch linux for nerd font support (powerline support)
   - terminator config path `.config/terminator/config`
+  - if `kanata` does't work refer https://github.com/jtroo/kanata as there might be a need to add the user to `uinput` group.
