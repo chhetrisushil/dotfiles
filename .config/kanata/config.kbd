@@ -3,6 +3,7 @@
 )
 
 (defsrc
+  esc
   tab
   caps
   \
@@ -17,6 +18,7 @@
 )
 
 (deflayer qwerty
+  grv
   @t2sNt
   @c2cNe
   @b2sNb
@@ -24,8 +26,9 @@
 )
 
 (deflayer arrow
-  _
-  _
-  _
+  grv
+  @t2sNt
+  @c2cNe
+  @b2sNb
   _ left down up right
 )
