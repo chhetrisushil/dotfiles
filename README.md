@@ -153,6 +153,15 @@ install 'yakuake' for drop-down terminal
 
 ## How to configure/customize Neovim
 - github: https://github.com/LunarVim/Neovim-from-scratch
+## Steps to launch `kanata` on start-up
+### MacOS
+- Run the script located in `scripts/bin/kanata_launch_macos` located in the `dotfiles` folder
+- Add `kanata` binary to `system settings -> privacy & security -> input monitoring`
+- Reboot the system
+
+### Linux
+- Run `sudo groupadd uinput` to create a `input` user group.
+- Run `sudo usermod -aG input,uinput $(whoami)` to add the user to the usergroups.
 
 **NOTES:** 
   - Before setting up vim copy `.vim` folder to `~/.vim`
