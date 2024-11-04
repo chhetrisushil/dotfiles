@@ -11,7 +11,7 @@
 
 (defalias
   c2cNe (tap-hold-press 200 200 esc lctl)
-  arr (tap-hold-press 200 200 f (layer-while-held arrow))
+  arr (tap-hold-release 200 200 f (layer-while-held arrow))
 )
 
 (deflayer qwerty
