@@ -1,0 +1,27 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  ;; only required for keychron keyboard
+  esc
+  caps
+  f h j k l
+)
+
+(defalias
+  c2cNe (tap-hold-press 200 200 esc lctl)
+  arr (tap-hold-press 200 200 f (layer-while-held arrow))
+)
+
+(deflayer qwerty
+  grv
+  @c2cNe
+  @arr _ _ _ _
+)
+
+(deflayer arrow
+  _
+  _
+  _ left down up right
+)
