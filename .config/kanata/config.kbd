@@ -7,7 +7,8 @@
   tab
   caps
   \
-  f h j k l
+  lalt
+  a s d f g h j k l ;
 )
 
 (defalias
@@ -15,6 +16,8 @@
   t2sNt (tap-hold-press 200 200 tab lmet)
   b2sNb (tap-hold-press 200 200 \ lmet)
   arr   (tap-hold-release 200 200 f (layer-while-held arrow))
+  num   (tap-dance 200 (lalt (layer-switch number)))
+  rel   (layer-switch qwerty)
 )
 
 (deflayer qwerty
@@ -22,7 +25,8 @@
   @t2sNt
   @c2cNe
   @b2sNb
-  @arr _ _ _ _
+  @num
+  _ _ _ @arr _ _ _ _ _ _
 )
 
 (deflayer arrow
@@ -30,5 +34,15 @@
   @t2sNt
   @c2cNe
   @b2sNb
-  _ left down up right
+  _
+  _ _ _ _ _ left down up right _
+)
+
+(deflayer number
+  grv
+  @t2sNt
+  @c2cNe
+  @b2sNb
+  @rel
+  1 2 3 4 5 6 7 8 9 0
 )
