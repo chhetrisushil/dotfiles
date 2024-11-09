@@ -1,5 +1,6 @@
 (defcfg
   process-unmapped-keys yes
+  log-layer-changes no
 )
 
 (defsrc
@@ -12,7 +13,20 @@
 
 (defvar
   tap-time 200
-  hold-time 150
+  hold-time 200
+)
+
+(defalias
+  c2cNe     (tap-hold-press $tap-time $hold-time esc lctl)
+
+  a         (tap-hold-release $tap-time $hold-time a lmet)
+  s         (tap-hold-release $tap-time $hold-time s lalt)
+  d         (tap-hold-release $tap-time $hold-time d lsft)
+  f         (tap-hold-release $tap-time $hold-time f (layer-while-held arrowNnumNsym))
+  j         (tap-hold-release $tap-time $hold-time j (layer-while-held arrowNnumNsym))
+  k         (tap-hold-release $tap-time $hold-time k rsft)
+  l         (tap-hold-release $tap-time $hold-time l ralt)
+  ;         (tap-hold-release $tap-time $hold-time ; rmet)
 )
 
 (deflayer base
@@ -23,40 +37,10 @@
   _ _ _
 )
 
-(deflayer nomods
-  grv
-  tab q w e r t y u i o p [  ] \
-  @c2cNe a s d f g h j k l ;
-  lshift z x c v b n m , . /
-  lctl lmet lalt
-)
-
 (deflayer arrowNnumNsym
   grv
   _ 1 2 3 4 5 6 7 8 9 0 _ _ _
   @c2cNe _ _ _ _ _ left down up right _
   _ S-1 S-2 S-3 S-4 S-5 S-6 S-7 S-8 S-9 S-0 ;; symbols are defined with S-<num> emulating Shift + <num>
   _ _ _
-)
-
-(deffakekeys
-  to-base (layer-switch base)
-)
-
-(defalias
-  tap (multi
-    (layer-switch nomods)
-    (on-idle-fakekey to-base tap 20)
-  )
-
-  c2cNe     (tap-hold-press $tap-time $hold-time esc lctl)
-
-  a (tap-hold-release $tap-time $hold-time (multi a @tap) lmet)
-  s (tap-hold-release $tap-time $hold-time (multi s @tap) lalt)
-  d (tap-hold-release $tap-time $hold-time (multi d @tap) lsft)
-  f (tap-hold-release $tap-time $hold-time (multi f @tap) (layer-while-held arrowNnumNsym))
-  j (tap-hold-release $tap-time $hold-time (multi j @tap) (layer-while-held arrowNnumNsym))
-  k (tap-hold-release $tap-time $hold-time (multi k @tap) rsft)
-  l (tap-hold-release $tap-time $hold-time (multi l @tap) ralt)
-  ; (tap-hold-release $tap-time $hold-time (multi ; @tap) rmet)
 )
