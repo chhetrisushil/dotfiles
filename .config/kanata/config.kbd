@@ -24,9 +24,9 @@
   d         (tap-hold-release $tap-time $hold-time d lsft)
   f         (tap-hold-release $tap-time $hold-time f (layer-while-held arrowNnumNsym))
   j         (tap-hold-release $tap-time $hold-time j (layer-while-held arrowNnumNsym))
-  k         (tap-hold-release $tap-time $hold-time k rsft)
-  l         (tap-hold-release $tap-time $hold-time l ralt)
-  ;         (tap-hold-release $tap-time $hold-time ; rmet)
+  k         (tap-hold-release $tap-time $hold-time k lsft)
+  l         (tap-hold-release $tap-time $hold-time l lalt)
+  ;         (tap-hold-release $tap-time $hold-time ; lmet)
 )
 
 (deflayer base
