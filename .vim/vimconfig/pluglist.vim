@@ -159,4 +159,8 @@ Plug 'leafOfTree/vim-svelte-plugin'
 " markdown view in nvim
 Plug 'OXY2DEV/markview.nvim'
 
+" Noice plugin to replace message UI
+Plug 'folke/noice.nvim'
+Plug 'MunifTanjim/nui.nvim'
+
 call plug#end()

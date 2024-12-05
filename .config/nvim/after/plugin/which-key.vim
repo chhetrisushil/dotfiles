@@ -18,4 +18,8 @@ lua << EOF
       }
     }
   }
+
+  wk.add({
+    {"<space>bd", "<cmd>bdelete<CR>", desc = "Delete current buffer", remap = false}
+  })
 EOF
