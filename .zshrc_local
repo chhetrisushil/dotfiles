@@ -64,6 +64,9 @@ function peco-history-selection() {
 zle -N peco-history-selection
 bindkey -a '/' peco-history-selection
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # fortune | cowsay -f tux
 
 
