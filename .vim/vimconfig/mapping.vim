@@ -83,7 +83,6 @@ vnoremap ( <ESC>`>a)<ESC>`<i(<ESC>
 vnoremap { <ESC>`>a}<ESC>`<i{<ESC>
 vnoremap ) <ESC>`>a)<ESC>`<i(<ESC>
 vnoremap } <ESC>`>a}<ESC>`<i{<ESC>
-vnoremap " <ESC>`>a"<ESC>`<i"<ESC>
 vnoremap ' <ESC>`>a'<ESC>`<i'<ESC>
 
 " Command-line Mapping
