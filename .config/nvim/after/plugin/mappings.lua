@@ -23,4 +23,5 @@ wk.add({
 -- with <space> as prefix
 wk.add({
   { "<space>l", "<cmd>Limelight!!<cr>", desc = "Toggle Limelight" },
+  { "<space>bd", "<cmd>bdelete<CR>", desc = "Delete current buffer", remap = false },
 })
