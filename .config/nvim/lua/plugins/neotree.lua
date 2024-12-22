@@ -11,8 +11,18 @@ return {
     local neotree = require("neo-tree")
     local wk = require("which-key")
 
-    wk.add({
-      { "<C-d>", "<cmd>Neotree toggle<CR>", desc = "Neotree" }
+    neotree.setup({
+      filesystem = {
+        follow_current_file = {
+          enabled = true,
+          leave_dirs_open = false,
+        },
+      },
+      buffers = { follow_current_file = { enable = true } },
     })
-  end
+
+    wk.add({
+      { "<C-d>", "<cmd>Neotree toggle<CR>", desc = "Neotree" },
+    })
+  end,
 }
