@@ -13,6 +13,7 @@ return {
         enable = true,
         disable = {},
       },
+      sync_install = false,
       ensure_installed = {
         "tsx",
         "toml",
@@ -27,7 +28,11 @@ return {
         "lua",
         "javascript",
         "typescript",
+        "query",
+        "markdown",
+        "markdown_inline",
       },
+      auto_install = true,
       autotag = {
         enable = true,
       },

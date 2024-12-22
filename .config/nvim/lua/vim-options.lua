@@ -14,3 +14,6 @@ vim.o.smartcase = true
 vim.o.smarttab = true
 
 vim.g.mapleader = " "
+vim.g.markdown_fence_languages = {
+  "ts=typescript"
+}

@@ -12,6 +12,7 @@ return {
         ensure_installed = {
           "lua_ls",
           "ts_ls",
+          "denols",
         },
       })
     end
@@ -44,6 +45,7 @@ return {
       lspconfig.lua_ls.setup({})
 
       -- Javascrip/Typescript lsp config
+      lspconfig.denols.setup({})
       lspconfig.ts_ls.setup({})
     end
   },
