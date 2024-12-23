@@ -15,9 +15,11 @@ return {
 		local dapui = require("dapui")
 		local wk = require("which-key")
 
+		-- Setup
 		dapui.setup()
 		require("dap-go").setup()
 
+    -- Listeners
 		dap.listeners.before.attach.dapui_config = function()
 			dapui.open()
 		end
