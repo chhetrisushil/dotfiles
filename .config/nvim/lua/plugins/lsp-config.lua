@@ -30,7 +30,7 @@ return {
       wk.add({
         { "<leader>D", vim.lsp.buf.type_definition, desc = "Type Definition", remap = false },
         { "<leader>ca", vim.lsp.buf.code_action, desc = "Code action", remap = false },
-        { "<leader>f", function() vim.lsp.buf.format({ async = true }) end, desc = "Formatting", remap = false },
+        -- { "<leader>f", function() vim.lsp.buf.format({ async = true }) end, desc = "Formatting", remap = false },
         { "<leader>j", vim.diagnostic.goto_next, desc = "Goto Next Diagnostic", remap = false },
         { "<leader>k", vim.diagnostic.goto_prev, desc = "Goto Prev Diagnostic", remap = false },
         { "<leader>q", vim.diagnostic.setloclist, desc = "Loc list", remap = false },
