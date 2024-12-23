@@ -31,6 +31,7 @@ return {
         { "<leader>ff", function() builtin.find_files({ hidden = true }) end, desc = "Find files (include hidden)" },
         { "<leader>fg", builtin.live_grep, desc = "Find files with grep" },
         { "<leader>fh", builtin.help_tags, desc = "Help tags" },
+        { "<leader>fs", builtin.lsp_document_symbols, desc = "Symbols in current buffer" },
         { "<leader>lc", "<cmd>Telescope repo cached_list<cr>", desc = "Open cached repo list" },
         { "<leader>lr", function () telescope.extensions.repo.list{search_dirs={Workspace_loc}} end, desc = "Open repo list" },
         { "<leader><leader>", builtin.oldfiles, desc = "Old files" },
