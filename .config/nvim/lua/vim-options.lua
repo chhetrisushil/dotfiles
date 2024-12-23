@@ -1,19 +1,24 @@
-vim.o.expandtab = true
-vim.o.tabstop = 2
-vim.o.softtabstop = 2
-vim.o.shiftwidth = 2
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.swapfile = false
-vim.o.syntax = "on"
-vim.o.smartindent = true
-vim.o.autoindent = true
-vim.o.copyindent = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.smarttab = true
+local opt = vim.o
 
-vim.g.mapleader = " "
-vim.g.markdown_fence_languages = {
+opt.expandtab = true
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
+opt.number = true
+opt.relativenumber = true
+opt.swapfile = false
+opt.syntax = "on"
+opt.smartindent = true
+opt.autoindent = true
+opt.copyindent = true
+opt.ignorecase = true
+opt.smartcase = true
+opt.smarttab = true
+opt.cursorline = true
+
+local g = vim.g
+
+g.mapleader = " "
+g.markdown_fence_languages = {
   "ts=typescript"
 }
