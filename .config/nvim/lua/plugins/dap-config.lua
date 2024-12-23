@@ -4,6 +4,7 @@ return {
 		"rcarriga/nvim-dap-ui",
 		"mxsdev/nvim-dap-vscode-js",
 		"leoluz/nvim-dap-go",
+		"theHamsta/nvim-dap-virtual-text",
 		{
 			"microsoft/vscode-js-debug",
 			opt = true,
@@ -18,6 +19,7 @@ return {
 		-- Setup
 		dapui.setup()
 		require("dap-go").setup()
+		require("nvim-dap-virtual-text").setup()
 
     -- Listeners
 		dap.listeners.before.attach.dapui_config = function()
