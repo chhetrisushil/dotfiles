@@ -21,7 +21,7 @@ return {
 		require("dap-go").setup()
 		require("nvim-dap-virtual-text").setup()
 
-    -- Listeners
+		-- Listeners
 		dap.listeners.before.attach.dapui_config = function()
 			dapui.open()
 		end
@@ -39,6 +39,13 @@ return {
 		wk.add({
 			{ "<leader>dt", dap.toggle_breakpoint, desc = "Toggle Breakpoint" },
 			{ "<leader>dc", dap.continue, desc = "Continue" },
+			{
+				"<leader>d?",
+				function()
+					dapui.eval(nil, { enter = true })
+				end,
+				desc = "Eval",
+			},
 		})
 
 		require("dap-vscode-js").setup({
