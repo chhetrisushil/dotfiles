@@ -85,4 +85,4 @@
     name: debugpy
 
 - name: Configure neovim plugins
-  command: nvim --headless +PlugInstall +qa
+  command: nvim --headless "+Lazy! sync" +qa

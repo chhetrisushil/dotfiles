@@ -5,6 +5,7 @@ return {
 		"mxsdev/nvim-dap-vscode-js",
 		"leoluz/nvim-dap-go",
 		"theHamsta/nvim-dap-virtual-text",
+		"nvim-neotest/nvim-nio"
 		{
 			"microsoft/vscode-js-debug",
 			opt = true,
