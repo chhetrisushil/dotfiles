@@ -1,4 +1,4 @@
-local image_path = vim.fn.expand("$HOME/.config/nvim/lua/plugins/snacks/sushil.png")
+local image_path = vim.fn.expand("$HOME/.config/nvim/lua/plugins/snacks/skull.png")
 
 return {
   "folke/snacks.nvim",
@@ -27,7 +27,7 @@ return {
         { section = "startup" },
         {
           section = "terminal",
-          cmd = "ascii-image-converter -C " .. image_path,
+          cmd = "ascii-image-converter -C -b " .. image_path,
           random = 10,
           pane = 2,
           indent = 4,
