@@ -16,6 +16,8 @@ return {
           "denols",
           "bashls",
           "gopls",
+          "html",
+          "emmet_language_server",
         },
       })
     end,
@@ -80,6 +82,25 @@ return {
 
       -- Bash lsp config
       lspconfig.bashls.setup({})
+
+      -- HTML lsp config
+      lspconfig.html.setup({})
+
+      -- Emmet lsp config
+      lspconfig.emmet_language_server.setup({
+        filetypes = {
+          "css",
+          "eruby",
+          "html",
+          "javascript",
+          "javascriptreact",
+          "less",
+          "sass",
+          "scss",
+          "pug",
+          "typescriptreact",
+        },
+      })
     end,
   },
 }
