@@ -15,6 +15,7 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.smarttab = true
 opt.cursorline = true
+opt.confirm = true
 
 local g = vim.g
 
