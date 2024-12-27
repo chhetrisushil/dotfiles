@@ -8,9 +8,16 @@ return {
 	opts = {},
 	keys = {
 		{
-			"<leader>?",
+			"<leader>\\",
 			function()
 				require("which-key").show({ global = false })
+			end,
+			desc = "Buffer Local Keymaps (which-key)",
+		},
+		{
+			"<leader>?",
+			function()
+				require("which-key").show()
 			end,
 			desc = "Buffer Local Keymaps (which-key)",
 		},
@@ -18,11 +25,11 @@ return {
 		{ "<leader>bd", "<cmd>bd<CR>", desc = "Delete current buffer", remap = false },
 		{ "<C-l>", "<cmd>nohl<CR>", desc = "No highlight", remap = false, mode = "n" },
 		-- window movements
-		{ ";w", "<C-w>w", desc = "Move to next window" },
-		{ ";h", "<C-w>h", desc = "Move to left window" },
-		{ ";j", "<C-w>j", desc = "Move to window below" },
-		{ ";k", "<C-w>k", desc = "Move to window above" },
-		{ ";l", "<C-w>l", desc = "Move to right window" },
+		{ "<localleader>w", "<C-w>w", desc = "Move to next window" },
+		{ "<localleader>h", "<C-w>h", desc = "Move to left window" },
+		{ "<localleader>j", "<C-w>j", desc = "Move to window below" },
+		{ "<localleader>k", "<C-w>k", desc = "Move to window above" },
+		{ "<localleader>l", "<C-w>l", desc = "Move to right window" },
 	},
 	config = function()
 		local hipatterns = require("mini.hipatterns")

@@ -20,6 +20,7 @@ opt.confirm = true
 local g = vim.g
 
 g.mapleader = " "
+g.maplocalleader = ";"
 g.markdown_fence_languages = {
   "ts=typescript"
 }
