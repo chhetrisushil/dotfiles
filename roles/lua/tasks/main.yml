@@ -1,0 +1,24 @@
+---
+- name: Check if lua is already installed
+  shell: command -v lua
+  ignore_errors: yes
+  register: lua_check
+
+- name: Install lua
+  package:
+    name: lua
+    state: present
+  become: yes
+  when: lua_check.stdout == ""
+
+- name: Check if luarocks is already installed
+  shell: command -v luarocks
+  ignore_errors: yes
+  register: luarocks_check
+
+- name: Install luarocks
+  package:
+    name: luarocks
+    state: present
+  become: yes
+  when: luarocks_check.stdout == ""
