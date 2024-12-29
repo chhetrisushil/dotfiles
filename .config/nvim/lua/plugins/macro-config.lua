@@ -5,7 +5,6 @@ return {
     -- these must match the keys in the mapping config below
     { "q", desc = "  Start Recording" },
     { "<localleader>q", desc = "  Play Recording" },
-    { "<localleader>e", desc = "  Edit Recording" },
     { "<localleader>s", desc = "  Switch Slot" },
   },
   config = function()
@@ -14,7 +13,6 @@ return {
       mapping = {
         startStopRecording = "q",
         playMacro = "<localleader>q",
-        editMacro = "<localleader>e",
         switchSlot = "<localleader>s",
       },
     })
