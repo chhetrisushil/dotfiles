@@ -49,7 +49,7 @@ return {
       { "<leader>j",  vim.diagnostic.goto_next,         desc = "Goto Next Diagnostic", remap = false },
       { "<leader>k",  vim.diagnostic.goto_prev,         desc = "Goto Prev Diagnostic", remap = false },
       { "<leader>q",  vim.diagnostic.setloclist,        desc = "Loc list",             remap = false },
-      { "<leader>rn", vim.lsp.buf.rename,               desc = "Rename variable",      remap = false },
+      -- { "<leader>rn", vim.lsp.buf.rename,               desc = "Rename variable",      remap = false },
       { "<leader>w",  group = "Workspace",              remap = false },
       { "<leader>wa", vim.lsp.buf.add_workspace_folder, desc = "Add workspace",        remap = false },
       {
