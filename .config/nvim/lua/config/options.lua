@@ -1,5 +1,15 @@
+local g = vim.g
+
+g.mapleader = " "
+g.maplocalleader = ";"
+g.markdown_fence_languages = {
+  "ts=typescript"
+}
+
 local opt = vim.o
 
+opt.encoding = "utf-8"
+opt.fileencoding = "utf-8"
 opt.termguicolors = true
 opt.expandtab = true
 opt.tabstop = 2
@@ -17,11 +27,11 @@ opt.smartcase = true
 opt.smarttab = true
 opt.cursorline = true
 opt.confirm = true
+opt.undofile = true
 
-local g = vim.g
+-- Undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
-g.mapleader = " "
-g.maplocalleader = ";"
-g.markdown_fence_languages = {
-  "ts=typescript"
-}
+-- Add asterisks in block comments
+vim.opt.formatoptions:append({ "r" })
