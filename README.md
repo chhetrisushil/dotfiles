@@ -180,6 +180,12 @@ install 'yakuake' for drop-down terminal
   - set locale to utf8 in linux for powerline fonts to work properly in tmux, run `sudo localectl set-locale LANG="en_IN.utf8"`, choose utf8 locale by running `localectl list-locales`. Once the locale is set a reboot is required.
   - Install `eslint`, run `npm install -g eslint`
   - `.tmux/` folder is customized copy of `oh-my-tmux`
+      - to enable undercurl set the following in `.tmux.conf.local` **Copy with #!important**
+      ```tmux
+      set -g default-terminal 'alacritty' #!important
+      set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm' #!important
+      set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m' #!important
+      ```
   - install `reattach-to-user-namespace` in macos for tmux and clipboard binding and `xclip` for Linux
   - install `clipit` for clipboard management (paste from history) for linux
   - install `pywal` for setting wallpaper and corresponding theme
