@@ -9,6 +9,12 @@ return {
   },
   config = function()
     require("noice").setup({
+      views = {
+        hover = {
+          border = { style = "rounded" },
+          size = { max_width = 80 },
+        },
+      },
       lsp = {
         override = {
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
@@ -21,5 +27,5 @@ return {
         inc_rename = true,
       },
     })
-  end
+  end,
 }
