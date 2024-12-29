@@ -425,4 +425,7 @@ decorations = "none"
 opacity = 0.1
 blur = true
 
+[env]
+TERM = "alacritty"
+
 [keyboard]
