@@ -1,5 +1,6 @@
 local opt = vim.o
 
+opt.termguicolors = true
 opt.expandtab = true
 opt.tabstop = 2
 opt.softtabstop = 2
