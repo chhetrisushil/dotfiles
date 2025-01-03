@@ -19,6 +19,7 @@ return {
           "html",
           "emmet_language_server",
           "nginx_language_server",
+          "elmls",
         },
       })
     end,
@@ -99,6 +100,9 @@ return {
 
       -- Nginx lsp config
       lspconfig.nginx_language_server.setup({})
+
+      -- Elm lsp config
+      lspconfig.elmls.setup({})
     end,
   },
 }
