@@ -3,7 +3,7 @@ local g = vim.g
 g.mapleader = " "
 g.maplocalleader = ";"
 g.markdown_fence_languages = {
-  "ts=typescript"
+  "ts=typescript",
 }
 
 local opt = vim.o
@@ -35,3 +35,10 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
+
+-- Rounded borders for diagnostics
+vim.diagnostic.config({
+  float = {
+    border = "rounded",
+  },
+})
