@@ -4,8 +4,7 @@
 :END:
 This repo is just to store my dot config files for example .vimrc etc
 
-reference: https://github.com/sagarrakshe/dotvim,
-https://github.com/sagarrakshe/dotfiles
+reference: https://github.com/sagarrakshe/dotvim, https://github.com/sagarrakshe/dotfiles
 
 * Setup
 :PROPERTIES:
@@ -51,61 +50,49 @@ install 'yakuake' for drop-down terminal
 :PROPERTIES:
 :CUSTOM_ID: mpv-for-mac-os
 :END:
-- Install =mpv= for mac os using brew run the following command
-  =brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/mpv.rb=
+- Install =mpv= for mac os using brew run the following command =brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/mpv.rb=
 
 ** Nerd font
 :PROPERTIES:
 :CUSTOM_ID: nerd-font
 :END:
-- Install nerd font from
-  https://github.com/ryanoasis/nerd-fonts#font-installation
-- Install nerd devicons for fancy nerd tree icons
-  https://github.com/ryanoasis/vim-devicons#installation
-- Install =Meslo LG S Italic for Powerline Nerd Font.ttf= font to the
-  system for linux
-- For linux place the font in =/usr/share/font/= folder and rebuild the
-  font cache =fc-cache -f -v=
-- For Mac install font from
-  =./mac-Meslo-Nerd-Font/Meslo LG S Italic for Powerline Nerd Font.ttf=
+- Install nerd font from https://github.com/ryanoasis/nerd-fonts#font-installation
+- Install nerd devicons for fancy nerd tree icons https://github.com/ryanoasis/vim-devicons#installation
+- Install =Meslo LG S Italic for Powerline Nerd Font.ttf= font to the system for linux
+- For linux place the font in =/usr/share/font/= folder and rebuild the font cache =fc-cache -f -v=
+- For Mac install font from =./mac-Meslo-Nerd-Font/Meslo LG S Italic for Powerline Nerd Font.ttf=
 
 ** Powerline font for 'agnoster' zsh theme and vim-airline
 :PROPERTIES:
 :CUSTOM_ID: powerline-font-for-agnoster-zsh-theme-and-vim-airline
 :END:
 - Install powerline font from https://github.com/powerline/fonts
-- set the font =Meslo LG S DZ for Powerline= in the terminal (/italic/
-  preferably)
+- set the font =Meslo LG S DZ for Powerline= in the terminal (/italic/ preferably)
 
 ** cobalt2 zsh-theme for iterm
 :PROPERTIES:
 :CUSTOM_ID: cobalt2-zsh-theme-for-iterm
 :END:
-- Follow the instruction in this repo
-  https://github.com/wesbos/Cobalt2-iterm
+- Follow the instruction in this repo https://github.com/wesbos/Cobalt2-iterm
 
 ** Instant markdown for instant preview
 :PROPERTIES:
 :CUSTOM_ID: instant-markdown-for-instant-preview
 :END:
-- Follow install instructions from
-  https://github.com/suan/vim-instant-markdown
+- Follow install instructions from https://github.com/suan/vim-instant-markdown
 
 ** Install =ack-grep= for ack.vim support
 :PROPERTIES:
 :CUSTOM_ID: install-ack-grep-for-ack.vim-support
 :END:
-- Run command =sudo apt-get install ack-grep= to install ack. /symlink
-  ack-grep to ack if needed/=ln -s /usr/bin/ack-grep /usr/bin/ack=
+- Run command =sudo apt-get install ack-grep= to install ack. /symlink ack-grep to ack if needed/ =ln -s /usr/bin/ack-grep /usr/bin/ack=
 
 ** For fish like auto completion in zsh
 :PROPERTIES:
 :CUSTOM_ID: for-fish-like-auto-completion-in-zsh
 :END:
-- Install zsh-autosuggestions from
-  https://github.com/zsh-users/zsh-autosuggestions
-- Run the following command
-  =git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions=
+- Install zsh-autosuggestions from https://github.com/zsh-users/zsh-autosuggestions
+- Run the following command =git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions=
 - Plugin is already mapped in =.zshrc= file
 
 ** Install =xcape= to map Caps_Lock to ctrl (on long press) and esc (on tap) on Archlinux
@@ -113,8 +100,7 @@ install 'yakuake' for drop-down terminal
 :CUSTOM_ID: install-xcape-to-map-caps_lock-to-ctrl-on-long-press-and-esc-on-tap-on-archlinux
 :END:
 - Try =sudo pacman -S xcape= first (archlinux)
-- Install xcape from https://github.com/alols/xcape before setting up
-  the environment
+- Install xcape from https://github.com/alols/xcape before setting up the environment
 
 ** Install =xmodmap= to map Tab to Hyper_L (on long press) and Tab (on tap) on Archlinux
 :PROPERTIES:
@@ -122,8 +108,7 @@ install 'yakuake' for drop-down terminal
 :END:
 - Try =sudo pacman -S xorg-xmodmap= first (archlinux)
 - Install xmodmap before setting up the environment
-- This also maps backslash to Hyper_R (on long press) and backslash (on
-  tap)
+- This also maps backslash to Hyper_R (on long press) and backslash (on tap)
 
 ** Install =HyperKey.app= to map Caps_Lock to ctrl (on long press) and esc (on tap) on MacOS
 :PROPERTIES:
@@ -135,22 +120,17 @@ install 'yakuake' for drop-down terminal
 :PROPERTIES:
 :CUSTOM_ID: install-jsctags-for-javascript-ctags
 :END:
-- =jsctags= for ctags generation for vim read more at
-  https://www.npmjs.com/package/jsctags
-- Run the following command to create tags file
-  =find <path to directory containing javascript files> -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | sort > tags=
-- set the tags option to the tag file in local.vim
-  e.g. =set tags+=./tags=
+- =jsctags= for ctags generation for vim read more at https://www.npmjs.com/package/jsctags
+- Run the following command to create tags file =find <path to directory containing javascript files> -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | sort > tags=
+- set the tags option to the tag file in local.vim e.g. ~set tags+=./tags~
 
 ** Install the_silver_searcher
 :PROPERTIES:
 :CUSTOM_ID: install-the_silver_searcher
 :END:
-- Install =the_silver_searcher= which is aliased to command =ag= for
-  searching
+- Install =the_silver_searcher= which is aliased to command =ag= for searching
 - =ag= is also used in vim config for inside vim searching
-- Repo for the_silver_searcher
-  https://github.com/ggreer/the_silver_searcher
+- Repo for the_silver_searcher https://github.com/ggreer/the_silver_searcher
 
 ** Install =elm-format=
 :PROPERTIES:
@@ -166,23 +146,20 @@ install 'yakuake' for drop-down terminal
 :END:
 - Install =elm= by running =npm i -g elm=
 - Elm reference site https://guide.elm-lang.org/
-- Introduciton to Elm
-  https://www.gitbook.com/book/evancz/an-introduction-to-elm/details
+- Introduciton to Elm https://www.gitbook.com/book/evancz/an-introduction-to-elm/details
 
 ** Neovim setup
 :PROPERTIES:
 :CUSTOM_ID: neovim-setup
 :END:
 - Copy =nvim= folder to =~/.config=
-- NOTE: vim's =.vim= folder and =.vimrc= should alredy be setup before
-  copying nvim folder
+- NOTE: vim's =.vim= folder and =.vimrc= should alredy be setup before copying nvim folder
 
 ** Install =bat= (alternate to =cat= command)
 :PROPERTIES:
 :CUSTOM_ID: install-bat-alternate-to-cat-command
 :END:
-- Install =bat= it's a good alternate to =cat= command for file content
-  viewing
+- Install =bat= it's a good alternate to =cat= command for file content viewing
 
 ** Install =lazydocker=
 :PROPERTIES:
@@ -229,8 +206,7 @@ install 'yakuake' for drop-down terminal
 - nvim-tree (file explorer): https://github.com/kyazdani42/nvim-tree.lua
 - nvim-web-devicons: https://github.com/kyazdani42/nvim-web-devicons
 - neovim setup https://github.com/craftzdog/dotfiles-public
-- neovim setup video:
-  https://www.youtube.com/watch?v=FW2X1CXrU1w&t=741s&ab_channel=devaslife
+- neovim setup video: https://www.youtube.com/watch?v=FW2X1CXrU1w&t=741s&ab_channel=devaslife
 - ranger in neovim: https://github.com/kevinhwang91/rnvimr
 
 ** Install =exa= modern replacement for ls
@@ -283,10 +259,8 @@ install 'yakuake' for drop-down terminal
 :END:
 - github: https://github.com/LunarVim/Neovim-from-scratch ## Steps to
   launch =kanata= on start-up ### MacOS
-- Run the script located in =scripts/bin/kanata_launch_macos= located in
-  the =dotfiles= folder
-- Add =kanata= binary to
-  =system settings -> privacy & security -> input monitoring=
+- Run the script located in =scripts/bin/kanata_launch_macos= located in the =dotfiles= folder
+- Add =kanata= binary to =system settings -> privacy & security -> input monitoring=
 - Reboot the system
 
 *** Linux
@@ -294,38 +268,29 @@ install 'yakuake' for drop-down terminal
 :CUSTOM_ID: linux
 :END:
 - Run =sudo groupadd uinput= to create a =input= user group.
-- Run =sudo usermod -aG input,uinput $(whoami)= to add the user to the
-  usergroups.
+- Run =sudo usermod -aG input,uinput $(whoami)= to add the user to the usergroups.
 
-*NOTES:* - Before setting up vim copy =.vim= folder to =~/.vim= -
-Install =typescript= =dtsm= =typings= by running
-=sudo npm install -g typescript dtsm typings= for typescripts plugin to
-work properly - location of most of the config is HOME directory
-(i.e. ~/) except for .gitconfig which resides in the project directory -
-location for =.ackrc= is home directory (i.e. ~/) e.g. =~/.ackrc= - Keep
-colors folder inside =~/.vim= folder - Create a ".tags" folder in home
-directory - Run npm install after installing tern plugin - Run git
-submodule update --init --recursive in vim-jsbeautify plugin folder -
-Map actionscript.dict in .vimrc properly - Path to xmonad.desktop
-=/usr/share/xsessions/xmonad.desktop=, update the =Exec= property value
-to the starter script - Ultisnips to work create a directory
-=mkdir -p ~/.vim/ftdetect= and run this command
-=ln -s ~/.vim/bundle/ultisnips/ftdetect/* ~/.vim/ftdetect/= - =jsctags=
-for ctags generation for vim read more at
-https://www.npmjs.com/package/jsctags - use
-https://github.com/gpakosz/.tmux for tmux configuration - set locale to
-utf8 in linux for powerline fonts to work properly in tmux, run
-=sudo localectl set-locale LANG="en_IN.utf8"=, choose utf8 locale by
-running =localectl list-locales=. Once the locale is set a reboot is
-required. - Install =eslint=, run =npm install -g eslint= - =.tmux/=
-folder is customized copy of =oh-my-tmux= - to enable undercurl set the
-following in =.tmux.conf.local= *Copy with #!important*
-=tmux       set -g default-terminal 'alacritty' #!important       set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm' #!important       set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m' #!important= -
-install =reattach-to-user-namespace= in macos for tmux and clipboard
-binding and =xclip= for Linux - install =clipit= for clipboard
-management (paste from history) for linux - install =pywal= for setting
-wallpaper and corresponding theme - install =nerd-fonts-complete= from
-AUR for arch linux for nerd font support (powerline support) -
-terminator config path =.config/terminator/config= - if =kanata= does't
-work refer https://github.com/jtroo/kanata as there might be a need to
-add the user to =uinput= group.
+*NOTES:*
+- Before setting up vim copy =.vim= folder to =~/.vim=
+- Install =typescript= =dtsm= =typings= by running =sudo npm install -g typescript dtsm typings= for typescripts plugin to
+work properly
+- location of most of the config is HOME directory (i.e. ~/) except for .gitconfig which resides in the project directory
+- location for =.ackrc= is home directory (i.e. ~/) e.g. =~/.ackrc=
+- Keep colors folder inside =~/.vim= folder - Create a ".tags" folder in home directory
+- Run npm install after installing tern plugin - Run git submodule update --init --recursive in vim-jsbeautify plugin folder
+- Map actionscript.dict in .vimrc properly - Path to xmonad.desktop =/usr/share/xsessions/xmonad.desktop=, update the =Exec= property value to the starter script
+- Ultisnips to work create a directory =mkdir -p ~/.vim/ftdetect= and run this command =ln -s ~/.vim/bundle/ultisnips/ftdetect/* ~/.vim/ftdetect/= - =jsctags= for ctags generation for vim read more at https://www.npmjs.com/package/jsctags
+- use https://github.com/gpakosz/.tmux for tmux configuration
+- set locale to utf8 in linux for powerline fonts to work properly in tmux, run =sudo localectl set-locale LANG="en_IN.utf8"=, choose utf8 locale by running =localectl list-locales=. Once the locale is set a reboot is required.
+- Install =eslint=, run =npm install -g eslint= - =.tmux/= folder is customized copy of =oh-my-tmux=
+- to enable undercurl set the following in =.tmux.conf.local= *Copy with #!important*
+  #+begin_src bash
+  set -g default-terminal 'alacritty' #!important
+  set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm' #!important
+  set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m' #!important
+  #+end_src
+- install =reattach-to-user-namespace= in macos for tmux and clipboard binding and =xclip= for Linux
+- install =clipit= for clipboard management (paste from history) for linux
+- install =pywal= for setting wallpaper and corresponding theme
+- install =nerd-fonts-complete= from AUR for arch linux for nerd font support (powerline support)
+- terminator config path =.config/terminator/config= - if =kanata= does't work refer https://github.com/jtroo/kanata as there might be a need to add the user to =uinput= group.
