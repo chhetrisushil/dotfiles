@@ -273,8 +273,8 @@ install 'yakuake' for drop-down terminal
 *NOTES:*
 - Before setting up vim copy =.vim= folder to =~/.vim=
 - Install =typescript= =dtsm= =typings= by running =sudo npm install -g typescript dtsm typings= for typescripts plugin to work properly
-- location of most of the config is HOME directory (i.e. ~/) except for .gitconfig which resides in the project directory
-- location for =.ackrc= is home directory (i.e. ~/) e.g. =~/.ackrc=
+- location of most of the config is HOME directory (i.e. ~/) except for .gitconfig which resides in the project directory
+- location for =.ackrc= is home directory (i.e. ~/) e.g. =~/.ackrc=
 - Keep colors folder inside =~/.vim= folder - Create a ".tags" folder in home directory
 - Run npm install after installing tern plugin - Run git submodule update --init --recursive in vim-jsbeautify plugin folder
 - Map actionscript.dict in .vimrc properly - Path to xmonad.desktop =/usr/share/xsessions/xmonad.desktop=, update the =Exec= property value to the starter script
