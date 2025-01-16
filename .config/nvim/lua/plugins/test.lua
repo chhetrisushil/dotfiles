@@ -13,28 +13,40 @@ return {
   },
   keys = {
     {
+      "<localleader>t",
+      "",
+      desc = "+Test",
+    },
+    {
       "<localleader>tr",
       function()
         require("neotest").run.run()
       end,
-      desc = "Run Test",
+      desc = "Run Nearest Test",
+    },
+    {
+      "<localleader>ts",
+      function()
+        require("neotest").run.stop()
+      end,
+      desc = "Stop Running Test",
     },
     {
       "<localleader>to",
       function()
-        require("neotest").output.open()
+        require("neotest").output.open({ enter = true, auto_close = true })
       end,
-      desc = "Test Output",
+      desc = "Show Output",
     },
     {
       "<localleader>tO",
       function()
-        require("neotest").output.open({ enter = true })
+        require("neotest").output_panel.toggle()
       end,
-      desc = "Enter Output",
+      desc = "Toggle Output Panel",
     },
     {
-      "<localleader>ts",
+      "<localleader>tS",
       function()
         require("neotest").summary.toggle()
       end,
@@ -45,7 +57,14 @@ return {
       function()
         require("neotest").run.run(vim.fn.expand("%"))
       end,
-      desc = "Run File Test",
+      desc = "Run File (Neotest)",
+    },
+    {
+      "<localleader>tF",
+      function()
+        require("neotest").run.run(vim.uv.cwd())
+      end,
+      desc = "Run All Test Files (Neotest)",
     },
     {
       "<localleader>tn",
@@ -77,7 +96,16 @@ return {
     },
     {
       "<localleader>tw",
-      "<cmd>lua require('neotest').run.run({ jestCommand = 'jest --watch ' })<cr>",
+      function()
+        require("neotest").watch.toggle(vim.fn.expand("%"))
+      end,
+      desc = "Toggle Watch (Neotest)",
+    },
+    {
+      "<localleader>tW",
+      function()
+        require("neotest").run.run({ jestCommand = "jest --watch " })
+      end,
       desc = "Run jest Watch",
     },
   },
