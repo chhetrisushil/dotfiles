@@ -13,6 +13,55 @@ return {
   },
   keys = {
     {
+      "<localleader>tr",
+      function()
+        require("neotest").run.run()
+      end,
+      desc = "Run Test",
+    },
+    {
+      "<localleader>to",
+      function()
+        require("neotest").output.open()
+      end,
+      desc = "Test Output",
+    },
+    {
+      "<localleader>tO",
+      function()
+        require("neotest").output.open({ enter = true })
+      end,
+      desc = "Enter Output",
+    },
+    {
+      "<localleader>ts",
+      function()
+        require("neotest").summary.toggle()
+      end,
+      desc = "Toggle Summary",
+    },
+    {
+      "<localleader>tf",
+      function()
+        require("neotest").run.run(vim.fn.expand("%"))
+      end,
+      desc = "Run File Test",
+    },
+    {
+      "<localleader>tn",
+      function()
+        require("neotest").jump.next({ status = "failed" })
+      end,
+      desc = "Next Failed Test",
+    },
+    {
+      "<localleader>tN",
+      function()
+        require("neotest").jump.prev({ status = "failed" })
+      end,
+      desc = "Prev Failed Test",
+    },
+    {
       "<localleader>tl",
       function()
         require("neotest").run.run_last()
@@ -29,7 +78,7 @@ return {
     {
       "<localleader>tw",
       "<cmd>lua require('neotest').run.run({ jestCommand = 'jest --watch ' })<cr>",
-      desc = "Run Watch",
+      desc = "Run jest Watch",
     },
   },
   config = function()
