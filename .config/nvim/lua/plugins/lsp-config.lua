@@ -67,14 +67,65 @@ return {
       local lspconfig = require("lspconfig")
 
       -- lua lsp config
-      lspconfig.lua_ls.setup({})
+      lspconfig.lua_ls.setup({
+        settings = {
+          Lua = {
+            hint = {
+              enable = true,
+              arrayIndex = "Enable",
+              setType = true,
+              paramType = true,
+              returnType = true,
+            },
+          },
+        },
+      })
 
       -- Javascrip/Typescript lsp config
       lspconfig.denols.setup({})
-      lspconfig.ts_ls.setup({})
+      lspconfig.ts_ls.setup({
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayEnumMemberValueHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayParameterNameHints = "all",
+              inlcudeInlayParameterNameHintsWhenArgumentMatchesName = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayVariableTypeHints = true,
+            },
+          },
+          javascript = {
+            inlayHints = {
+              includeInlayEnumMemberValueHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayParameterNameHints = "all",
+              inlcudeInlayParameterNameHintsWhenArgumentMatchesName = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayVariableTypeHints = true,
+            },
+          },
+        },
+      })
 
       -- Go lsp config
-      lspconfig.gopls.setup({})
+      lspconfig.gopls.setup({
+        settings = {
+          gopls = {
+            hints = {
+              assignVariableTypes = true,
+              compositeLiteralFields = true,
+              compositeLiteralTypes = true,
+              constantValues = true,
+              functionTypeParameters = true,
+              parameterNames = true,
+              rangeVariableTypes = true,
+            },
+          },
+        },
+      })
 
       -- Bash lsp config
       lspconfig.bashls.setup({})

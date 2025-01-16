@@ -42,3 +42,6 @@ vim.diagnostic.config({
     border = "rounded",
   },
 })
+
+-- enable inlayhint
+vim.lsp.inlay_hint.enable(true, nil)
