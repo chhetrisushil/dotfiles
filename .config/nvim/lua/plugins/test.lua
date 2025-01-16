@@ -9,7 +9,7 @@ return {
     "nvim-neotest/neotest-jest",
     "marilari88/neotest-vitest",
     "nvim-neotest/neotest-go",
-    "nvim-neotest/neotest-pythond",
+    "nvim-neotest/neotest-python",
   },
   keys = {
     {
