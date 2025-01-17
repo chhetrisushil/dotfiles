@@ -95,6 +95,18 @@ return {
       end
     end
 
+    if not dap.adapters["chrome"] then
+      dap.adapters["chrome"] = {
+        type = "executable",
+        command = "node",
+        args = {
+          vim.fn.resolve(
+            vim.fn.stdpath("data") .. "/mason/packages/chrome-debug-adapter/out/src/chromeDebug.js"
+          ),
+        },
+      }
+    end
+
     for _, language in ipairs(js_based_languages) do
       dap.configurations[language] = {
         -- Debug single nodejs files
@@ -147,8 +159,9 @@ return {
         -- Debug web applications (client side)
         {
           name = "Launch & Debug Chrome",
-          type = "pwa-chrome",
+          type = "chrome",
           request = "launch",
+          port = 9222,
           url = function()
             local co = coroutine.running()
             return coroutine.create(function()
