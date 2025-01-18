@@ -294,3 +294,5 @@ install 'yakuake' for drop-down terminal
 - install =nerd-fonts-complete= from AUR for arch linux for nerd font support (powerline support)
 - terminator config path =.config/terminator/config= - if =kanata= does't work refer https://github.com/jtroo/kanata as there might be a need to add the user to =uinput= group.
 - copy =.cargo/config= before setting up neovim. =lua/json5= neovim plugin needs this file.
+- install =debugpy= to debug python in neovim =pip3 install debugpy=
+- install =delve= through mason plugin (Mason dap)
