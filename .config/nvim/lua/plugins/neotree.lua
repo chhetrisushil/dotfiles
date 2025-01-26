@@ -19,6 +19,15 @@ return {
         },
       },
       buffers = { follow_current_file = { enable = true } },
+      sources = { "filesystem", "buffers", "document_symbols" },
+      source_selector = {
+        winbar = true,
+        sources = {
+          { source = "filesystem" },
+          { source = "buffers" },
+          { source = "document_symbols" },
+        },
+      },
     })
 
     wk.add({
