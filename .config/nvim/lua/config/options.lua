@@ -41,6 +41,7 @@ vim.diagnostic.config({
   float = {
     border = "rounded",
   },
+  virtual_lines = false,
 })
 
 -- enable inlayhint

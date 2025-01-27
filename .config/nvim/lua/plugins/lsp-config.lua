@@ -156,4 +156,18 @@ return {
       lspconfig.elmls.setup({})
     end,
   },
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    lazy = false,
+    keys = {
+      {
+        "<localleader>vt",
+        function()
+          require("lsp_lines").toggle()
+        end,
+        desc = "Toggle virtual lines",
+      },
+    },
+    config = true,
+  },
 }
