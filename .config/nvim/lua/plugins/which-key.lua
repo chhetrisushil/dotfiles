@@ -30,6 +30,13 @@ return {
     { "<localleader>j", "<C-w>j",                  desc = "Move to window below" },
     { "<localleader>k", "<C-w>k",                  desc = "Move to window above" },
     { "<localleader>l", "<C-w>l",                  desc = "Move to right window" },
+    {
+      "<localleader>vt",
+      function()
+        vim.diagnostic.config({ virtual_lines = not vim.diagnostic.config().virtual_lines })
+      end,
+      desc = "Toggle virtual lines",
+    },
   },
   config = function()
     local hipatterns = require("mini.hipatterns")
