@@ -42,6 +42,7 @@ vim.diagnostic.config({
     border = "rounded",
   },
   virtual_lines = false,
+  virtual_text = true,
 })
 
 -- enable inlayhint
