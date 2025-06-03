@@ -257,8 +257,12 @@ install 'yakuake' for drop-down terminal
 :PROPERTIES:
 :CUSTOM_ID: how-to-configurecustomize-neovim
 :END:
-- github: https://github.com/LunarVim/Neovim-from-scratch ## Steps to
-  launch =kanata= on start-up ### MacOS
+- github: https://github.com/LunarVim/Neovim-from-scratch
+
+** Steps to launch =kanata= on start-up MacOS
+:PROPERTIES:
+:CUSTOM_ID: steps-to-launch-kanata-on-start-up-macos
+:END:
 - Run the script located in =scripts/bin/kanata_launch_macos= located in the =dotfiles= folder
 - Add =kanata= binary to =system settings -> privacy & security -> input monitoring=
 - Reboot the system
