@@ -1,6 +1,12 @@
 (defcfg
   process-unmapped-keys yes
   log-layer-changes no
+  macos-dev-names-exclude (
+    "Moonlander Mark I"
+  )
+  linux-dev-names-exclude (
+    "Moonlander Mark I"
+  )
 )
 
 (defsrc
