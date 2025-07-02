@@ -13,7 +13,7 @@
   esc
   tab q w e r t y u i o p [  ] \
   caps a s d f g h j k l ;
-  lshift z x c v b n m , . /
+  lshift z x c v b n m , . / rshift
   lctl lmet lalt
 )
 
@@ -24,13 +24,13 @@
 
 (defalias
   c2cNe     (tap-hold-press $tap-time $hold-time esc lctl)
+  s2nl      (layer-while-held symbolsAndNums)
 
   a         (tap-hold-release $tap-time $hold-time a lmet)
   s         (tap-hold-release $tap-time $hold-time s lalt)
   d         (tap-hold-release $tap-time $hold-time d lsft)
   f         (tap-hold-release $tap-time $hold-time f lctl)
-  g         (tap-hold-release $tap-time $hold-time g (layer-while-held arrowNnumNsym))
-  h         (tap-hold-release $tap-time $hold-time h (layer-while-held arrowNnumNsym))
+  g         (tap-hold-release $tap-time $hold-time g (layer-while-held arrows))
   j         (tap-hold-release $tap-time $hold-time j lctl)
   k         (tap-hold-release $tap-time $hold-time k lsft)
   l         (tap-hold-release $tap-time $hold-time l lalt)
@@ -40,15 +40,23 @@
 (deflayer base
   grv
   _ _ _ _ _ _ _ _ _ _ _ _ _ _
-  @c2cNe @a @s @d @f @g @h @j @k @l @;
-  _ _ _ _ _ _ _ _ _ _ _
+  @c2cNe @a @s @d @f @g _ @j @k @l @;
+  @s2nl _ _ _ _ _ _ _ _ _ _ @s2nl
   _ _ _
 )
 
-(deflayer arrowNnumNsym
+(deflayer arrows
   grv
-  _ 1 2 3 4 5 6 7 8 9 0 _ _ _
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _
   @c2cNe @a @s @d @f _ left down up right _
-  _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _
+)
+
+(deflayer symbolsAndNums
+  grv
+  _ S-1 S-2 S-[ S-] S-\ _ 7 8 9 S-8 _ _ _
+  @c2cNe S-3 S-4 S-9 S-0 ` 0 4 5 6 S-=
+  _ S-5 S-6 [ ] S-` S-7 1 2 3 \ _
   _ _ _
 )
