@@ -25,7 +25,8 @@
 (defalias
   c2cNe     (tap-hold-press $tap-time $hold-time esc lctl)
   s2sl      (layer-while-held symbols)
-  s2nl      (layer-while-held numbers)
+  s2nl      (tap-dance $tap-time ((layer-while-held numbers) (layer-switch mouse)))
+  sb        (layer-switch base)
 
   a         (tap-hold-release $tap-time $hold-time a lmet)
   s         (tap-hold-release $tap-time $hold-time s lalt)
@@ -36,6 +37,13 @@
   k         (tap-hold-release $tap-time $hold-time k lsft)
   l         (tap-hold-release $tap-time $hold-time l lalt)
   ;         (tap-hold-release $tap-time $hold-time ; lmet)
+
+  mwu (mwheel-up 50 120)
+  mwd (mwheel-down 50 120)
+  ms↑ (movemouse-up 4 4)
+  ms← (movemouse-left 4 4)
+  ms↓ (movemouse-down 4 4)
+  ms→ (movemouse-right 4 4)
 )
 
 (deflayer base
@@ -67,5 +75,13 @@
   _ _ _ _ _ _ _ 7 8 9 S-8 _ _ _
   @c2cNe _ _ _ _ _ 0 4 5 6 S-=
   _ _ _ _ _ _ S-7 1 2 3 \ _
+  _ _ _
+)
+
+(deflayer mouse
+  grv
+  _ _ _ _ _ _ _ @mwu @mwd _ _ _ _ _
+  @c2cNe @a @s @d @f _ @ms← @ms↓ @ms↑ @ms→ _
+  @sb _ _ mlft mrgt _ _ _ _ _ _ _
   _ _ _
 )
