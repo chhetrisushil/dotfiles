@@ -38,12 +38,12 @@
   l         (tap-hold-release $tap-time $hold-time l lalt)
   ;         (tap-hold-release $tap-time $hold-time ; lmet)
 
-  mwu (mwheel-up 50 120)
-  mwd (mwheel-down 50 120)
-  ms↑ (movemouse-up 4 4)
-  ms← (movemouse-left 4 4)
-  ms↓ (movemouse-down 4 4)
-  ms→ (movemouse-right 4 4)
+  mwu (mwheel-down 50 5)
+  mwd (mwheel-up 50 5)
+  ms↑ (movemouse-up 4 2)
+  ms← (movemouse-left 4 2)
+  ms↓ (movemouse-down 4 2)
+  ms→ (movemouse-right 4 2)
 )
 
 (deflayer base
