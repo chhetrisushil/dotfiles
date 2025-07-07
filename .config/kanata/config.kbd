@@ -25,7 +25,7 @@
 (defalias
   c2cNe     (tap-hold-press $tap-time $hold-time esc lctl)
   s2sl      (layer-while-held symbols)
-  s2nl      (tap-dance $tap-time ((layer-while-held numbers) (layer-switch mouse)))
+  s2nl      (tap-hold-press $tap-time $hold-time (layer-switch mouse) (layer-while-held numbers))
   sb        (layer-switch base)
 
   a         (tap-hold-release $tap-time $hold-time a lmet)
