@@ -10,11 +10,11 @@
 )
 
 (defsrc
-  esc
+  esc bspc
   tab q w e r t y u i o p [  ] \
   caps a s d f g h j k l ;
   lshift z x c v b n m , . / rshift
-  lctl lmet lalt
+  lctl lmet lalt spc rmet ralt
 )
 
 (defvar
@@ -47,41 +47,42 @@
 )
 
 (deflayer base
-  grv
-  _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  grv XX
+  XX _ _ _ _ _ _ _ _ _ _ _ _ _
   @c2cNe @a @s @d @f @g _ @j @k @l @;
   @s2nl _ _ _ _ _ _ _ _ _ _ @s2sl
-  _ _ _
+  _ tab _ spc bspc ralt
 )
 
 (deflayer arrows
-  grv
+  grv _
   _ _ _ _ _ _ _ _ _ _ _ _ _ _
   @c2cNe @a @s @d @f _ left down up right _
   _ _ _ _ _ _ _ _ _ _ _ _
-  _ _ _
+  _ _ _ _ _ _
 )
 
 (deflayer symbols
-  grv
+  grv _
   _ S-1 S-2 S-[ S-] S-\ _ _ _ _ _ _ _ _
   @c2cNe S-3 S-4 S-9 S-0 ` _ _ _ _ _
   _ S-5 S-6 [ ] S-` _ _ _ _ _ _
-  _ _ _
+  _ _ _ _ _ _ 
 )
 
 (deflayer numbers
-  grv
+  grv _
   _ _ _ _ _ _ - 7 8 9 S-8 _ _ _
   @c2cNe _ _ _ _ _ 0 4 5 6 S-=
   _ _ _ _ _ _ S-7 1 2 3 \ _
-  _ _ _
+  _ _ _ _ _ _
+
 )
 
 (deflayer mouse
-  grv
+  grv _
   _ _ _ _ _ _ _ @mwu @mwd _ _ _ _ _
   @c2cNe @a @s @d @f _ @ms← @ms↓ @ms↑ @ms→ _
   @sb _ _ _ mlft mrgt _ _ _ _ _ _
-  _ _ _
+  _ _ _ _ _ _
 )
