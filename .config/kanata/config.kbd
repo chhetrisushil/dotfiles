@@ -12,7 +12,7 @@
 (defsrc
   esc bspc
   tab q w e r t y u i o p [  ] \
-  caps a s d f g h j k l ;
+  caps a s d f g h j k l ; ' ret
   lshift z x c v b n m , . / rshift
   lctl lmet lalt spc rmet ralt
 )
@@ -49,15 +49,15 @@
 (deflayer base
   grv XX
   XX _ _ _ _ _ _ _ _ _ _ _ _ _
-  @c2cNe @a @s @d @f @g _ @j @k @l @;
+  @c2cNe @a @s @d @f @g _ @j @k @l @; _ XX
   @s2nl _ _ _ _ _ _ _ _ _ _ @s2sl
-  _ tab _ spc bspc ralt
+  _ ret tab spc bspc ralt
 )
 
 (deflayer arrows
   grv _
   _ _ _ _ _ _ _ _ _ _ _ _ _ _
-  @c2cNe @a @s @d @f _ left down up right _
+  @c2cNe @a @s @d @f _ left down up right _ _ _
   _ _ _ _ _ _ _ _ _ _ _ _
   _ _ _ _ _ _
 )
@@ -65,7 +65,7 @@
 (deflayer symbols
   grv _
   _ S-1 S-2 S-[ S-] S-\ _ _ _ _ _ _ _ _
-  @c2cNe S-3 S-4 S-9 S-0 ` _ _ _ _ _
+  @c2cNe S-3 S-4 S-9 S-0 ` _ _ _ _ _ _ _
   _ S-5 S-6 [ ] S-` _ _ _ _ _ _
   _ _ _ _ _ _ 
 )
@@ -73,7 +73,7 @@
 (deflayer numbers
   grv _
   _ _ _ _ _ _ - 7 8 9 S-8 _ _ _
-  @c2cNe _ _ _ _ _ 0 4 5 6 S-=
+  @c2cNe _ _ _ _ _ 0 4 5 6 S-= _ _
   _ _ _ _ _ _ S-7 1 2 3 \ _
   _ _ _ _ _ _
 
@@ -81,7 +81,7 @@
 
 (deflayer mouse
   grv _
-  _ _ _ _ _ _ _ @mwu @mwd _ _ _ _ _
+  _ _ _ _ _ _ _ @mwu @mwd _ _ _ _ _ _ _
   @c2cNe @a @s @d @f _ @ms← @ms↓ @ms↑ @ms→ _
   @sb _ _ _ mlft mrgt _ _ _ _ _ _
   _ _ _ _ _ _
