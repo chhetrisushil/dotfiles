@@ -47,11 +47,11 @@
 )
 
 (deflayer base
-  grv XX
+  grv _
   _ _ _ _ _ _ _ _ _ _ _ _ _ _
   @c2cNe @a @s @d @f @g _ @j @k @l @; _ _ 
   @s2nl _ _ _ _ _ _ _ _ _ _ @s2sl
-  _ bspc _ spc _ ralt
+  _ _ _ _ _ _
 )
 
 (deflayer arrows
