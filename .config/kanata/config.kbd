@@ -48,10 +48,10 @@
 
 (deflayer base
   grv XX
-  XX _ _ _ _ _ _ _ _ _ _ _ _ _
-  @c2cNe @a @s @d @f @g _ @j @k @l @; _ XX
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  @c2cNe @a @s @d @f @g _ @j @k @l @; _ _ 
   @s2nl _ _ _ _ _ _ _ _ _ _ @s2sl
-  _ ret tab spc bspc ralt
+  _ bspc _ spc _ ralt
 )
 
 (deflayer arrows
