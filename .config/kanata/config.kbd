@@ -3,9 +3,11 @@
   log-layer-changes no
   macos-dev-names-exclude (
     "Moonlander Mark I"
+    "CorneWireless"
   )
   linux-dev-names-exclude (
     "Moonlander Mark I"
+    "CorneWireless"
   )
 )
 
