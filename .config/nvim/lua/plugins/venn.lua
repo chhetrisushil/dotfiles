@@ -1,5 +1,6 @@
 return {
   "jbyuki/venn.nvim",
+  event = "VeryLazy",
   dependencies = { "folke/which-key.nvim" },
   config = function()
     -- venn.nvim: enable or disable keymappings
