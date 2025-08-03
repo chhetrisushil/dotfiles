@@ -292,6 +292,11 @@ unbind C-b
 set -g prefix C-a
 bind C-a send-prefix
 
+# pop-up bindings
+bind L display-popup -w 90% -h 90% -E "lazygit"
+bind T display-popup -w 90% -h 90% -E "zsh"
+bind W display-popup -w 90% -h 90% -E "taskwarrior-tui"
+
 # move status line to top
 #set -g status-position top
 
