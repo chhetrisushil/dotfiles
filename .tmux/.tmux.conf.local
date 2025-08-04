@@ -293,10 +293,10 @@ set -g prefix C-a
 bind C-a send-prefix
 
 # pop-up bindings
-bind L display-popup -w 90% -h 90% -E "lazygit"
-bind T display-popup -w 90% -h 90% -E "zsh"
-bind W display-popup -w 90% -h 90% -E "taskwarrior-tui"
-bind N display-popup -w 90% -h 90% -E "nvim ~/scratchNotes.md"
+bind L display-popup -w 90% -h 90% -T "Lazygit" -E "lazygit"
+bind T display-popup -w 90% -h 90% -T "Terminal" -E "zsh"
+bind W display-popup -w 90% -h 90% -T "Tasks" -E "taskwarrior-tui"
+bind N display-popup -w 90% -h 90% -T "Notes" -E "nvim ~/scratchNotes.md"
 
 # move status line to top
 #set -g status-position top
