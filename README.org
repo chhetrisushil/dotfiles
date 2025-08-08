@@ -300,3 +300,6 @@ install 'yakuake' for drop-down terminal
 - copy =.cargo/config= before setting up neovim. =lua/json5= neovim plugin needs this file.
 - install =debugpy= to debug python in neovim =pip3 install debugpy=
 - install =delve= through mason plugin (Mason dap)
+- install =mermaid cli= =npm install -g @mermaid-js/mermaid-cli=
+- install =magick cli= (imagemagick) =brew install imagemagick=
+- install =plantuml cli= =brew install plantuml= before that install =graphviz=, it's a plantuml dependency =brew install graphviz=
