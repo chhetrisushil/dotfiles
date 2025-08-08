@@ -2,7 +2,7 @@ return {
   "3rd/image.nvim",
   config = function()
     require("image").setup({
-      backend = "kitty",
+      backend = "kitty", -- or "ueberzug" for some reason ueberzug doesn't work
       processor = "magick_cli", -- or "magick_rock"
       integrations = {
         markdown = {

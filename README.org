@@ -303,3 +303,4 @@ install 'yakuake' for drop-down terminal
 - install =mermaid cli= =npm install -g @mermaid-js/mermaid-cli=
 - install =magick cli= (imagemagick) =brew install imagemagick=
 - install =plantuml cli= =brew install plantuml= before that install =graphviz=, it's a plantuml dependency =brew install graphviz=
+- install =ueberzugpp= to render image on terminal =brew install jstkdng/programs/ueberzugpp=
