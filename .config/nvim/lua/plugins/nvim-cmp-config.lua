@@ -77,6 +77,9 @@ return {
           { name = "path" },
           { name = "luasnip" }, -- For luasnip users.
           { name = "emoji" },
+          per_filetype = {
+            codecompanion = { "codecompanion" },
+          },
         }, {
           { name = "buffer" },
         }),
