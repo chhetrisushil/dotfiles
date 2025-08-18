@@ -305,3 +305,4 @@ install 'yakuake' for drop-down terminal
 - install =plantuml cli= =brew install plantuml= before that install =graphviz=, it's a plantuml dependency =brew install graphviz=
 - install =ueberzugpp= to render image on terminal =brew install jstkdng/programs/ueberzugpp=
 - install =quarto cli= for =quarto-nvim= to work (https://quarto.org/docs/get-started/)
+- install =gh= for =octo.nvim=
