@@ -13,7 +13,7 @@ return {
           "biome",
           "lua_ls",
           "ts_ls",
-          "denols",
+          -- "denols",
           "bashls",
           "gopls",
           "html",
@@ -26,6 +26,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    lazy = false,
     opts = {
       biome = {
         filetypes = {
@@ -64,10 +65,8 @@ return {
       { "<leader>wr", vim.lsp.buf.remove_workspace_folder, desc = "Remove workspace", remap = false },
     },
     config = function()
-      local lspconfig = require("lspconfig")
-
       -- lua lsp config
-      lspconfig.lua_ls.setup({
+      vim.lsp.config("lua_ls", {
         settings = {
           Lua = {
             hint = {
@@ -80,10 +79,11 @@ return {
           },
         },
       })
+      vim.lsp.enable("lua_ls")
 
       -- Javascrip/Typescript lsp config
-      lspconfig.denols.setup({})
-      lspconfig.ts_ls.setup({
+      -- lspconfig.denols.setup({})
+      vim.lsp.config("ts_ls", {
         settings = {
           typescript = {
             inlayHints = {
@@ -109,9 +109,10 @@ return {
           },
         },
       })
+      vim.lsp.enable("ts_ls")
 
       -- Go lsp config
-      lspconfig.gopls.setup({
+      vim.lsp.config("gopls", {
         settings = {
           gopls = {
             hints = {
@@ -126,15 +127,16 @@ return {
           },
         },
       })
+      vim.lsp.enable("gopls")
 
       -- Bash lsp config
-      lspconfig.bashls.setup({})
+      vim.lsp.enable("bashls")
 
       -- HTML lsp config
-      lspconfig.html.setup({})
+      vim.lsp.enable("html")
 
       -- Emmet lsp config
-      lspconfig.emmet_language_server.setup({
+      vim.lsp.config("emmet_language_server", {
         filetypes = {
           "css",
           "eruby",
@@ -148,12 +150,13 @@ return {
           "typescriptreact",
         },
       })
+      vim.lsp.enable("emmet_language_server")
 
       -- Nginx lsp config
-      lspconfig.nginx_language_server.setup({})
+      vim.lsp.enable("nginx_language_server")
 
       -- Elm lsp config
-      lspconfig.elmls.setup({})
+      vim.lsp.enable("elmls")
     end,
   },
 }
