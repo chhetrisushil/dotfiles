@@ -297,6 +297,7 @@ bind L display-popup -w 90% -h 90% -T "Lazygit" -E "lazygit"
 bind T display-popup -w 90% -h 90% -T "Terminal" -E "zsh"
 bind W display-popup -w 90% -h 90% -T "Tasks" -E "taskwarrior-tui"
 bind N display-popup -w 90% -h 90% -T "Notes" -E "nvim ~/scratchNotes.md"
+bind E display-popup -w 90% -h 90% -T "Diary" -E "nvim ~/dear-diary/$(date +%d-%m-%Y-diary.md)"
 
 # move status line to top
 #set -g status-position top
