@@ -7,7 +7,8 @@ return {
 	config = function()
 		require("marker-groups").setup({
 			keymaps = {
-				enable = false,
+				enabled = true,
+				prefix = "<localleader>m",
 			},
 		})
 	end,
